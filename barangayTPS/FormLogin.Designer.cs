@@ -32,15 +32,16 @@
             pictureBox1 = new PictureBox();
             label7 = new Label();
             label6 = new Label();
-            label5 = new Label();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             label4 = new Label();
             comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
             label1 = new Label();
             label3 = new Label();
             label2 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -48,15 +49,16 @@
             // panel1
             // 
             panel1.BackColor = Color.SeaGreen;
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(label8);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
@@ -71,9 +73,9 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.logo_removebg_preview;
-            pictureBox1.Location = new Point(541, 28);
+            pictureBox1.Location = new Point(524, 17);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(69, 68);
+            pictureBox1.Size = new Size(96, 90);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
@@ -84,7 +86,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(329, 396);
+            label7.Location = new Point(398, 347);
             label7.Name = "label7";
             label7.Size = new Size(59, 15);
             label7.TabIndex = 10;
@@ -96,41 +98,31 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(329, 346);
+            label6.Location = new Point(398, 295);
             label6.Name = "label6";
             label6.Size = new Size(98, 15);
             label6.TabIndex = 9;
             label6.Text = "Username/Email";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(329, 292);
-            label5.Name = "label5";
-            label5.Size = new Size(120, 15);
-            label5.TabIndex = 8;
-            label5.Text = "Enter your full name";
+            label6.Click += label6_Click;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(329, 370);
+            textBox3.Location = new Point(398, 320);
             textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.PasswordChar = '*';
-            textBox3.Size = new Size(504, 25);
+            textBox3.Size = new Size(353, 25);
             textBox3.TabIndex = 7;
+            textBox3.Text = "Enter password\r\n";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(329, 320);
+            textBox2.Location = new Point(398, 270);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(504, 25);
+            textBox2.Size = new Size(353, 23);
             textBox2.TabIndex = 6;
             textBox2.Text = "Enter admin username/email";
             // 
@@ -154,16 +146,6 @@
             comboBox1.Size = new Size(185, 23);
             comboBox1.TabIndex = 4;
             comboBox1.Text = "Resident/Admin";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(329, 266);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(504, 25);
-            textBox1.TabIndex = 3;
-            textBox1.Text = "Enter your full name";
             // 
             // label1
             // 
@@ -204,6 +186,40 @@
             label2.TabIndex = 1;
             label2.Text = "Transaction Management System";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(480, 412);
+            label8.Name = "label8";
+            label8.Size = new Size(123, 15);
+            label8.TabIndex = 12;
+            label8.Text = "Don't have account? \r\n";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Yellow;
+            label9.Location = new Point(597, 412);
+            label9.Name = "label9";
+            label9.Size = new Size(50, 15);
+            label9.TabIndex = 13;
+            label9.Text = "Sign Up";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Location = new Point(528, 365);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 14;
+            button1.Text = "Login";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -225,14 +241,15 @@
         private Label label1;
         private Label label4;
         private ComboBox comboBox1;
-        private TextBox textBox1;
         private Label label3;
         private Label label2;
         private Label label7;
         private Label label6;
-        private Label label5;
         private TextBox textBox3;
         private TextBox textBox2;
         private PictureBox pictureBox1;
+        private Label label9;
+        private Label label8;
+        private Button button1;
     }
 }
