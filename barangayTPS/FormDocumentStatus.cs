@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace barangayTPS
 {
-    public partial class FormResidentInfo : Form
+    public partial class FormDocumentStatus : Form
     {
-        public FormResidentInfo()
+        public FormDocumentStatus()
         {
             InitializeComponent();
         }
