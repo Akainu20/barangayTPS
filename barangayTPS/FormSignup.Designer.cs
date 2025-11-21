@@ -56,7 +56,7 @@
             panelSignupHeader.Controls.Add(lblTransactionManagementSystem);
             panelSignupHeader.Location = new Point(-104, -32);
             panelSignupHeader.Name = "panelSignupHeader";
-            panelSignupHeader.Size = new Size(1296, 803);
+            panelSignupHeader.Size = new Size(1275, 803);
             panelSignupHeader.TabIndex = 4;
             // 
             // btnCreateAccount
