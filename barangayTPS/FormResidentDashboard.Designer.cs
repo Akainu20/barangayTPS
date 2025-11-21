@@ -375,7 +375,7 @@
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(217, 583);
+            pictureBox2.Location = new Point(215, 566);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(982, 359);
             pictureBox2.TabIndex = 4;
