@@ -28,220 +28,162 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            button6 = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormResidentDashboard));
+            panelResidentSidebar = new Panel();
+            btnResidentLogout = new Button();
+            btnResidentDashboard = new Button();
             panel2 = new Panel();
-            panel7 = new Panel();
-            pictureBox5 = new PictureBox();
-            button5 = new Button();
-            label6 = new Label();
-            panel6 = new Panel();
-            pictureBox4 = new PictureBox();
-            button4 = new Button();
-            label5 = new Label();
-            panel5 = new Panel();
-            pictureBox2 = new PictureBox();
-            button3 = new Button();
-            label4 = new Label();
-            panel3 = new Panel();
-            pictureBox1 = new PictureBox();
-            button1 = new Button();
-            label1 = new Label();
-            panel4 = new Panel();
-            pictureBox3 = new PictureBox();
-            button2 = new Button();
-            label3 = new Label();
-            panel8 = new Panel();
-            panel9 = new Panel();
-            label2 = new Label();
-            panel10 = new Panel();
-            panel11 = new Panel();
+            panelAvailableDocuments = new Panel();
             label7 = new Label();
-            panel12 = new Panel();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            pictureBox1 = new PictureBox();
+            btnViewNow = new Button();
+            label12 = new Label();
+            panelBarangayClearance = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox3 = new PictureBox();
+            btnRequestNow = new Button();
+            label3 = new Label();
+            panelResidentWelcome = new Panel();
             pictureBox6 = new PictureBox();
-            panel1.SuspendLayout();
+            panel9 = new Panel();
+            lblResidentWelcome = new Label();
+            pictureBox2 = new PictureBox();
+            panelResidentSidebar.SuspendLayout();
             panel2.SuspendLayout();
-            panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel3.SuspendLayout();
+            panelAvailableDocuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel4.SuspendLayout();
+            panelBarangayClearance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel8.SuspendLayout();
-            panel10.SuspendLayout();
-            panel11.SuspendLayout();
+            panelResidentWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // panelResidentSidebar
             // 
-            panel1.BackColor = Color.SeaGreen;
-            panel1.Controls.Add(button6);
-            panel1.Location = new Point(-1, 75);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(210, 909);
-            panel1.TabIndex = 0;
+            panelResidentSidebar.BackColor = Color.SeaGreen;
+            panelResidentSidebar.Controls.Add(btnResidentLogout);
+            panelResidentSidebar.Controls.Add(btnResidentDashboard);
+            panelResidentSidebar.Location = new Point(-1, 75);
+            panelResidentSidebar.Name = "panelResidentSidebar";
+            panelResidentSidebar.Size = new Size(210, 909);
+            panelResidentSidebar.TabIndex = 0;
             // 
-            // button6
+            // btnResidentLogout
             // 
-            button6.BackColor = Color.White;
-            button6.Location = new Point(15, 39);
-            button6.Name = "button6";
-            button6.Size = new Size(179, 41);
-            button6.TabIndex = 0;
-            button6.Text = "Dashboard";
-            button6.UseVisualStyleBackColor = false;
+            btnResidentLogout.BackColor = Color.White;
+            btnResidentLogout.Location = new Point(16, 96);
+            btnResidentLogout.Name = "btnResidentLogout";
+            btnResidentLogout.Size = new Size(179, 41);
+            btnResidentLogout.TabIndex = 12;
+            btnResidentLogout.Text = "Logout\r\n";
+            btnResidentLogout.UseVisualStyleBackColor = false;
+            btnResidentLogout.Click += btnResidentLogout_Click;
+            // 
+            // btnResidentDashboard
+            // 
+            btnResidentDashboard.BackColor = Color.White;
+            btnResidentDashboard.Location = new Point(15, 39);
+            btnResidentDashboard.Name = "btnResidentDashboard";
+            btnResidentDashboard.Size = new Size(179, 41);
+            btnResidentDashboard.TabIndex = 0;
+            btnResidentDashboard.Text = "Dashboard";
+            btnResidentDashboard.UseVisualStyleBackColor = false;
+            btnResidentDashboard.Click += btnResidentDashboard_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(panel7);
-            panel2.Controls.Add(panel6);
-            panel2.Controls.Add(panel5);
-            panel2.Controls.Add(panel3);
-            panel2.Controls.Add(panel4);
-            panel2.Location = new Point(216, 75);
+            panel2.Controls.Add(panelAvailableDocuments);
+            panel2.Controls.Add(panelBarangayClearance);
+            panel2.Location = new Point(209, 83);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1315, 412);
+            panel2.Size = new Size(1005, 412);
             panel2.TabIndex = 2;
             // 
-            // panel7
+            // panelAvailableDocuments
             // 
-            panel7.BackColor = Color.SeaGreen;
-            panel7.Controls.Add(pictureBox5);
-            panel7.Controls.Add(button5);
-            panel7.Controls.Add(label6);
-            panel7.Location = new Point(1071, 39);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(224, 341);
-            panel7.TabIndex = 28;
+            panelAvailableDocuments.BackColor = Color.SeaGreen;
+            panelAvailableDocuments.Controls.Add(label7);
+            panelAvailableDocuments.Controls.Add(label8);
+            panelAvailableDocuments.Controls.Add(label9);
+            panelAvailableDocuments.Controls.Add(label10);
+            panelAvailableDocuments.Controls.Add(label11);
+            panelAvailableDocuments.Controls.Add(pictureBox1);
+            panelAvailableDocuments.Controls.Add(btnViewNow);
+            panelAvailableDocuments.Controls.Add(label12);
+            panelAvailableDocuments.Location = new Point(539, 31);
+            panelAvailableDocuments.Name = "panelAvailableDocuments";
+            panelAvailableDocuments.Size = new Size(398, 341);
+            panelAvailableDocuments.TabIndex = 29;
             // 
-            // pictureBox5
+            // label7
             // 
-            pictureBox5.Image = Properties.Resources.document;
-            pictureBox5.Location = new Point(3, 12);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(39, 43);
-            pictureBox5.TabIndex = 23;
-            pictureBox5.TabStop = false;
+            label7.AutoSize = true;
+            label7.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.ImageAlign = ContentAlignment.MiddleLeft;
+            label7.Location = new Point(61, 207);
+            label7.Name = "label7";
+            label7.Size = new Size(100, 21);
+            label7.TabIndex = 28;
+            label7.Text = "-Barangay ID";
             // 
-            // button5
+            // label8
             // 
-            button5.BackColor = Color.White;
-            button5.Location = new Point(17, 235);
-            button5.Name = "button5";
-            button5.Size = new Size(190, 51);
-            button5.TabIndex = 9;
-            button5.Text = "Request Now";
-            button5.UseVisualStyleBackColor = false;
+            label8.AutoSize = true;
+            label8.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.ImageAlign = ContentAlignment.MiddleLeft;
+            label8.Location = new Point(61, 186);
+            label8.Name = "label8";
+            label8.Size = new Size(129, 21);
+            label8.TabIndex = 27;
+            label8.Text = "-Business permit";
             // 
-            // label6
+            // label9
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(38, 12);
-            label6.Name = "label6";
-            label6.Size = new Size(185, 41);
-            label6.TabIndex = 11;
-            label6.Text = "Barangay ID";
+            label9.AutoSize = true;
+            label9.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.ImageAlign = ContentAlignment.MiddleLeft;
+            label9.Location = new Point(61, 165);
+            label9.Name = "label9";
+            label9.Size = new Size(178, 21);
+            label9.TabIndex = 26;
+            label9.Text = "-Certificate of Indigency";
             // 
-            // panel6
+            // label10
             // 
-            panel6.BackColor = Color.SeaGreen;
-            panel6.Controls.Add(pictureBox4);
-            panel6.Controls.Add(button4);
-            panel6.Controls.Add(label5);
-            panel6.Location = new Point(809, 39);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(224, 341);
-            panel6.TabIndex = 27;
+            label10.AutoSize = true;
+            label10.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.ImageAlign = ContentAlignment.MiddleLeft;
+            label10.Location = new Point(61, 144);
+            label10.Name = "label10";
+            label10.Size = new Size(182, 21);
+            label10.TabIndex = 25;
+            label10.Text = "-Certificate of Residency";
             // 
-            // pictureBox4
+            // label11
             // 
-            pictureBox4.Image = Properties.Resources.document;
-            pictureBox4.Location = new Point(3, 12);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(39, 43);
-            pictureBox4.TabIndex = 23;
-            pictureBox4.TabStop = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.White;
-            button4.Location = new Point(17, 235);
-            button4.Name = "button4";
-            button4.Size = new Size(190, 51);
-            button4.TabIndex = 9;
-            button4.Text = "Request Now";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(38, 12);
-            label5.Name = "label5";
-            label5.Size = new Size(185, 41);
-            label5.TabIndex = 11;
-            label5.Text = "Barangay ID";
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.SeaGreen;
-            panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(button3);
-            panel5.Controls.Add(label4);
-            panel5.Location = new Point(547, 39);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(224, 341);
-            panel5.TabIndex = 26;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.document;
-            pictureBox2.Location = new Point(3, 12);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(39, 43);
-            pictureBox2.TabIndex = 23;
-            pictureBox2.TabStop = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.White;
-            button3.Location = new Point(17, 235);
-            button3.Name = "button3";
-            button3.Size = new Size(190, 51);
-            button3.TabIndex = 9;
-            button3.Text = "Request Now";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(38, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(185, 41);
-            label4.TabIndex = 11;
-            label4.Text = "Barangay ID";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.SeaGreen;
-            panel3.Controls.Add(pictureBox1);
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(label1);
-            panel3.Location = new Point(283, 39);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(224, 341);
-            panel3.TabIndex = 25;
+            label11.AutoSize = true;
+            label11.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.ImageAlign = ContentAlignment.MiddleLeft;
+            label11.Location = new Point(61, 123);
+            label11.Name = "label11";
+            label11.Size = new Size(153, 21);
+            label11.TabIndex = 24;
+            label11.Text = "-Barangay Clearance";
             // 
             // pictureBox1
             // 
@@ -252,37 +194,104 @@
             pictureBox1.TabIndex = 23;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnViewNow
             // 
-            button1.BackColor = Color.White;
-            button1.Location = new Point(17, 235);
-            button1.Name = "button1";
-            button1.Size = new Size(190, 51);
-            button1.TabIndex = 9;
-            button1.Text = "Request Now";
-            button1.UseVisualStyleBackColor = false;
+            btnViewNow.BackColor = Color.White;
+            btnViewNow.Location = new Point(49, 252);
+            btnViewNow.Name = "btnViewNow";
+            btnViewNow.Size = new Size(323, 51);
+            btnViewNow.TabIndex = 9;
+            btnViewNow.Text = "View Now";
+            btnViewNow.UseVisualStyleBackColor = false;
+            btnViewNow.Click += btnViewNow_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.ImageAlign = ContentAlignment.MiddleLeft;
+            label12.Location = new Point(61, 81);
+            label12.Name = "label12";
+            label12.Size = new Size(214, 28);
+            label12.TabIndex = 11;
+            label12.Text = "Available Documents";
+            // 
+            // panelBarangayClearance
+            // 
+            panelBarangayClearance.BackColor = Color.SeaGreen;
+            panelBarangayClearance.Controls.Add(label6);
+            panelBarangayClearance.Controls.Add(label5);
+            panelBarangayClearance.Controls.Add(label4);
+            panelBarangayClearance.Controls.Add(label2);
+            panelBarangayClearance.Controls.Add(label1);
+            panelBarangayClearance.Controls.Add(pictureBox3);
+            panelBarangayClearance.Controls.Add(btnRequestNow);
+            panelBarangayClearance.Controls.Add(label3);
+            panelBarangayClearance.Location = new Point(54, 31);
+            panelBarangayClearance.Name = "panelBarangayClearance";
+            panelBarangayClearance.Size = new Size(423, 341);
+            panelBarangayClearance.TabIndex = 24;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.ImageAlign = ContentAlignment.MiddleLeft;
+            label6.Location = new Point(61, 207);
+            label6.Name = "label6";
+            label6.Size = new Size(100, 21);
+            label6.TabIndex = 28;
+            label6.Text = "-Barangay ID";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.ImageAlign = ContentAlignment.MiddleLeft;
+            label5.Location = new Point(61, 186);
+            label5.Name = "label5";
+            label5.Size = new Size(129, 21);
+            label5.TabIndex = 27;
+            label5.Text = "-Business permit";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.ImageAlign = ContentAlignment.MiddleLeft;
+            label4.Location = new Point(61, 165);
+            label4.Name = "label4";
+            label4.Size = new Size(178, 21);
+            label4.TabIndex = 26;
+            label4.Text = "-Certificate of Indigency";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.ImageAlign = ContentAlignment.MiddleLeft;
+            label2.Location = new Point(61, 144);
+            label2.Name = "label2";
+            label2.Size = new Size(182, 21);
+            label2.TabIndex = 25;
+            label2.Text = "-Certificate of Residency";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(38, 12);
+            label1.ImageAlign = ContentAlignment.MiddleLeft;
+            label1.Location = new Point(61, 123);
             label1.Name = "label1";
-            label1.Size = new Size(185, 41);
-            label1.TabIndex = 11;
-            label1.Text = "Barangay ID";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.SeaGreen;
-            panel4.Controls.Add(pictureBox3);
-            panel4.Controls.Add(button2);
-            panel4.Controls.Add(label3);
-            panel4.Location = new Point(19, 39);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(224, 341);
-            panel4.TabIndex = 24;
+            label1.Size = new Size(153, 21);
+            label1.TabIndex = 24;
+            label1.Text = "-Barangay Clearance";
             // 
             // pictureBox3
             // 
@@ -293,101 +302,40 @@
             pictureBox3.TabIndex = 23;
             pictureBox3.TabStop = false;
             // 
-            // button2
+            // btnRequestNow
             // 
-            button2.BackColor = Color.White;
-            button2.Location = new Point(17, 235);
-            button2.Name = "button2";
-            button2.Size = new Size(190, 51);
-            button2.TabIndex = 9;
-            button2.Text = "Request Now";
-            button2.UseVisualStyleBackColor = false;
+            btnRequestNow.BackColor = Color.White;
+            btnRequestNow.Location = new Point(74, 252);
+            btnRequestNow.Name = "btnRequestNow";
+            btnRequestNow.Size = new Size(277, 51);
+            btnRequestNow.TabIndex = 9;
+            btnRequestNow.Text = "Request Now";
+            btnRequestNow.UseVisualStyleBackColor = false;
+            btnRequestNow.Click += btnRequestNow_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(38, 12);
+            label3.ImageAlign = ContentAlignment.MiddleLeft;
+            label3.Location = new Point(61, 81);
             label3.Name = "label3";
-            label3.Size = new Size(185, 41);
+            label3.Size = new Size(301, 28);
             label3.TabIndex = 11;
-            label3.Text = "Barangay ID";
+            label3.Text = "Request Barangay Documents ";
             // 
-            // panel8
+            // panelResidentWelcome
             // 
-            panel8.BackColor = Color.SeaGreen;
-            panel8.Controls.Add(pictureBox6);
-            panel8.Controls.Add(panel9);
-            panel8.Controls.Add(label2);
-            panel8.Location = new Point(0, 0);
-            panel8.Margin = new Padding(3, 4, 3, 4);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(1574, 83);
-            panel8.TabIndex = 3;
-            // 
-            // panel9
-            // 
-            panel9.BackColor = Color.Gold;
-            panel9.Location = new Point(0, 75);
-            panel9.Margin = new Padding(3, 4, 3, 4);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(1575, 16);
-            panel9.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.SeaGreen;
-            label2.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(586, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(616, 60);
-            label2.TabIndex = 1;
-            label2.Text = "Welcome to Your Dashboard";
-            label2.Click += label2_Click;
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.White;
-            panel10.Controls.Add(panel11);
-            panel10.Location = new Point(216, 523);
-            panel10.Margin = new Padding(3, 4, 3, 4);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(1315, 329);
-            panel10.TabIndex = 4;
-            // 
-            // panel11
-            // 
-            panel11.BackColor = Color.SeaGreen;
-            panel11.Controls.Add(label7);
-            panel11.Controls.Add(panel12);
-            panel11.Location = new Point(0, 0);
-            panel11.Margin = new Padding(3, 4, 3, 4);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(1315, 325);
-            panel11.TabIndex = 5;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Calibri", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(493, 16);
-            label7.Name = "label7";
-            label7.Size = new Size(359, 37);
-            label7.TabIndex = 12;
-            label7.Text = "Recent Document Requests\r\n";
-            // 
-            // panel12
-            // 
-            panel12.BackColor = Color.White;
-            panel12.Location = new Point(3, 59);
-            panel12.Margin = new Padding(3, 4, 3, 4);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(1309, 263);
-            panel12.TabIndex = 6;
+            panelResidentWelcome.BackColor = Color.SeaGreen;
+            panelResidentWelcome.Controls.Add(pictureBox6);
+            panelResidentWelcome.Controls.Add(panel9);
+            panelResidentWelcome.Controls.Add(lblResidentWelcome);
+            panelResidentWelcome.Location = new Point(0, 0);
+            panelResidentWelcome.Margin = new Padding(3, 4, 3, 4);
+            panelResidentWelcome.Name = "panelResidentWelcome";
+            panelResidentWelcome.Size = new Size(1574, 83);
+            panelResidentWelcome.TabIndex = 3;
             // 
             // pictureBox6
             // 
@@ -400,77 +348,95 @@
             pictureBox6.TabIndex = 3;
             pictureBox6.TabStop = false;
             // 
+            // panel9
+            // 
+            panel9.BackColor = Color.Gold;
+            panel9.Location = new Point(0, 75);
+            panel9.Margin = new Padding(3, 4, 3, 4);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(1575, 16);
+            panel9.TabIndex = 2;
+            // 
+            // lblResidentWelcome
+            // 
+            lblResidentWelcome.AutoSize = true;
+            lblResidentWelcome.BackColor = Color.SeaGreen;
+            lblResidentWelcome.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblResidentWelcome.ForeColor = Color.White;
+            lblResidentWelcome.Location = new Point(275, 11);
+            lblResidentWelcome.Name = "lblResidentWelcome";
+            lblResidentWelcome.Size = new Size(616, 60);
+            lblResidentWelcome.TabIndex = 1;
+            lblResidentWelcome.Text = "Welcome to Your Dashboard";
+            lblResidentWelcome.Click += label2_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(217, 583);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(982, 359);
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
+            // 
             // FormResidentDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1573, 971);
-            Controls.Add(panel10);
-            Controls.Add(panel8);
+            ClientSize = new Size(1209, 971);
+            Controls.Add(pictureBox2);
+            Controls.Add(panelResidentWelcome);
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panelResidentSidebar);
             Name = "FormResidentDashboard";
             Text = "FormResidentDashboard";
             Load += FormResidentDashboard_Load;
-            panel1.ResumeLayout(false);
+            panelResidentSidebar.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelAvailableDocuments.ResumeLayout(false);
+            panelAvailableDocuments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panelBarangayClearance.ResumeLayout(false);
+            panelBarangayClearance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            panel10.ResumeLayout(false);
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
+            panelResidentWelcome.ResumeLayout(false);
+            panelResidentWelcome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelResidentSidebar;
         private Panel panel2;
-        private Button button6;
-        private Panel panel4;
+        private Button btnResidentDashboard;
+        private Panel panelBarangayClearance;
         private PictureBox pictureBox3;
-        private Button button2;
-        private Label label3;
-        private Panel panel8;
-        private Label label2;
-        private Panel panel7;
-        private PictureBox pictureBox5;
-        private Button button5;
-        private Label label6;
-        private Panel panel6;
-        private PictureBox pictureBox4;
-        private Button button4;
-        private Label label5;
-        private Panel panel5;
-        private PictureBox pictureBox2;
-        private Button button3;
-        private Label label4;
-        private Panel panel3;
-        private PictureBox pictureBox1;
-        private Button button1;
-        private Label label1;
+        private Button btnRequestNow;
+        private Panel panelResidentWelcome;
+        private Label lblResidentWelcome;
         private Panel panel9;
-        private Panel panel10;
-        private Panel panel11;
-        private Panel panel12;
-        private Label label7;
         private PictureBox pictureBox6;
+        private Label label3;
+        private Button btnResidentLogout;
+        private Label label2;
+        private Label label1;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Panel panelAvailableDocuments;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private PictureBox pictureBox1;
+        private Button btnViewNow;
+        private Label label12;
+        private PictureBox pictureBox2;
     }
 }

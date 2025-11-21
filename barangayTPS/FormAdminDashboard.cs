@@ -21,5 +21,24 @@ namespace barangayTPS
         {
 
         }
+
+        private void btnAdminLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin newForm = new FormLogin();
+            newForm.Show();
+        }
+
+        private void btnAdminDashboard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTransactionHistory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormTransactionHistory newForm = new FormTransactionHistory();
+            newForm.Show();
+        }
     }
 }

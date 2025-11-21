@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace barangayTPS
 {
@@ -20,6 +21,13 @@ namespace barangayTPS
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin newForm = new FormLogin();
+            newForm.Show();
         }
     }
 }

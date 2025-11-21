@@ -10,28 +10,28 @@ using System.Windows.Forms;
 
 namespace barangayTPS
 {
-    public partial class FormDocumentRequest : Form
+    public partial class FormAvailableDocuments : Form
     {
-        public FormDocumentRequest()
+        public FormAvailableDocuments()
         {
             InitializeComponent();
         }
 
-        private void btnBackResidentDashboard_Click(object sender, EventArgs e)
+        private void btnResidentLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin newForm = new FormLogin();
+            newForm.Show();
+        }
+
+        private void btnResidentDashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormResidentDashboard newForm = new FormResidentDashboard();
             newForm.Show();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormResidentDashboard newForm = new FormResidentDashboard();
-            newForm.Show();
-        }
-
-        private void btnSubmitRequest_Click(object sender, EventArgs e)
+        private void btnBackToAdminDashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormResidentDashboard newForm = new FormResidentDashboard();

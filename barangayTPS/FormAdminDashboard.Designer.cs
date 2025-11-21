@@ -37,26 +37,28 @@
             DocumentType = new DataGridViewTextBoxColumn();
             DateRequested = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
-            panel4 = new Panel();
+            panelRecentRequest = new Panel();
             label3 = new Label();
-            panel1 = new Panel();
-            button5 = new Button();
-            button4 = new Button();
-            button1 = new Button();
-            panel8 = new Panel();
-            panel9 = new Panel();
-            button2 = new Button();
-            button3 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
+            panelAdminSidebar = new Panel();
+            btnAdminLogout = new Button();
+            btnAdminDashboard = new Button();
+            btnTransactionHistory = new Button();
+            panelAdminWelcome = new Panel();
+            lblAdminWelcome = new Label();
+            pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
+            panel9 = new Panel();
+            btnPendingRequest = new Button();
+            btnTotalRequest = new Button();
+            btnCompletedRequest = new Button();
+            btnRejectedRequest = new Button();
+            btnRefresh = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel4.SuspendLayout();
-            panel1.SuspendLayout();
-            panel8.SuspendLayout();
+            panelRecentRequest.SuspendLayout();
+            panelAdminSidebar.SuspendLayout();
+            panelAdminWelcome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
@@ -139,15 +141,15 @@
             Status.Name = "Status";
             Status.Width = 125;
             // 
-            // panel4
+            // panelRecentRequest
             // 
-            panel4.BackColor = Color.SeaGreen;
-            panel4.Controls.Add(label3);
-            panel4.Controls.Add(dataGridView1);
-            panel4.Location = new Point(422, 280);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(885, 430);
-            panel4.TabIndex = 4;
+            panelRecentRequest.BackColor = Color.SeaGreen;
+            panelRecentRequest.Controls.Add(label3);
+            panelRecentRequest.Controls.Add(dataGridView1);
+            panelRecentRequest.Location = new Point(422, 280);
+            panelRecentRequest.Name = "panelRecentRequest";
+            panelRecentRequest.Size = new Size(885, 430);
+            panelRecentRequest.TabIndex = 4;
             // 
             // label3
             // 
@@ -161,121 +163,83 @@
             label3.TabIndex = 5;
             label3.Text = "Recent Requests";
             // 
-            // panel1
+            // panelAdminSidebar
             // 
-            panel1.BackColor = Color.SeaGreen;
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(-5, 79);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(219, 923);
-            panel1.TabIndex = 7;
+            panelAdminSidebar.BackColor = Color.SeaGreen;
+            panelAdminSidebar.Controls.Add(btnAdminLogout);
+            panelAdminSidebar.Controls.Add(btnAdminDashboard);
+            panelAdminSidebar.Controls.Add(btnTransactionHistory);
+            panelAdminSidebar.Location = new Point(-5, 79);
+            panelAdminSidebar.Name = "panelAdminSidebar";
+            panelAdminSidebar.Size = new Size(219, 923);
+            panelAdminSidebar.TabIndex = 7;
             // 
-            // button5
+            // btnAdminLogout
             // 
-            button5.BackColor = Color.White;
-            button5.Location = new Point(18, 171);
-            button5.Name = "button5";
-            button5.Size = new Size(179, 41);
-            button5.TabIndex = 11;
-            button5.Text = "Logout\r\n";
-            button5.UseVisualStyleBackColor = false;
+            btnAdminLogout.BackColor = Color.White;
+            btnAdminLogout.Location = new Point(18, 171);
+            btnAdminLogout.Name = "btnAdminLogout";
+            btnAdminLogout.Size = new Size(179, 41);
+            btnAdminLogout.TabIndex = 11;
+            btnAdminLogout.Text = "Logout\r\n";
+            btnAdminLogout.UseVisualStyleBackColor = false;
+            btnAdminLogout.Click += btnAdminLogout_Click;
             // 
-            // button4
+            // btnAdminDashboard
             // 
-            button4.BackColor = Color.White;
-            button4.Location = new Point(18, 39);
-            button4.Name = "button4";
-            button4.Size = new Size(179, 41);
-            button4.TabIndex = 10;
-            button4.Text = "Dashboard";
-            button4.UseVisualStyleBackColor = false;
+            btnAdminDashboard.BackColor = Color.White;
+            btnAdminDashboard.Location = new Point(18, 39);
+            btnAdminDashboard.Name = "btnAdminDashboard";
+            btnAdminDashboard.Size = new Size(179, 41);
+            btnAdminDashboard.TabIndex = 10;
+            btnAdminDashboard.Text = "Dashboard";
+            btnAdminDashboard.UseVisualStyleBackColor = false;
+            btnAdminDashboard.Click += btnAdminDashboard_Click;
             // 
-            // button1
+            // btnTransactionHistory
             // 
-            button1.BackColor = Color.White;
-            button1.Location = new Point(18, 107);
-            button1.Name = "button1";
-            button1.Size = new Size(179, 41);
-            button1.TabIndex = 9;
-            button1.Text = "Transaction History\r\n";
-            button1.UseVisualStyleBackColor = false;
+            btnTransactionHistory.BackColor = Color.White;
+            btnTransactionHistory.Location = new Point(18, 107);
+            btnTransactionHistory.Name = "btnTransactionHistory";
+            btnTransactionHistory.Size = new Size(179, 41);
+            btnTransactionHistory.TabIndex = 9;
+            btnTransactionHistory.Text = "Transaction History\r\n";
+            btnTransactionHistory.UseVisualStyleBackColor = false;
+            btnTransactionHistory.Click += btnTransactionHistory_Click;
             // 
-            // panel8
+            // panelAdminWelcome
             // 
-            panel8.BackColor = Color.SeaGreen;
-            panel8.Controls.Add(pictureBox6);
-            panel8.Controls.Add(button9);
-            panel8.Controls.Add(panel9);
-            panel8.Location = new Point(-1, 1);
-            panel8.Margin = new Padding(3, 4, 3, 4);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(1489, 83);
-            panel8.TabIndex = 8;
+            panelAdminWelcome.BackColor = Color.SeaGreen;
+            panelAdminWelcome.Controls.Add(lblAdminWelcome);
+            panelAdminWelcome.Controls.Add(pictureBox1);
+            panelAdminWelcome.Controls.Add(pictureBox6);
+            panelAdminWelcome.Controls.Add(panel9);
+            panelAdminWelcome.Location = new Point(-1, 1);
+            panelAdminWelcome.Margin = new Padding(3, 4, 3, 4);
+            panelAdminWelcome.Name = "panelAdminWelcome";
+            panelAdminWelcome.Size = new Size(1489, 83);
+            panelAdminWelcome.TabIndex = 8;
             // 
-            // panel9
+            // lblAdminWelcome
             // 
-            panel9.BackColor = Color.Gold;
-            panel9.Location = new Point(0, 75);
-            panel9.Margin = new Padding(3, 4, 3, 4);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(1575, 16);
-            panel9.TabIndex = 2;
+            lblAdminWelcome.AutoSize = true;
+            lblAdminWelcome.BackColor = Color.SeaGreen;
+            lblAdminWelcome.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdminWelcome.ForeColor = Color.White;
+            lblAdminWelcome.Location = new Point(160, 8);
+            lblAdminWelcome.Name = "lblAdminWelcome";
+            lblAdminWelcome.Size = new Size(616, 60);
+            lblAdminWelcome.TabIndex = 12;
+            lblAdminWelcome.Text = "Welcome to Your Dashboard";
             // 
-            // button2
+            // pictureBox1
             // 
-            button2.Location = new Point(672, 731);
-            button2.Name = "button2";
-            button2.Size = new Size(166, 62);
-            button2.TabIndex = 9;
-            button2.Text = "Pending Requests";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(441, 731);
-            button3.Name = "button3";
-            button3.Size = new Size(166, 62);
-            button3.TabIndex = 10;
-            button3.Text = "Total Requests";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(892, 731);
-            button6.Name = "button6";
-            button6.Size = new Size(166, 62);
-            button6.TabIndex = 11;
-            button6.Text = "Completed Requests";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(1094, 731);
-            button7.Name = "button7";
-            button7.Size = new Size(166, 62);
-            button7.TabIndex = 12;
-            button7.Text = "Rejected Requests";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(422, 234);
-            button8.Name = "button8";
-            button8.Size = new Size(163, 40);
-            button8.TabIndex = 13;
-            button8.Text = "Refresh";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(1318, 22);
-            button9.Name = "button9";
-            button9.Size = new Size(125, 31);
-            button9.TabIndex = 3;
-            button9.Text = "Notifications";
-            button9.UseVisualStyleBackColor = true;
+            pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
+            pictureBox1.Location = new Point(1282, 23);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(33, 32);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -288,29 +252,85 @@
             pictureBox6.TabIndex = 14;
             pictureBox6.TabStop = false;
             // 
+            // panel9
+            // 
+            panel9.BackColor = Color.Gold;
+            panel9.Location = new Point(0, 75);
+            panel9.Margin = new Padding(3, 4, 3, 4);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(1575, 16);
+            panel9.TabIndex = 2;
+            // 
+            // btnPendingRequest
+            // 
+            btnPendingRequest.Location = new Point(672, 731);
+            btnPendingRequest.Name = "btnPendingRequest";
+            btnPendingRequest.Size = new Size(166, 62);
+            btnPendingRequest.TabIndex = 9;
+            btnPendingRequest.Text = "Pending Requests";
+            btnPendingRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnTotalRequest
+            // 
+            btnTotalRequest.Location = new Point(441, 731);
+            btnTotalRequest.Name = "btnTotalRequest";
+            btnTotalRequest.Size = new Size(166, 62);
+            btnTotalRequest.TabIndex = 10;
+            btnTotalRequest.Text = "Total Requests";
+            btnTotalRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnCompletedRequest
+            // 
+            btnCompletedRequest.Location = new Point(892, 731);
+            btnCompletedRequest.Name = "btnCompletedRequest";
+            btnCompletedRequest.Size = new Size(166, 62);
+            btnCompletedRequest.TabIndex = 11;
+            btnCompletedRequest.Text = "Completed Requests";
+            btnCompletedRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnRejectedRequest
+            // 
+            btnRejectedRequest.Location = new Point(1094, 731);
+            btnRejectedRequest.Name = "btnRejectedRequest";
+            btnRejectedRequest.Size = new Size(166, 62);
+            btnRejectedRequest.TabIndex = 12;
+            btnRejectedRequest.Text = "Rejected Requests";
+            btnRejectedRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Location = new Point(422, 234);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(163, 40);
+            btnRefresh.TabIndex = 13;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            // 
             // FormAdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1454, 900);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(panel8);
-            Controls.Add(panel1);
-            Controls.Add(panel4);
+            Controls.Add(btnRefresh);
+            Controls.Add(btnRejectedRequest);
+            Controls.Add(btnCompletedRequest);
+            Controls.Add(btnTotalRequest);
+            Controls.Add(btnPendingRequest);
+            Controls.Add(panelAdminWelcome);
+            Controls.Add(panelAdminSidebar);
+            Controls.Add(panelRecentRequest);
             Controls.Add(panel3);
             Name = "FormAdminDashboard";
             Text = "FormAdminDashboard";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel8.ResumeLayout(false);
+            panelRecentRequest.ResumeLayout(false);
+            panelRecentRequest.PerformLayout();
+            panelAdminSidebar.ResumeLayout(false);
+            panelAdminWelcome.ResumeLayout(false);
+            panelAdminWelcome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
@@ -325,20 +345,21 @@
         private DataGridViewTextBoxColumn DateRequested;
         private DataGridViewTextBoxColumn Status;
         private Label label2;
-        private Panel panel4;
+        private Panel panelRecentRequest;
         private Label label3;
-        private Panel panel1;
-        private Panel panel8;
+        private Panel panelAdminSidebar;
+        private Panel panelAdminWelcome;
         private Panel panel9;
-        private Button button5;
-        private Button button4;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private Button button9;
+        private Button btnAdminLogout;
+        private Button btnAdminDashboard;
+        private Button btnTransactionHistory;
+        private Button btnPendingRequest;
+        private Button btnTotalRequest;
+        private Button btnCompletedRequest;
+        private Button btnRejectedRequest;
+        private Button btnRefresh;
         private PictureBox pictureBox6;
+        private PictureBox pictureBox1;
+        private Label lblAdminWelcome;
     }
 }

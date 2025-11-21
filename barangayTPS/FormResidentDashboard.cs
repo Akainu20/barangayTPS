@@ -26,5 +26,41 @@ namespace barangayTPS
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnResidentDashboard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnResidentLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin newForm = new FormLogin();
+            newForm.Show();
+        }
+
+        private void btnRequestNow_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormDocumentRequest newForm = new FormDocumentRequest();
+            newForm.Show();
+        }
+
+        private void btnViewNow_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAvailableDocuments newForm = new FormAvailableDocuments();
+            newForm.Show();
+        }
     }
 }

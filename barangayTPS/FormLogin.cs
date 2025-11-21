@@ -16,5 +16,19 @@ namespace barangayTPS
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormResidentDashboard newForm = new FormResidentDashboard();
+            newForm.Show();
+        }
+
+        private void lblSignup_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormSignup newForm = new FormSignup();
+            newForm.Show();
+        }
     }
 }
