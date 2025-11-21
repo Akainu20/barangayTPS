@@ -197,7 +197,7 @@
             // btnViewNow
             // 
             btnViewNow.BackColor = Color.White;
-            btnViewNow.Location = new Point(49, 252);
+            btnViewNow.Location = new Point(45, 252);
             btnViewNow.Name = "btnViewNow";
             btnViewNow.Size = new Size(323, 51);
             btnViewNow.TabIndex = 9;
