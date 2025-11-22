@@ -36,10 +36,8 @@
             btnTransactionHistoryLogout = new Button();
             btnTransactionHistoryDashboard = new Button();
             btnTransactionHistoryTransactionHistory = new Button();
-            btnRefresh = new Button();
             panelTransactionSidebar = new Panel();
             panelTransactionHistory = new Panel();
-            label3 = new Label();
             dataGridView1 = new DataGridView();
             RequestID = new DataGridViewTextBoxColumn();
             ResidentName = new DataGridViewTextBoxColumn();
@@ -49,6 +47,8 @@
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
+            btnRefresh = new Button();
+            label4 = new Label();
             panelTransactionWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -74,10 +74,10 @@
             panelTransactionWelcome.Controls.Add(pictureBox1);
             panelTransactionWelcome.Controls.Add(pictureBox6);
             panelTransactionWelcome.Controls.Add(panel9);
-            panelTransactionWelcome.Location = new Point(4, 6);
+            panelTransactionWelcome.Location = new Point(0, 4);
             panelTransactionWelcome.Margin = new Padding(3, 4, 3, 4);
             panelTransactionWelcome.Name = "panelTransactionWelcome";
-            panelTransactionWelcome.Size = new Size(1489, 83);
+            panelTransactionWelcome.Size = new Size(1341, 83);
             panelTransactionWelcome.TabIndex = 17;
             // 
             // btnBackAdminDashboard
@@ -93,7 +93,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
-            pictureBox1.Location = new Point(1304, 22);
+            pictureBox1.Location = new Point(1246, 18);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 32);
             pictureBox1.TabIndex = 23;
@@ -103,7 +103,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(14, 22);
+            pictureBox6.Location = new Point(1285, 14);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -142,15 +142,6 @@
             btnTransactionHistoryTransactionHistory.Text = "Transaction History\r\n";
             btnTransactionHistoryTransactionHistory.UseVisualStyleBackColor = false;
             // 
-            // btnRefresh
-            // 
-            btnRefresh.Location = new Point(427, 239);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(163, 40);
-            btnRefresh.TabIndex = 22;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
-            // 
             // panelTransactionSidebar
             // 
             panelTransactionSidebar.BackColor = Color.SeaGreen;
@@ -165,34 +156,23 @@
             // panelTransactionHistory
             // 
             panelTransactionHistory.BackColor = Color.SeaGreen;
-            panelTransactionHistory.Controls.Add(label3);
+            panelTransactionHistory.Controls.Add(label4);
+            panelTransactionHistory.Controls.Add(btnRefresh);
             panelTransactionHistory.Controls.Add(dataGridView1);
-            panelTransactionHistory.Location = new Point(427, 285);
+            panelTransactionHistory.Location = new Point(225, 257);
             panelTransactionHistory.Name = "panelTransactionHistory";
-            panelTransactionHistory.Size = new Size(885, 695);
+            panelTransactionHistory.Size = new Size(1101, 702);
             panelTransactionHistory.TabIndex = 15;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(17, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(226, 22);
-            label3.TabIndex = 5;
-            label3.Text = "Recent Transaction Requests";
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status });
-            dataGridView1.Location = new Point(3, 69);
+            dataGridView1.Location = new Point(7, 75);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(878, 623);
+            dataGridView1.Size = new Size(1087, 624);
             dataGridView1.TabIndex = 3;
             // 
             // RequestID
@@ -257,18 +237,38 @@
             panel3.BackColor = Color.SeaGreen;
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(427, 122);
+            panel3.Location = new Point(225, 122);
             panel3.Name = "panel3";
-            panel3.Size = new Size(885, 87);
+            panel3.Size = new Size(1101, 87);
             panel3.TabIndex = 14;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Location = new Point(971, 18);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(116, 37);
+            btnRefresh.TabIndex = 22;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(11, 27);
+            label4.Name = "label4";
+            label4.Size = new Size(274, 28);
+            label4.TabIndex = 23;
+            label4.Text = "Recent Transaction Request";
             // 
             // FormTransactionHistory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1492, 992);
+            ClientSize = new Size(1333, 971);
             Controls.Add(panelTransactionWelcome);
-            Controls.Add(btnRefresh);
             Controls.Add(panelTransactionSidebar);
             Controls.Add(panelTransactionHistory);
             Controls.Add(panel3);
@@ -308,5 +308,7 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox1;
         private Button btnBackAdminDashboard;
+        private Button button1;
+        private Label label4;
     }
 }

@@ -84,7 +84,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(452, 186);
+            label11.Location = new Point(351, 280);
             label11.Name = "label11";
             label11.Size = new Size(42, 20);
             label11.TabIndex = 20;
@@ -92,27 +92,29 @@
             // 
             // btnBackResidentDashboard
             // 
-            btnBackResidentDashboard.Location = new Point(526, 13);
+            btnBackResidentDashboard.BackColor = Color.SeaGreen;
+            btnBackResidentDashboard.ForeColor = Color.White;
+            btnBackResidentDashboard.Location = new Point(484, 13);
             btnBackResidentDashboard.Name = "btnBackResidentDashboard";
-            btnBackResidentDashboard.Size = new Size(94, 29);
+            btnBackResidentDashboard.Size = new Size(136, 44);
             btnBackResidentDashboard.TabIndex = 19;
             btnBackResidentDashboard.Text = "Back";
-            btnBackResidentDashboard.UseVisualStyleBackColor = true;
+            btnBackResidentDashboard.UseVisualStyleBackColor = false;
             btnBackResidentDashboard.Click += btnBackResidentDashboard_Click;
             // 
             // txtAge
             // 
-            txtAge.Location = new Point(452, 209);
+            txtAge.Location = new Point(351, 303);
             txtAge.Multiline = true;
             txtAge.Name = "txtAge";
-            txtAge.Size = new Size(87, 35);
+            txtAge.Size = new Size(261, 35);
             txtAge.TabIndex = 18;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.White;
-            label8.Location = new Point(39, 380);
+            label8.Location = new Point(39, 412);
             label8.Name = "label8";
             label8.Size = new Size(573, 20);
             label8.TabIndex = 17;
@@ -120,9 +122,9 @@
             // 
             // btnCancel
             // 
-            btnCancel.BackColor = Color.DarkGreen;
+            btnCancel.BackColor = Color.SeaGreen;
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(242, 666);
+            btnCancel.Location = new Point(283, 666);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(165, 48);
             btnCancel.TabIndex = 16;
@@ -132,9 +134,9 @@
             // 
             // btnSubmitRequest
             // 
-            btnSubmitRequest.BackColor = Color.DarkGreen;
+            btnSubmitRequest.BackColor = Color.SeaGreen;
             btnSubmitRequest.ForeColor = Color.White;
-            btnSubmitRequest.Location = new Point(419, 666);
+            btnSubmitRequest.Location = new Point(455, 666);
             btnSubmitRequest.Name = "btnSubmitRequest";
             btnSubmitRequest.Size = new Size(165, 48);
             btnSubmitRequest.TabIndex = 15;
@@ -146,7 +148,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(45, 512);
+            label10.Location = new Point(50, 511);
             label10.Name = "label10";
             label10.Size = new Size(175, 20);
             label10.TabIndex = 14;
@@ -154,25 +156,25 @@
             // 
             // txtRequestReason
             // 
-            txtRequestReason.Location = new Point(45, 535);
+            txtRequestReason.Location = new Point(39, 534);
             txtRequestReason.Multiline = true;
             txtRequestReason.Name = "txtRequestReason";
-            txtRequestReason.Size = new Size(539, 110);
+            txtRequestReason.Size = new Size(539, 126);
             txtRequestReason.TabIndex = 13;
             // 
             // cmbDocType
             // 
             cmbDocType.FormattingEnabled = true;
-            cmbDocType.Location = new Point(46, 449);
+            cmbDocType.Location = new Point(50, 466);
             cmbDocType.Name = "cmbDocType";
-            cmbDocType.Size = new Size(260, 28);
+            cmbDocType.Size = new Size(262, 28);
             cmbDocType.TabIndex = 12;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(45, 413);
+            label9.Location = new Point(50, 443);
             label9.Name = "label9";
             label9.Size = new Size(149, 20);
             label9.TabIndex = 11;
@@ -182,7 +184,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(347, 280);
+            label7.Location = new Point(351, 347);
             label7.Name = "label7";
             label7.Size = new Size(144, 20);
             label7.TabIndex = 9;
@@ -192,7 +194,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(45, 280);
+            label6.Location = new Point(50, 347);
             label6.Name = "label6";
             label6.Size = new Size(162, 20);
             label6.TabIndex = 8;
@@ -200,16 +202,16 @@
             // 
             // txtContactNumber
             // 
-            txtContactNumber.Location = new Point(347, 303);
+            txtContactNumber.Location = new Point(351, 370);
             txtContactNumber.Multiline = true;
             txtContactNumber.Name = "txtContactNumber";
-            txtContactNumber.Size = new Size(236, 33);
+            txtContactNumber.Size = new Size(261, 39);
             txtContactNumber.TabIndex = 7;
             txtContactNumber.Text = "09-XX-XXX-XXXX";
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(45, 303);
+            txtAddress.Location = new Point(45, 370);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(261, 39);
@@ -220,7 +222,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(45, 181);
+            label5.Location = new Point(50, 280);
             label5.Name = "label5";
             label5.Size = new Size(102, 20);
             label5.TabIndex = 5;
@@ -229,10 +231,10 @@
             // txtFullName
             // 
             txtFullName.ForeColor = SystemColors.InactiveCaptionText;
-            txtFullName.Location = new Point(45, 209);
+            txtFullName.Location = new Point(45, 303);
             txtFullName.Multiline = true;
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(362, 35);
+            txtFullName.Size = new Size(261, 35);
             txtFullName.TabIndex = 4;
             txtFullName.Text = "Enter your full name";
             // 
@@ -240,7 +242,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.White;
-            label4.Location = new Point(39, 144);
+            label4.Location = new Point(39, 246);
             label4.Name = "label4";
             label4.Size = new Size(573, 20);
             label4.TabIndex = 3;
@@ -250,7 +252,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(45, 124);
+            label3.Location = new Point(50, 226);
             label3.Name = "label3";
             label3.Size = new Size(179, 20);
             label3.TabIndex = 2;
@@ -259,7 +261,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(45, 67);
+            label2.Location = new Point(50, 155);
             label2.Name = "label2";
             label2.Size = new Size(398, 20);
             label2.TabIndex = 1;
@@ -269,7 +271,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(39, 28);
+            label1.Location = new Point(39, 104);
             label1.Name = "label1";
             label1.Size = new Size(332, 38);
             label1.TabIndex = 0;

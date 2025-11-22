@@ -54,11 +54,13 @@
             btnMarkAsReady = new Button();
             btnReject = new Button();
             btnMarkAsComplete = new Button();
+            panel1 = new Panel();
             panelDocumentStatusWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             paneDocumentsStatusSidebar.SuspendLayout();
             panel3.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel9
@@ -106,7 +108,6 @@
             // panelDocumentStatusWelcome
             // 
             panelDocumentStatusWelcome.BackColor = Color.SeaGreen;
-            panelDocumentStatusWelcome.Controls.Add(btnBackToAdminDashboard);
             panelDocumentStatusWelcome.Controls.Add(pictureBox1);
             panelDocumentStatusWelcome.Controls.Add(pictureBox6);
             panelDocumentStatusWelcome.Controls.Add(panel9);
@@ -118,9 +119,9 @@
             // 
             // btnBackToAdminDashboard
             // 
-            btnBackToAdminDashboard.Location = new Point(1359, 22);
+            btnBackToAdminDashboard.Location = new Point(18, 238);
             btnBackToAdminDashboard.Name = "btnBackToAdminDashboard";
-            btnBackToAdminDashboard.Size = new Size(94, 29);
+            btnBackToAdminDashboard.Size = new Size(179, 42);
             btnBackToAdminDashboard.TabIndex = 32;
             btnBackToAdminDashboard.Text = "Back";
             btnBackToAdminDashboard.UseVisualStyleBackColor = true;
@@ -129,7 +130,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
-            pictureBox1.Location = new Point(1320, 21);
+            pictureBox1.Location = new Point(1392, 18);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 32);
             pictureBox1.TabIndex = 31;
@@ -139,7 +140,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(18, 21);
+            pictureBox6.Location = new Point(1431, 13);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -149,6 +150,7 @@
             // paneDocumentsStatusSidebar
             // 
             paneDocumentsStatusSidebar.BackColor = Color.SeaGreen;
+            paneDocumentsStatusSidebar.Controls.Add(btnBackToAdminDashboard);
             paneDocumentsStatusSidebar.Controls.Add(btnDocumentStatusLogout);
             paneDocumentsStatusSidebar.Controls.Add(btnDocumentStatusDashboard);
             paneDocumentsStatusSidebar.Controls.Add(btnDocumentStatusTransactionHistory);
@@ -185,22 +187,22 @@
             panel3.BackColor = Color.SeaGreen;
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(417, 115);
+            panel3.Location = new Point(215, 115);
             panel3.Name = "panel3";
-            panel3.Size = new Size(885, 87);
+            panel3.Size = new Size(1251, 87);
             panel3.TabIndex = 13;
             // 
             // txtRequestID
             // 
-            txtRequestID.Location = new Point(417, 276);
+            txtRequestID.Location = new Point(462, 176);
             txtRequestID.Multiline = true;
             txtRequestID.Name = "txtRequestID";
-            txtRequestID.Size = new Size(132, 37);
+            txtRequestID.Size = new Size(278, 37);
             txtRequestID.TabIndex = 17;
             // 
             // txtResidentName
             // 
-            txtResidentName.Location = new Point(659, 276);
+            txtResidentName.Location = new Point(60, 71);
             txtResidentName.Multiline = true;
             txtResidentName.Name = "txtResidentName";
             txtResidentName.Size = new Size(278, 37);
@@ -208,78 +210,93 @@
             // 
             // txtDate
             // 
-            txtDate.Location = new Point(417, 374);
+            txtDate.Location = new Point(60, 176);
             txtDate.Multiline = true;
             txtDate.Name = "txtDate";
-            txtDate.Size = new Size(132, 34);
+            txtDate.Size = new Size(278, 37);
             txtDate.TabIndex = 19;
             // 
             // txtDocType
             // 
-            txtDocType.Location = new Point(991, 276);
+            txtDocType.Location = new Point(854, 68);
             txtDocType.Multiline = true;
             txtDocType.Name = "txtDocType";
-            txtDocType.Size = new Size(311, 37);
+            txtDocType.Size = new Size(311, 40);
             txtDocType.TabIndex = 20;
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(659, 374);
+            txtStatus.Location = new Point(462, 68);
             txtStatus.Multiline = true;
             txtStatus.Name = "txtStatus";
-            txtStatus.Size = new Size(145, 34);
+            txtStatus.Size = new Size(278, 40);
             txtStatus.TabIndex = 21;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(417, 248);
+            label3.BackColor = Color.SeaGreen;
+            label3.Font = new Font("Segoe UI", 10.2F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(462, 150);
             label3.Name = "label3";
-            label3.Size = new Size(81, 20);
+            label3.Size = new Size(93, 23);
             label3.TabIndex = 22;
             label3.Text = "Request ID";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(659, 248);
+            label4.BackColor = Color.SeaGreen;
+            label4.Font = new Font("Segoe UI", 10.2F);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(60, 45);
             label4.Name = "label4";
-            label4.Size = new Size(110, 20);
+            label4.Size = new Size(126, 23);
             label4.TabIndex = 23;
             label4.Text = "Resident Name";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(991, 258);
+            label5.BackColor = Color.SeaGreen;
+            label5.Font = new Font("Segoe UI", 10.2F);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(854, 42);
             label5.Name = "label5";
-            label5.Size = new Size(113, 20);
+            label5.Size = new Size(130, 23);
             label5.TabIndex = 24;
             label5.Text = "Document Type";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(417, 351);
+            label6.BackColor = Color.SeaGreen;
+            label6.Font = new Font("Segoe UI", 10.2F);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(60, 153);
             label6.Name = "label6";
-            label6.Size = new Size(41, 20);
+            label6.Size = new Size(46, 23);
             label6.TabIndex = 25;
             label6.Text = "Date";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(659, 351);
+            label7.BackColor = Color.SeaGreen;
+            label7.Font = new Font("Segoe UI", 10.2F);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(462, 42);
             label7.Name = "label7";
-            label7.Size = new Size(49, 20);
+            label7.Size = new Size(56, 23);
             label7.TabIndex = 26;
             label7.Text = "Status";
             // 
             // btnAccept
             // 
-            btnAccept.BackColor = Color.SeaGreen;
-            btnAccept.ForeColor = Color.White;
-            btnAccept.Location = new Point(417, 484);
+            btnAccept.BackColor = Color.White;
+            btnAccept.ForeColor = Color.Black;
+            btnAccept.Location = new Point(120, 299);
             btnAccept.Name = "btnAccept";
             btnAccept.Size = new Size(150, 52);
             btnAccept.TabIndex = 27;
@@ -288,9 +305,9 @@
             // 
             // btnMarkAsReady
             // 
-            btnMarkAsReady.BackColor = Color.SeaGreen;
-            btnMarkAsReady.ForeColor = Color.White;
-            btnMarkAsReady.Location = new Point(630, 484);
+            btnMarkAsReady.BackColor = Color.White;
+            btnMarkAsReady.ForeColor = Color.Black;
+            btnMarkAsReady.Location = new Point(368, 299);
             btnMarkAsReady.Name = "btnMarkAsReady";
             btnMarkAsReady.Size = new Size(150, 52);
             btnMarkAsReady.TabIndex = 28;
@@ -299,9 +316,9 @@
             // 
             // btnReject
             // 
-            btnReject.BackColor = Color.SeaGreen;
-            btnReject.ForeColor = Color.White;
-            btnReject.Location = new Point(831, 484);
+            btnReject.BackColor = Color.White;
+            btnReject.ForeColor = Color.Black;
+            btnReject.Location = new Point(623, 299);
             btnReject.Name = "btnReject";
             btnReject.Size = new Size(150, 52);
             btnReject.TabIndex = 29;
@@ -310,34 +327,43 @@
             // 
             // btnMarkAsComplete
             // 
-            btnMarkAsComplete.BackColor = Color.SeaGreen;
-            btnMarkAsComplete.ForeColor = Color.White;
-            btnMarkAsComplete.Location = new Point(1032, 484);
+            btnMarkAsComplete.BackColor = Color.White;
+            btnMarkAsComplete.ForeColor = Color.Black;
+            btnMarkAsComplete.Location = new Point(876, 299);
             btnMarkAsComplete.Name = "btnMarkAsComplete";
             btnMarkAsComplete.Size = new Size(150, 52);
             btnMarkAsComplete.TabIndex = 30;
             btnMarkAsComplete.Text = "Mark as Complete";
             btnMarkAsComplete.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.SeaGreen;
+            panel1.Controls.Add(txtDate);
+            panel1.Controls.Add(btnMarkAsComplete);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(btnReject);
+            panel1.Controls.Add(btnMarkAsReady);
+            panel1.Controls.Add(txtRequestID);
+            panel1.Controls.Add(btnAccept);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(txtStatus);
+            panel1.Controls.Add(txtDocType);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(txtResidentName);
+            panel1.Location = new Point(215, 224);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1251, 374);
+            panel1.TabIndex = 31;
+            // 
             // FormDocumentStatus
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1472, 998);
-            Controls.Add(btnMarkAsComplete);
-            Controls.Add(btnReject);
-            Controls.Add(btnMarkAsReady);
-            Controls.Add(btnAccept);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(txtStatus);
-            Controls.Add(txtDocType);
-            Controls.Add(txtDate);
-            Controls.Add(txtResidentName);
-            Controls.Add(txtRequestID);
+            Controls.Add(panel1);
             Controls.Add(panelDocumentStatusWelcome);
             Controls.Add(paneDocumentsStatusSidebar);
             Controls.Add(panel3);
@@ -349,8 +375,9 @@
             paneDocumentsStatusSidebar.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -380,5 +407,6 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox1;
         private Button btnBackToAdminDashboard;
+        private Panel panel1;
     }
 }

@@ -38,6 +38,12 @@
             DateRequested = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             panelRecentRequest = new Panel();
+            label4 = new Label();
+            btnRejectedRequest = new Button();
+            btnRefresh = new Button();
+            btnCompletedRequest = new Button();
+            btnPendingRequest = new Button();
+            btnTotalRequest = new Button();
             panelAdminSidebar = new Panel();
             btnAdminLogout = new Button();
             btnAdminDashboard = new Button();
@@ -47,12 +53,6 @@
             pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
             panel9 = new Panel();
-            btnPendingRequest = new Button();
-            btnTotalRequest = new Button();
-            btnCompletedRequest = new Button();
-            btnRejectedRequest = new Button();
-            btnRefresh = new Button();
-            label4 = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelRecentRequest.SuspendLayout();
@@ -69,7 +69,7 @@
             panel3.Controls.Add(label1);
             panel3.Location = new Point(220, 117);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1195, 87);
+            panel3.Size = new Size(1106, 87);
             panel3.TabIndex = 2;
             // 
             // label2
@@ -99,10 +99,10 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status });
-            dataGridView1.Location = new Point(7, 70);
+            dataGridView1.Location = new Point(10, 70);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1174, 362);
+            dataGridView1.Size = new Size(1085, 362);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -153,8 +153,66 @@
             panelRecentRequest.Controls.Add(dataGridView1);
             panelRecentRequest.Location = new Point(220, 250);
             panelRecentRequest.Name = "panelRecentRequest";
-            panelRecentRequest.Size = new Size(1195, 550);
+            panelRecentRequest.Size = new Size(1106, 550);
             panelRecentRequest.TabIndex = 4;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(7, 26);
+            label4.Name = "label4";
+            label4.Size = new Size(162, 28);
+            label4.TabIndex = 9;
+            label4.Text = "Recent Request";
+            // 
+            // btnRejectedRequest
+            // 
+            btnRejectedRequest.Location = new Point(826, 462);
+            btnRejectedRequest.Name = "btnRejectedRequest";
+            btnRejectedRequest.Size = new Size(158, 42);
+            btnRejectedRequest.TabIndex = 12;
+            btnRejectedRequest.Text = "Rejected Requests";
+            btnRejectedRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Location = new Point(975, 17);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(120, 37);
+            btnRefresh.TabIndex = 13;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnCompletedRequest
+            // 
+            btnCompletedRequest.Location = new Point(591, 462);
+            btnCompletedRequest.Name = "btnCompletedRequest";
+            btnCompletedRequest.Size = new Size(158, 42);
+            btnCompletedRequest.TabIndex = 11;
+            btnCompletedRequest.Text = "Completed Requests";
+            btnCompletedRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnPendingRequest
+            // 
+            btnPendingRequest.Location = new Point(356, 462);
+            btnPendingRequest.Name = "btnPendingRequest";
+            btnPendingRequest.Size = new Size(158, 42);
+            btnPendingRequest.TabIndex = 9;
+            btnPendingRequest.Text = "Pending Requests";
+            btnPendingRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnTotalRequest
+            // 
+            btnTotalRequest.Location = new Point(128, 462);
+            btnTotalRequest.Name = "btnTotalRequest";
+            btnTotalRequest.Size = new Size(158, 42);
+            btnTotalRequest.TabIndex = 10;
+            btnTotalRequest.Text = "Total Requests";
+            btnTotalRequest.UseVisualStyleBackColor = true;
+            btnTotalRequest.Click += btnTotalRequest_Click;
             // 
             // panelAdminSidebar
             // 
@@ -210,7 +268,7 @@
             panelAdminWelcome.Location = new Point(-1, 1);
             panelAdminWelcome.Margin = new Padding(3, 4, 3, 4);
             panelAdminWelcome.Name = "panelAdminWelcome";
-            panelAdminWelcome.Size = new Size(1489, 83);
+            panelAdminWelcome.Size = new Size(1339, 83);
             panelAdminWelcome.TabIndex = 8;
             // 
             // lblAdminWelcome
@@ -228,7 +286,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
-            pictureBox1.Location = new Point(1322, 23);
+            pictureBox1.Location = new Point(1247, 21);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 32);
             pictureBox1.TabIndex = 15;
@@ -238,7 +296,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(1361, 15);
+            pictureBox6.Location = new Point(1286, 15);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -254,69 +312,11 @@
             panel9.Size = new Size(1575, 16);
             panel9.TabIndex = 2;
             // 
-            // btnPendingRequest
-            // 
-            btnPendingRequest.Location = new Point(356, 468);
-            btnPendingRequest.Name = "btnPendingRequest";
-            btnPendingRequest.Size = new Size(166, 62);
-            btnPendingRequest.TabIndex = 9;
-            btnPendingRequest.Text = "Pending Requests";
-            btnPendingRequest.UseVisualStyleBackColor = true;
-            // 
-            // btnTotalRequest
-            // 
-            btnTotalRequest.Location = new Point(106, 468);
-            btnTotalRequest.Name = "btnTotalRequest";
-            btnTotalRequest.Size = new Size(166, 62);
-            btnTotalRequest.TabIndex = 10;
-            btnTotalRequest.Text = "Total Requests";
-            btnTotalRequest.UseVisualStyleBackColor = true;
-            btnTotalRequest.Click += btnTotalRequest_Click;
-            // 
-            // btnCompletedRequest
-            // 
-            btnCompletedRequest.Location = new Point(619, 468);
-            btnCompletedRequest.Name = "btnCompletedRequest";
-            btnCompletedRequest.Size = new Size(166, 62);
-            btnCompletedRequest.TabIndex = 11;
-            btnCompletedRequest.Text = "Completed Requests";
-            btnCompletedRequest.UseVisualStyleBackColor = true;
-            // 
-            // btnRejectedRequest
-            // 
-            btnRejectedRequest.Location = new Point(885, 468);
-            btnRejectedRequest.Name = "btnRejectedRequest";
-            btnRejectedRequest.Size = new Size(166, 62);
-            btnRejectedRequest.TabIndex = 12;
-            btnRejectedRequest.Text = "Rejected Requests";
-            btnRejectedRequest.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            btnRefresh.Location = new Point(1060, 17);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(120, 37);
-            btnRefresh.TabIndex = 13;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(7, 26);
-            label4.Name = "label4";
-            label4.Size = new Size(162, 28);
-            label4.TabIndex = 9;
-            label4.Text = "Recent Request";
-            // 
             // FormAdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1454, 900);
+            ClientSize = new Size(1338, 971);
             Controls.Add(panelAdminWelcome);
             Controls.Add(panelAdminSidebar);
             Controls.Add(panelRecentRequest);

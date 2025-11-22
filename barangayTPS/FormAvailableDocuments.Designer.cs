@@ -32,6 +32,7 @@
             pictureBox6 = new PictureBox();
             lblResidentWelcome = new Label();
             panelResidentWelcome = new Panel();
+            btnBackToAdminDashboard = new Button();
             panel9 = new Panel();
             label3 = new Label();
             panelBarangayClearance = new Panel();
@@ -52,8 +53,7 @@
             btnResidentLogout = new Button();
             btnResidentDashboard = new Button();
             panelResidentSidebar = new Panel();
-            pictureBox7 = new PictureBox();
-            btnBackToAdminDashboard = new Button();
+            pictureBox8 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panelResidentWelcome.SuspendLayout();
             panelBarangayClearance.SuspendLayout();
@@ -68,14 +68,14 @@
             panelCertificateOfIndigency.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panelResidentSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // pictureBox6
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(15, 21);
+            pictureBox6.Location = new Point(1364, 11);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -97,7 +97,6 @@
             // panelResidentWelcome
             // 
             panelResidentWelcome.BackColor = Color.SeaGreen;
-            panelResidentWelcome.Controls.Add(btnBackToAdminDashboard);
             panelResidentWelcome.Controls.Add(pictureBox6);
             panelResidentWelcome.Controls.Add(panel9);
             panelResidentWelcome.Controls.Add(lblResidentWelcome);
@@ -106,6 +105,16 @@
             panelResidentWelcome.Name = "panelResidentWelcome";
             panelResidentWelcome.Size = new Size(1574, 83);
             panelResidentWelcome.TabIndex = 6;
+            // 
+            // btnBackToAdminDashboard
+            // 
+            btnBackToAdminDashboard.Location = new Point(15, 155);
+            btnBackToAdminDashboard.Name = "btnBackToAdminDashboard";
+            btnBackToAdminDashboard.Size = new Size(178, 39);
+            btnBackToAdminDashboard.TabIndex = 33;
+            btnBackToAdminDashboard.Text = "Back";
+            btnBackToAdminDashboard.UseVisualStyleBackColor = true;
+            btnBackToAdminDashboard.Click += btnBackToAdminDashboard_Click;
             // 
             // panel9
             // 
@@ -304,6 +313,7 @@
             // panelResidentSidebar
             // 
             panelResidentSidebar.BackColor = Color.SeaGreen;
+            panelResidentSidebar.Controls.Add(btnBackToAdminDashboard);
             panelResidentSidebar.Controls.Add(btnResidentLogout);
             panelResidentSidebar.Controls.Add(btnResidentDashboard);
             panelResidentSidebar.Location = new Point(0, 77);
@@ -311,33 +321,23 @@
             panelResidentSidebar.Size = new Size(210, 909);
             panelResidentSidebar.TabIndex = 4;
             // 
-            // pictureBox7
+            // pictureBox8
             // 
-            pictureBox7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox7.BackgroundImageLayout = ImageLayout.None;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(297, 513);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(1049, 359);
-            pictureBox7.TabIndex = 7;
-            pictureBox7.TabStop = false;
-            // 
-            // btnBackToAdminDashboard
-            // 
-            btnBackToAdminDashboard.Location = new Point(1311, 21);
-            btnBackToAdminDashboard.Name = "btnBackToAdminDashboard";
-            btnBackToAdminDashboard.Size = new Size(94, 29);
-            btnBackToAdminDashboard.TabIndex = 33;
-            btnBackToAdminDashboard.Text = "Back";
-            btnBackToAdminDashboard.UseVisualStyleBackColor = true;
-            btnBackToAdminDashboard.Click += btnBackToAdminDashboard_Click;
+            pictureBox8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox8.BackgroundImageLayout = ImageLayout.None;
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(286, 482);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(1079, 390);
+            pictureBox8.TabIndex = 8;
+            pictureBox8.TabStop = false;
             // 
             // FormAvailableDocuments
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1418, 884);
-            Controls.Add(pictureBox7);
+            Controls.Add(pictureBox8);
             Controls.Add(panelResidentWelcome);
             Controls.Add(panel2);
             Controls.Add(panelResidentSidebar);
@@ -363,7 +363,7 @@
             panelCertificateOfIndigency.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panelResidentSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
         }
 
@@ -394,5 +394,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox7;
         private Button btnBackToAdminDashboard;
+        private PictureBox pictureBox8;
     }
 }
