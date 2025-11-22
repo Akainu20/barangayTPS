@@ -293,7 +293,7 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(1061, 17);
+            btnRefresh.Location = new Point(1060, 17);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(120, 37);
             btnRefresh.TabIndex = 13;
