@@ -1,8 +1,8 @@
 namespace barangayTPS
 {
-    public partial class FormLogin : Form
+    public partial class FormUserLogin : Form
     {
-        public FormLogin()
+        public FormUserLogin()
         {
             InitializeComponent();
         }
