@@ -40,5 +40,10 @@ namespace barangayTPS
             FormTransactionHistory newForm = new FormTransactionHistory();
             newForm.Show();
         }
+
+        private void btnTotalRequest_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

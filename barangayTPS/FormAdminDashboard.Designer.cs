@@ -38,7 +38,6 @@
             DateRequested = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             panelRecentRequest = new Panel();
-            label3 = new Label();
             panelAdminSidebar = new Panel();
             btnAdminLogout = new Button();
             btnAdminDashboard = new Button();
@@ -53,6 +52,7 @@
             btnCompletedRequest = new Button();
             btnRejectedRequest = new Button();
             btnRefresh = new Button();
+            label4 = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelRecentRequest.SuspendLayout();
@@ -67,9 +67,9 @@
             panel3.BackColor = Color.SeaGreen;
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(422, 117);
+            panel3.Location = new Point(220, 117);
             panel3.Name = "panel3";
-            panel3.Size = new Size(885, 87);
+            panel3.Size = new Size(1195, 87);
             panel3.TabIndex = 2;
             // 
             // label2
@@ -99,10 +99,10 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status });
-            dataGridView1.Location = new Point(3, 69);
+            dataGridView1.Location = new Point(7, 70);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(878, 354);
+            dataGridView1.Size = new Size(1174, 362);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -144,24 +144,17 @@
             // panelRecentRequest
             // 
             panelRecentRequest.BackColor = Color.SeaGreen;
-            panelRecentRequest.Controls.Add(label3);
+            panelRecentRequest.Controls.Add(label4);
+            panelRecentRequest.Controls.Add(btnRejectedRequest);
+            panelRecentRequest.Controls.Add(btnRefresh);
+            panelRecentRequest.Controls.Add(btnCompletedRequest);
+            panelRecentRequest.Controls.Add(btnPendingRequest);
+            panelRecentRequest.Controls.Add(btnTotalRequest);
             panelRecentRequest.Controls.Add(dataGridView1);
-            panelRecentRequest.Location = new Point(422, 280);
+            panelRecentRequest.Location = new Point(220, 250);
             panelRecentRequest.Name = "panelRecentRequest";
-            panelRecentRequest.Size = new Size(885, 430);
+            panelRecentRequest.Size = new Size(1195, 550);
             panelRecentRequest.TabIndex = 4;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(17, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(134, 22);
-            label3.TabIndex = 5;
-            label3.Text = "Recent Requests";
             // 
             // panelAdminSidebar
             // 
@@ -224,18 +217,18 @@
             // 
             lblAdminWelcome.AutoSize = true;
             lblAdminWelcome.BackColor = Color.SeaGreen;
-            lblAdminWelcome.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdminWelcome.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAdminWelcome.ForeColor = Color.White;
-            lblAdminWelcome.Location = new Point(160, 8);
+            lblAdminWelcome.Location = new Point(18, 15);
             lblAdminWelcome.Name = "lblAdminWelcome";
-            lblAdminWelcome.Size = new Size(616, 60);
+            lblAdminWelcome.Size = new Size(475, 46);
             lblAdminWelcome.TabIndex = 12;
             lblAdminWelcome.Text = "Welcome to Your Dashboard";
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
-            pictureBox1.Location = new Point(1282, 23);
+            pictureBox1.Location = new Point(1322, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 32);
             pictureBox1.TabIndex = 15;
@@ -245,7 +238,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(16, 22);
+            pictureBox6.Location = new Point(1361, 15);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -263,7 +256,7 @@
             // 
             // btnPendingRequest
             // 
-            btnPendingRequest.Location = new Point(672, 731);
+            btnPendingRequest.Location = new Point(356, 468);
             btnPendingRequest.Name = "btnPendingRequest";
             btnPendingRequest.Size = new Size(166, 62);
             btnPendingRequest.TabIndex = 9;
@@ -272,16 +265,17 @@
             // 
             // btnTotalRequest
             // 
-            btnTotalRequest.Location = new Point(441, 731);
+            btnTotalRequest.Location = new Point(106, 468);
             btnTotalRequest.Name = "btnTotalRequest";
             btnTotalRequest.Size = new Size(166, 62);
             btnTotalRequest.TabIndex = 10;
             btnTotalRequest.Text = "Total Requests";
             btnTotalRequest.UseVisualStyleBackColor = true;
+            btnTotalRequest.Click += btnTotalRequest_Click;
             // 
             // btnCompletedRequest
             // 
-            btnCompletedRequest.Location = new Point(892, 731);
+            btnCompletedRequest.Location = new Point(619, 468);
             btnCompletedRequest.Name = "btnCompletedRequest";
             btnCompletedRequest.Size = new Size(166, 62);
             btnCompletedRequest.TabIndex = 11;
@@ -290,7 +284,7 @@
             // 
             // btnRejectedRequest
             // 
-            btnRejectedRequest.Location = new Point(1094, 731);
+            btnRejectedRequest.Location = new Point(885, 468);
             btnRejectedRequest.Name = "btnRejectedRequest";
             btnRejectedRequest.Size = new Size(166, 62);
             btnRejectedRequest.TabIndex = 12;
@@ -299,23 +293,30 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(422, 234);
+            btnRefresh.Location = new Point(1061, 17);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(163, 40);
+            btnRefresh.Size = new Size(120, 37);
             btnRefresh.TabIndex = 13;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(7, 26);
+            label4.Name = "label4";
+            label4.Size = new Size(162, 28);
+            label4.TabIndex = 9;
+            label4.Text = "Recent Request";
             // 
             // FormAdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1454, 900);
-            Controls.Add(btnRefresh);
-            Controls.Add(btnRejectedRequest);
-            Controls.Add(btnCompletedRequest);
-            Controls.Add(btnTotalRequest);
-            Controls.Add(btnPendingRequest);
             Controls.Add(panelAdminWelcome);
             Controls.Add(panelAdminSidebar);
             Controls.Add(panelRecentRequest);
@@ -346,7 +347,6 @@
         private DataGridViewTextBoxColumn Status;
         private Label label2;
         private Panel panelRecentRequest;
-        private Label label3;
         private Panel panelAdminSidebar;
         private Panel panelAdminWelcome;
         private Panel panel9;
@@ -361,5 +361,6 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox1;
         private Label lblAdminWelcome;
+        private Label label4;
     }
 }
