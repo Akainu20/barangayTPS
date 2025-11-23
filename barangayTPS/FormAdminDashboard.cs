@@ -52,5 +52,25 @@ namespace barangayTPS
             FormResidentInformation newForm = new FormResidentInformation();
             newForm.Show();
         }
+
+        private void btnRecentRequestRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPendingRequest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCompletedRequest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRejectedRequest_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

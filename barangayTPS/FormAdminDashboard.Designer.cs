@@ -169,6 +169,7 @@
             btnRejectedRequest.TabIndex = 12;
             btnRejectedRequest.Text = "Rejected Requests";
             btnRejectedRequest.UseVisualStyleBackColor = true;
+            btnRejectedRequest.Click += btnRejectedRequest_Click;
             // 
             // btnRecentRequestRefresh
             // 
@@ -178,6 +179,7 @@
             btnRecentRequestRefresh.TabIndex = 13;
             btnRecentRequestRefresh.Text = "Refresh";
             btnRecentRequestRefresh.UseVisualStyleBackColor = true;
+            btnRecentRequestRefresh.Click += btnRecentRequestRefresh_Click;
             // 
             // btnCompletedRequest
             // 
@@ -187,6 +189,7 @@
             btnCompletedRequest.TabIndex = 11;
             btnCompletedRequest.Text = "Completed Requests";
             btnCompletedRequest.UseVisualStyleBackColor = true;
+            btnCompletedRequest.Click += btnCompletedRequest_Click;
             // 
             // btnPendingRequest
             // 
@@ -196,6 +199,7 @@
             btnPendingRequest.TabIndex = 9;
             btnPendingRequest.Text = "Pending Requests";
             btnPendingRequest.UseVisualStyleBackColor = true;
+            btnPendingRequest.Click += btnPendingRequest_Click;
             // 
             // btnTotalRequest
             // 

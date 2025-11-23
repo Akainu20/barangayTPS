@@ -44,5 +44,60 @@ namespace barangayTPS
             FormAdminDashboard newForm = new FormAdminDashboard();
             newForm.Show();
         }
+
+        private void txtResidentName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtStatus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDocType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRequestID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMarkAsReady_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMarkAsComplete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormDocumentStatus_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

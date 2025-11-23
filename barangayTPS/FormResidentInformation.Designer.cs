@@ -213,6 +213,7 @@
             dataGridResidentData.RowHeadersWidth = 51;
             dataGridResidentData.Size = new Size(1085, 362);
             dataGridResidentData.TabIndex = 3;
+            dataGridResidentData.CellContentClick += dataGridResidentData_CellContentClick;
             // 
             // ResidentName
             // 
@@ -286,6 +287,7 @@
             btnResidentInfoRefresh.TabIndex = 14;
             btnResidentInfoRefresh.Text = "Refresh";
             btnResidentInfoRefresh.UseVisualStyleBackColor = true;
+            btnResidentInfoRefresh.Click += btnResidentInfoRefresh_Click;
             // 
             // FormResidentInformation
             // 

@@ -49,5 +49,15 @@ namespace barangayTPS
             FormAdminDashboard newForm = new FormAdminDashboard();
             newForm.Show();
         }
+
+        private void dataGridResidentData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnResidentInfoRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

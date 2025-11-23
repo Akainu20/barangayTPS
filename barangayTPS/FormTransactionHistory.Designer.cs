@@ -211,6 +211,7 @@
             btnHistoryRefresh.TabIndex = 22;
             btnHistoryRefresh.Text = "Refresh";
             btnHistoryRefresh.UseVisualStyleBackColor = true;
+            btnHistoryRefresh.Click += btnHistoryRefresh_Click;
             // 
             // dataGridTransactionHistory
             // 

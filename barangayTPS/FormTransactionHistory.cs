@@ -61,5 +61,10 @@ namespace barangayTPS
         {
 
         }
+
+        private void btnHistoryRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

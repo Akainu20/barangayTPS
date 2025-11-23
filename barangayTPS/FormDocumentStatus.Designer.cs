@@ -37,6 +37,7 @@
             pictureBox6 = new PictureBox();
             btnDocumentStatusBack = new Button();
             paneDocumentsStatusSidebar = new Panel();
+            btnDocumentStatusResidentInformation = new Button();
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
@@ -55,7 +56,6 @@
             btnReject = new Button();
             btnMarkAsComplete = new Button();
             panel1 = new Panel();
-            btnDocumentStatusResidentInformation = new Button();
             panelDocumentStatusWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -161,6 +161,16 @@
             paneDocumentsStatusSidebar.Size = new Size(219, 923);
             paneDocumentsStatusSidebar.TabIndex = 15;
             // 
+            // btnDocumentStatusResidentInformation
+            // 
+            btnDocumentStatusResidentInformation.BackColor = Color.White;
+            btnDocumentStatusResidentInformation.Location = new Point(18, 167);
+            btnDocumentStatusResidentInformation.Name = "btnDocumentStatusResidentInformation";
+            btnDocumentStatusResidentInformation.Size = new Size(179, 41);
+            btnDocumentStatusResidentInformation.TabIndex = 33;
+            btnDocumentStatusResidentInformation.Text = "Resident Information";
+            btnDocumentStatusResidentInformation.UseVisualStyleBackColor = false;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -201,6 +211,7 @@
             txtRequestID.Name = "txtRequestID";
             txtRequestID.Size = new Size(278, 37);
             txtRequestID.TabIndex = 17;
+            txtRequestID.TextChanged += txtRequestID_TextChanged;
             // 
             // txtResidentName
             // 
@@ -209,6 +220,7 @@
             txtResidentName.Name = "txtResidentName";
             txtResidentName.Size = new Size(278, 37);
             txtResidentName.TabIndex = 18;
+            txtResidentName.TextChanged += txtResidentName_TextChanged;
             // 
             // txtDate
             // 
@@ -217,6 +229,7 @@
             txtDate.Name = "txtDate";
             txtDate.Size = new Size(278, 37);
             txtDate.TabIndex = 19;
+            txtDate.TextChanged += txtDate_TextChanged;
             // 
             // txtDocType
             // 
@@ -225,6 +238,7 @@
             txtDocType.Name = "txtDocType";
             txtDocType.Size = new Size(311, 40);
             txtDocType.TabIndex = 20;
+            txtDocType.TextChanged += txtDocType_TextChanged;
             // 
             // txtStatus
             // 
@@ -233,6 +247,7 @@
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(278, 40);
             txtStatus.TabIndex = 21;
+            txtStatus.TextChanged += txtStatus_TextChanged;
             // 
             // label3
             // 
@@ -304,6 +319,7 @@
             btnAccept.TabIndex = 27;
             btnAccept.Text = "Accept";
             btnAccept.UseVisualStyleBackColor = false;
+            btnAccept.Click += btnAccept_Click;
             // 
             // btnMarkAsReady
             // 
@@ -315,6 +331,7 @@
             btnMarkAsReady.TabIndex = 28;
             btnMarkAsReady.Text = "Mark as Ready";
             btnMarkAsReady.UseVisualStyleBackColor = false;
+            btnMarkAsReady.Click += btnMarkAsReady_Click;
             // 
             // btnReject
             // 
@@ -326,6 +343,7 @@
             btnReject.TabIndex = 29;
             btnReject.Text = "Reject";
             btnReject.UseVisualStyleBackColor = false;
+            btnReject.Click += btnReject_Click;
             // 
             // btnMarkAsComplete
             // 
@@ -337,6 +355,7 @@
             btnMarkAsComplete.TabIndex = 30;
             btnMarkAsComplete.Text = "Mark as Complete";
             btnMarkAsComplete.UseVisualStyleBackColor = false;
+            btnMarkAsComplete.Click += btnMarkAsComplete_Click;
             // 
             // panel1
             // 
@@ -359,16 +378,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1251, 374);
             panel1.TabIndex = 31;
-            // 
-            // btnDocumentStatusResidentInformation
-            // 
-            btnDocumentStatusResidentInformation.BackColor = Color.White;
-            btnDocumentStatusResidentInformation.Location = new Point(18, 167);
-            btnDocumentStatusResidentInformation.Name = "btnDocumentStatusResidentInformation";
-            btnDocumentStatusResidentInformation.Size = new Size(179, 41);
-            btnDocumentStatusResidentInformation.TabIndex = 33;
-            btnDocumentStatusResidentInformation.Text = "Resident Information";
-            btnDocumentStatusResidentInformation.UseVisualStyleBackColor = false;
+            panel1.Paint += panel1_Paint;
             // 
             // FormDocumentStatus
             // 
@@ -381,6 +391,7 @@
             Controls.Add(panel3);
             Name = "FormDocumentStatus";
             Text = "FormDocumentStatus";
+            Load += FormDocumentStatus_Load;
             panelDocumentStatusWelcome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
