@@ -10,8 +10,16 @@ using System.Windows.Forms;
 
 namespace barangayTPS
 {
+
     public partial class FormResidentDashboard : Form
     {
+        private string _username;
+
+        public FormResidentDashboard(string username)
+        {
+            InitializeComponent();
+            _username = username;
+        }
         public FormResidentDashboard()
         {
             InitializeComponent();
@@ -52,15 +60,13 @@ namespace barangayTPS
         private void btnRequestNow_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormDocumentRequest newForm = new FormDocumentRequest();
-            newForm.Show();
+            new FormDocumentRequest(_username).Show();
         }
 
         private void btnViewNow_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormAvailableDocuments newForm = new FormAvailableDocuments();
-            newForm.Show();
+            new FormAvailableDocuments(_username).Show();
         }
     }
 }

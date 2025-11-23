@@ -32,8 +32,8 @@
             pictureBox6 = new PictureBox();
             lblResidentWelcome = new Label();
             panelResidentWelcome = new Panel();
-            btnBackToAdminDashboard = new Button();
             panel9 = new Panel();
+            btnBackToAdminDashboard = new Button();
             label3 = new Label();
             panelBarangayClearance = new Panel();
             pictureBox1 = new PictureBox();
@@ -106,6 +106,15 @@
             panelResidentWelcome.Size = new Size(1574, 83);
             panelResidentWelcome.TabIndex = 6;
             // 
+            // panel9
+            // 
+            panel9.BackColor = Color.Gold;
+            panel9.Location = new Point(0, 75);
+            panel9.Margin = new Padding(3, 4, 3, 4);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(1575, 16);
+            panel9.TabIndex = 2;
+            // 
             // btnBackToAdminDashboard
             // 
             btnBackToAdminDashboard.Location = new Point(15, 155);
@@ -115,15 +124,6 @@
             btnBackToAdminDashboard.Text = "Back";
             btnBackToAdminDashboard.UseVisualStyleBackColor = true;
             btnBackToAdminDashboard.Click += btnBackToAdminDashboard_Click;
-            // 
-            // panel9
-            // 
-            panel9.BackColor = Color.Gold;
-            panel9.Location = new Point(0, 75);
-            panel9.Margin = new Padding(3, 4, 3, 4);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(1575, 16);
-            panel9.TabIndex = 2;
             // 
             // label3
             // 
@@ -343,6 +343,7 @@
             Controls.Add(panelResidentSidebar);
             Name = "FormAvailableDocuments";
             Text = "FormAvailableDocuments";
+            Load += FormAvailableDocuments_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panelResidentWelcome.ResumeLayout(false);
             panelResidentWelcome.PerformLayout();

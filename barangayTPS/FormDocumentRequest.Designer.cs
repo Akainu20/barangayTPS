@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panelDocumentRequest = new Panel();
+            label12 = new Label();
+            txtUsername = new TextBox();
             label11 = new Label();
             btnBackResidentDashboard = new Button();
             txtAge = new TextBox();
@@ -49,8 +51,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            txtUsername = new TextBox();
-            label12 = new Label();
             panelDocumentRequest.SuspendLayout();
             SuspendLayout();
             // 
@@ -83,6 +83,24 @@
             panelDocumentRequest.Name = "panelDocumentRequest";
             panelDocumentRequest.Size = new Size(635, 734);
             panelDocumentRequest.TabIndex = 0;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(45, 191);
+            label12.Name = "label12";
+            label12.Size = new Size(185, 20);
+            label12.TabIndex = 22;
+            label12.Text = "Enter your username*";
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(45, 214);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(305, 40);
+            txtUsername.TabIndex = 21;
             // 
             // label11
             // 
@@ -281,24 +299,6 @@
             label1.TabIndex = 0;
             label1.Text = "Document Request Form";
             // 
-            // txtUsername
-            // 
-            txtUsername.Location = new Point(45, 214);
-            txtUsername.Multiline = true;
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(305, 40);
-            txtUsername.TabIndex = 21;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(45, 191);
-            label12.Name = "label12";
-            label12.Size = new Size(185, 20);
-            label12.TabIndex = 22;
-            label12.Text = "Enter your username*";
-            // 
             // FormDocumentRequest
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -307,6 +307,7 @@
             Controls.Add(panelDocumentRequest);
             Name = "FormDocumentRequest";
             Text = "FormDocumentRequest";
+            Load += FormDocumentRequest_Load;
             panelDocumentRequest.ResumeLayout(false);
             panelDocumentRequest.PerformLayout();
             ResumeLayout(false);

@@ -12,6 +12,13 @@ namespace barangayTPS
 {
     public partial class FormAvailableDocuments : Form
     {
+        private string _username;
+
+        public FormAvailableDocuments(string username)
+        {
+            InitializeComponent();
+            _username = username;
+        }
         public FormAvailableDocuments()
         {
             InitializeComponent();
@@ -36,6 +43,11 @@ namespace barangayTPS
             this.Hide();
             FormResidentDashboard newForm = new FormResidentDashboard();
             newForm.Show();
+        }
+
+        private void FormAvailableDocuments_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

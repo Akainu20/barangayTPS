@@ -332,6 +332,7 @@
             Controls.Add(panel3);
             Name = "FormAdminDashboard";
             Text = "FormAdminDashboard";
+            Load += FormAdminDashboard_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridRecentRequest).EndInit();

@@ -19,9 +19,34 @@ namespace barangayTPS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormResidentDashboard newForm = new FormResidentDashboard();
-            newForm.Show();
+            if (txtLoginUsername == null || txtLoginPassword == null)
+            {
+                MessageBox.Show("Please enter Username/Password.");
+                return;
+            }
+
+            string username = txtLoginUsername.Text.Trim();
+            string password = txtLoginPassword.Text.Trim();
+
+            string role = DBHelper.AuthenticateUser(username, password);
+
+            if (role == null)
+            {
+                MessageBox.Show("Invalid username or password.");
+                return;
+            }
+
+            if (role == "Resident")
+            {
+                this.Hide();
+                new FormResidentDashboard(username).Show();
+            }
+            else if (role == "Admin")
+            {
+                this.Hide();
+                new FormAdminDashboard().Show();
+            }
+
         }
 
         private void lblSignup_Click(object sender, EventArgs e)
