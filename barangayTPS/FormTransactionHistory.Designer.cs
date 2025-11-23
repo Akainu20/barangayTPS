@@ -41,8 +41,8 @@
             btnTransactionHistoryResidentInformation = new Button();
             panelTransactionHistory = new Panel();
             label4 = new Label();
-            btnRefresh = new Button();
-            dataGridView1 = new DataGridView();
+            btnHistoryRefresh = new Button();
+            dataGridTransactionHistory = new DataGridView();
             RequestID = new DataGridViewTextBoxColumn();
             ResidentName = new DataGridViewTextBoxColumn();
             DocumentType = new DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panelTransactionSidebar.SuspendLayout();
             panelTransactionHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridTransactionHistory).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -184,8 +184,8 @@
             // 
             panelTransactionHistory.BackColor = Color.SeaGreen;
             panelTransactionHistory.Controls.Add(label4);
-            panelTransactionHistory.Controls.Add(btnRefresh);
-            panelTransactionHistory.Controls.Add(dataGridView1);
+            panelTransactionHistory.Controls.Add(btnHistoryRefresh);
+            panelTransactionHistory.Controls.Add(dataGridTransactionHistory);
             panelTransactionHistory.Location = new Point(225, 257);
             panelTransactionHistory.Name = "panelTransactionHistory";
             panelTransactionHistory.Size = new Size(1101, 702);
@@ -203,26 +203,26 @@
             label4.TabIndex = 23;
             label4.Text = "Recent Transaction Request";
             // 
-            // btnRefresh
+            // btnHistoryRefresh
             // 
-            btnRefresh.Location = new Point(971, 18);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(116, 37);
-            btnRefresh.TabIndex = 22;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
+            btnHistoryRefresh.Location = new Point(971, 18);
+            btnHistoryRefresh.Name = "btnHistoryRefresh";
+            btnHistoryRefresh.Size = new Size(116, 37);
+            btnHistoryRefresh.TabIndex = 22;
+            btnHistoryRefresh.Text = "Refresh";
+            btnHistoryRefresh.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridTransactionHistory
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status, RequestPurpose });
-            dataGridView1.Location = new Point(7, 66);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1087, 624);
-            dataGridView1.TabIndex = 3;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridTransactionHistory.BackgroundColor = Color.White;
+            dataGridTransactionHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridTransactionHistory.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status, RequestPurpose });
+            dataGridTransactionHistory.Location = new Point(7, 66);
+            dataGridTransactionHistory.Name = "dataGridTransactionHistory";
+            dataGridTransactionHistory.RowHeadersWidth = 51;
+            dataGridTransactionHistory.Size = new Size(1087, 624);
+            dataGridTransactionHistory.TabIndex = 3;
+            dataGridTransactionHistory.CellContentClick += dataGridView1_CellContentClick;
             // 
             // RequestID
             // 
@@ -315,7 +315,7 @@
             panelTransactionSidebar.ResumeLayout(false);
             panelTransactionHistory.ResumeLayout(false);
             panelTransactionHistory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridTransactionHistory).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -327,11 +327,11 @@
         private Button btnTransactionHistoryLogout;
         private Button btnTransactionHistoryDashboard;
         private Button btnTransactionHistoryTransactionHistory;
-        private Button btnRefresh;
+        private Button btnHistoryRefresh;
         private Panel panelTransactionSidebar;
         private Panel panelTransactionHistory;
         private Label label3;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridTransactionHistory;
         private Label label2;
         private Label label1;
         private Panel panel3;

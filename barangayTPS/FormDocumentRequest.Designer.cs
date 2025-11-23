@@ -49,12 +49,16 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            txtUsername = new TextBox();
+            label12 = new Label();
             panelDocumentRequest.SuspendLayout();
             SuspendLayout();
             // 
             // panelDocumentRequest
             // 
             panelDocumentRequest.BackColor = Color.White;
+            panelDocumentRequest.Controls.Add(label12);
+            panelDocumentRequest.Controls.Add(txtUsername);
             panelDocumentRequest.Controls.Add(label11);
             panelDocumentRequest.Controls.Add(btnBackResidentDashboard);
             panelDocumentRequest.Controls.Add(txtAge);
@@ -242,7 +246,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.White;
-            label4.Location = new Point(39, 246);
+            label4.Location = new Point(50, 160);
             label4.Name = "label4";
             label4.Size = new Size(573, 20);
             label4.TabIndex = 3;
@@ -252,7 +256,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(50, 226);
+            label3.Location = new Point(48, 140);
             label3.Name = "label3";
             label3.Size = new Size(179, 20);
             label3.TabIndex = 2;
@@ -261,7 +265,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 155);
+            label2.Location = new Point(61, 87);
             label2.Name = "label2";
             label2.Size = new Size(398, 20);
             label2.TabIndex = 1;
@@ -271,11 +275,29 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(39, 104);
+            label1.Location = new Point(50, 36);
             label1.Name = "label1";
             label1.Size = new Size(332, 38);
             label1.TabIndex = 0;
             label1.Text = "Document Request Form";
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(45, 214);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(305, 40);
+            txtUsername.TabIndex = 21;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(45, 191);
+            label12.Name = "label12";
+            label12.Size = new Size(185, 20);
+            label12.TabIndex = 22;
+            label12.Text = "Enter your username*";
             // 
             // FormDocumentRequest
             // 
@@ -313,5 +335,7 @@
         private TextBox txtAge;
         private Button btnBackResidentDashboard;
         private Label label11;
+        private TextBox txtUsername;
+        private Label label12;
     }
 }

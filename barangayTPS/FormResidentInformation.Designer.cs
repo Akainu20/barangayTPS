@@ -41,20 +41,21 @@
             btnResidentInfoResidentInformation = new Button();
             label4 = new Label();
             panelResidentInformation = new Panel();
-            dataGridView1 = new DataGridView();
-            label2 = new Label();
-            label1 = new Label();
-            panel3 = new Panel();
+            dataGridResidentData = new DataGridView();
             ResidentName = new DataGridViewTextBoxColumn();
             ResidentAge = new DataGridViewTextBoxColumn();
             ResidentAddress = new DataGridViewTextBoxColumn();
             ResidentContactNum = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            label1 = new Label();
+            panel3 = new Panel();
+            btnResidentInfoRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panelAdminWelcome.SuspendLayout();
             panelAdminSidebar.SuspendLayout();
             panelResidentInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridResidentData).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -187,62 +188,31 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(7, 26);
             label4.Name = "label4";
-            label4.Size = new Size(162, 28);
+            label4.Size = new Size(201, 28);
             label4.TabIndex = 9;
-            label4.Text = "Recent Request";
+            label4.Text = "Resident Iformation";
             // 
             // panelResidentInformation
             // 
             panelResidentInformation.BackColor = Color.SeaGreen;
+            panelResidentInformation.Controls.Add(btnResidentInfoRefresh);
             panelResidentInformation.Controls.Add(label4);
-            panelResidentInformation.Controls.Add(dataGridView1);
+            panelResidentInformation.Controls.Add(dataGridResidentData);
             panelResidentInformation.Location = new Point(223, 234);
             panelResidentInformation.Name = "panelResidentInformation";
             panelResidentInformation.Size = new Size(1106, 550);
             panelResidentInformation.TabIndex = 10;
             // 
-            // dataGridView1
+            // dataGridResidentData
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResidentName, ResidentAge, ResidentAddress, ResidentContactNum });
-            dataGridView1.Location = new Point(10, 79);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1085, 362);
-            dataGridView1.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(23, 53);
-            label2.Name = "label2";
-            label2.Size = new Size(185, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Overview of Resident Data";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(19, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(317, 41);
-            label1.TabIndex = 3;
-            label1.Text = "Resident Information";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.SeaGreen;
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(label1);
-            panel3.Location = new Point(223, 101);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1106, 87);
-            panel3.TabIndex = 9;
+            dataGridResidentData.BackgroundColor = Color.White;
+            dataGridResidentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridResidentData.Columns.AddRange(new DataGridViewColumn[] { ResidentName, ResidentAge, ResidentAddress, ResidentContactNum });
+            dataGridResidentData.Location = new Point(10, 79);
+            dataGridResidentData.Name = "dataGridResidentData";
+            dataGridResidentData.RowHeadersWidth = 51;
+            dataGridResidentData.Size = new Size(1085, 362);
+            dataGridResidentData.TabIndex = 3;
             // 
             // ResidentName
             // 
@@ -276,6 +246,47 @@
             ResidentContactNum.Name = "ResidentContactNum";
             ResidentContactNum.ReadOnly = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(23, 53);
+            label2.Name = "label2";
+            label2.Size = new Size(185, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Overview of Resident Data";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(19, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(317, 41);
+            label1.TabIndex = 3;
+            label1.Text = "Resident Information";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.SeaGreen;
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label1);
+            panel3.Location = new Point(223, 101);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1106, 87);
+            panel3.TabIndex = 9;
+            // 
+            // btnResidentInfoRefresh
+            // 
+            btnResidentInfoRefresh.Location = new Point(975, 26);
+            btnResidentInfoRefresh.Name = "btnResidentInfoRefresh";
+            btnResidentInfoRefresh.Size = new Size(120, 37);
+            btnResidentInfoRefresh.TabIndex = 14;
+            btnResidentInfoRefresh.Text = "Refresh";
+            btnResidentInfoRefresh.UseVisualStyleBackColor = true;
+            // 
             // FormResidentInformation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -294,7 +305,7 @@
             panelAdminSidebar.ResumeLayout(false);
             panelResidentInformation.ResumeLayout(false);
             panelResidentInformation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridResidentData).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -312,7 +323,7 @@
         private Panel panelAdminSidebar;
         private Label label4;
         private Panel panelResidentInformation;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridResidentData;
         private Label label2;
         private Label label1;
         private Panel panel3;
@@ -322,5 +333,6 @@
         private DataGridViewTextBoxColumn ResidentAge;
         private DataGridViewTextBoxColumn ResidentAddress;
         private DataGridViewTextBoxColumn ResidentContactNum;
+        private Button btnResidentInfoRefresh;
     }
 }

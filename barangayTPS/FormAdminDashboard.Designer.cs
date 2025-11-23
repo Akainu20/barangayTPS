@@ -31,7 +31,7 @@
             panel3 = new Panel();
             label2 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dataGridRecentRequest = new DataGridView();
             ResidentName = new DataGridViewTextBoxColumn();
             DocumentType = new DataGridViewTextBoxColumn();
             DateRequested = new DataGridViewTextBoxColumn();
@@ -39,7 +39,7 @@
             panelRecentRequest = new Panel();
             label4 = new Label();
             btnRejectedRequest = new Button();
-            btnRefresh = new Button();
+            btnRecentRequestRefresh = new Button();
             btnCompletedRequest = new Button();
             btnPendingRequest = new Button();
             btnTotalRequest = new Button();
@@ -54,7 +54,7 @@
             pictureBox6 = new PictureBox();
             panel9 = new Panel();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridRecentRequest).BeginInit();
             panelRecentRequest.SuspendLayout();
             panelAdminSidebar.SuspendLayout();
             panelAdminWelcome.SuspendLayout();
@@ -94,17 +94,17 @@
             label1.TabIndex = 3;
             label1.Text = "Dashboard";
             // 
-            // dataGridView1
+            // dataGridRecentRequest
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResidentName, DocumentType, DateRequested, Status });
-            dataGridView1.Location = new Point(10, 79);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1085, 362);
-            dataGridView1.TabIndex = 3;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridRecentRequest.BackgroundColor = Color.White;
+            dataGridRecentRequest.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridRecentRequest.Columns.AddRange(new DataGridViewColumn[] { ResidentName, DocumentType, DateRequested, Status });
+            dataGridRecentRequest.Location = new Point(10, 79);
+            dataGridRecentRequest.Name = "dataGridRecentRequest";
+            dataGridRecentRequest.RowHeadersWidth = 51;
+            dataGridRecentRequest.Size = new Size(1085, 362);
+            dataGridRecentRequest.TabIndex = 3;
+            dataGridRecentRequest.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ResidentName
             // 
@@ -139,11 +139,11 @@
             panelRecentRequest.BackColor = Color.SeaGreen;
             panelRecentRequest.Controls.Add(label4);
             panelRecentRequest.Controls.Add(btnRejectedRequest);
-            panelRecentRequest.Controls.Add(btnRefresh);
+            panelRecentRequest.Controls.Add(btnRecentRequestRefresh);
             panelRecentRequest.Controls.Add(btnCompletedRequest);
             panelRecentRequest.Controls.Add(btnPendingRequest);
             panelRecentRequest.Controls.Add(btnTotalRequest);
-            panelRecentRequest.Controls.Add(dataGridView1);
+            panelRecentRequest.Controls.Add(dataGridRecentRequest);
             panelRecentRequest.Location = new Point(220, 250);
             panelRecentRequest.Name = "panelRecentRequest";
             panelRecentRequest.Size = new Size(1106, 550);
@@ -170,14 +170,14 @@
             btnRejectedRequest.Text = "Rejected Requests";
             btnRejectedRequest.UseVisualStyleBackColor = true;
             // 
-            // btnRefresh
+            // btnRecentRequestRefresh
             // 
-            btnRefresh.Location = new Point(975, 17);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(120, 37);
-            btnRefresh.TabIndex = 13;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
+            btnRecentRequestRefresh.Location = new Point(975, 22);
+            btnRecentRequestRefresh.Name = "btnRecentRequestRefresh";
+            btnRecentRequestRefresh.Size = new Size(120, 37);
+            btnRecentRequestRefresh.TabIndex = 13;
+            btnRecentRequestRefresh.Text = "Refresh";
+            btnRecentRequestRefresh.UseVisualStyleBackColor = true;
             // 
             // btnCompletedRequest
             // 
@@ -330,7 +330,7 @@
             Text = "FormAdminDashboard";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridRecentRequest).EndInit();
             panelRecentRequest.ResumeLayout(false);
             panelRecentRequest.PerformLayout();
             panelAdminSidebar.ResumeLayout(false);
@@ -344,7 +344,7 @@
         #endregion
         private Panel panel3;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridRecentRequest;
         private Label label2;
         private Panel panelRecentRequest;
         private Panel panelAdminSidebar;
@@ -357,7 +357,7 @@
         private Button btnTotalRequest;
         private Button btnCompletedRequest;
         private Button btnRejectedRequest;
-        private Button btnRefresh;
+        private Button btnRecentRequestRefresh;
         private PictureBox pictureBox6;
         private PictureBox pictureBox1;
         private Label lblAdminWelcome;
