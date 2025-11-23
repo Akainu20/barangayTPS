@@ -296,7 +296,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(1286, 15);
+            pictureBox6.Location = new Point(1286, 17);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
