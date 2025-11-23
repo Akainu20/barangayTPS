@@ -38,17 +38,20 @@
             btnTransactionHistoryTransactionHistory = new Button();
             panelTransactionSidebar = new Panel();
             panelTransactionHistory = new Panel();
+            label4 = new Label();
+            btnRefresh = new Button();
             dataGridView1 = new DataGridView();
+            label2 = new Label();
+            label1 = new Label();
+            panel3 = new Panel();
             RequestID = new DataGridViewTextBoxColumn();
             ResidentName = new DataGridViewTextBoxColumn();
             DocumentType = new DataGridViewTextBoxColumn();
             DateRequested = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
-            label2 = new Label();
-            label1 = new Label();
-            panel3 = new Panel();
-            btnRefresh = new Button();
-            label4 = new Label();
+            RequestPurpose = new DataGridViewTextBoxColumn();
+            btnTransactionHistoryResidentInformation = new Button();
+            btnTransactionHistoryBack = new Button();
             panelTransactionWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -113,7 +116,7 @@
             // btnTransactionHistoryLogout
             // 
             btnTransactionHistoryLogout.BackColor = Color.White;
-            btnTransactionHistoryLogout.Location = new Point(18, 171);
+            btnTransactionHistoryLogout.Location = new Point(18, 232);
             btnTransactionHistoryLogout.Name = "btnTransactionHistoryLogout";
             btnTransactionHistoryLogout.Size = new Size(179, 41);
             btnTransactionHistoryLogout.TabIndex = 11;
@@ -145,6 +148,8 @@
             // panelTransactionSidebar
             // 
             panelTransactionSidebar.BackColor = Color.SeaGreen;
+            panelTransactionSidebar.Controls.Add(btnTransactionHistoryBack);
+            panelTransactionSidebar.Controls.Add(btnTransactionHistoryResidentInformation);
             panelTransactionSidebar.Controls.Add(btnTransactionHistoryLogout);
             panelTransactionSidebar.Controls.Add(btnTransactionHistoryDashboard);
             panelTransactionSidebar.Controls.Add(btnTransactionHistoryTransactionHistory);
@@ -164,51 +169,38 @@
             panelTransactionHistory.Size = new Size(1101, 702);
             panelTransactionHistory.TabIndex = 15;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(11, 27);
+            label4.Name = "label4";
+            label4.Size = new Size(274, 28);
+            label4.TabIndex = 23;
+            label4.Text = "Recent Transaction Request";
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Location = new Point(971, 18);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(116, 37);
+            btnRefresh.TabIndex = 22;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status });
-            dataGridView1.Location = new Point(7, 75);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status, RequestPurpose });
+            dataGridView1.Location = new Point(7, 66);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1087, 624);
             dataGridView1.TabIndex = 3;
-            // 
-            // RequestID
-            // 
-            RequestID.HeaderText = "Request ID";
-            RequestID.MinimumWidth = 6;
-            RequestID.Name = "RequestID";
-            RequestID.Width = 125;
-            // 
-            // ResidentName
-            // 
-            ResidentName.HeaderText = "Resident Name";
-            ResidentName.MinimumWidth = 6;
-            ResidentName.Name = "ResidentName";
-            ResidentName.Width = 125;
-            // 
-            // DocumentType
-            // 
-            DocumentType.HeaderText = "Document Type";
-            DocumentType.MinimumWidth = 6;
-            DocumentType.Name = "DocumentType";
-            DocumentType.Width = 125;
-            // 
-            // DateRequested
-            // 
-            DateRequested.HeaderText = "Date";
-            DateRequested.MinimumWidth = 6;
-            DateRequested.Name = "DateRequested";
-            DateRequested.Width = 125;
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.Width = 125;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label2
             // 
@@ -242,26 +234,66 @@
             panel3.Size = new Size(1101, 87);
             panel3.TabIndex = 14;
             // 
-            // btnRefresh
+            // RequestID
             // 
-            btnRefresh.Location = new Point(971, 18);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(116, 37);
-            btnRefresh.TabIndex = 22;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
+            RequestID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            RequestID.HeaderText = "Request ID";
+            RequestID.MinimumWidth = 6;
+            RequestID.Name = "RequestID";
             // 
-            // label4
+            // ResidentName
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(11, 27);
-            label4.Name = "label4";
-            label4.Size = new Size(274, 28);
-            label4.TabIndex = 23;
-            label4.Text = "Recent Transaction Request";
+            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ResidentName.HeaderText = "Resident Name";
+            ResidentName.MinimumWidth = 6;
+            ResidentName.Name = "ResidentName";
+            // 
+            // DocumentType
+            // 
+            DocumentType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DocumentType.HeaderText = "Document Type";
+            DocumentType.MinimumWidth = 6;
+            DocumentType.Name = "DocumentType";
+            // 
+            // DateRequested
+            // 
+            DateRequested.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DateRequested.HeaderText = "Date";
+            DateRequested.MinimumWidth = 6;
+            DateRequested.Name = "DateRequested";
+            // 
+            // Status
+            // 
+            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            // 
+            // RequestPurpose
+            // 
+            RequestPurpose.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            RequestPurpose.HeaderText = "Purpose of Request";
+            RequestPurpose.MinimumWidth = 6;
+            RequestPurpose.Name = "RequestPurpose";
+            // 
+            // btnTransactionHistoryResidentInformation
+            // 
+            btnTransactionHistoryResidentInformation.BackColor = Color.White;
+            btnTransactionHistoryResidentInformation.Location = new Point(18, 170);
+            btnTransactionHistoryResidentInformation.Name = "btnTransactionHistoryResidentInformation";
+            btnTransactionHistoryResidentInformation.Size = new Size(179, 41);
+            btnTransactionHistoryResidentInformation.TabIndex = 17;
+            btnTransactionHistoryResidentInformation.Text = "Resident Information";
+            btnTransactionHistoryResidentInformation.UseVisualStyleBackColor = false;
+            // 
+            // btnTransactionHistoryBack
+            // 
+            btnTransactionHistoryBack.Location = new Point(18, 295);
+            btnTransactionHistoryBack.Name = "btnTransactionHistoryBack";
+            btnTransactionHistoryBack.Size = new Size(179, 42);
+            btnTransactionHistoryBack.TabIndex = 33;
+            btnTransactionHistoryBack.Text = "Back";
+            btnTransactionHistoryBack.UseVisualStyleBackColor = true;
             // 
             // FormTransactionHistory
             // 
@@ -297,11 +329,6 @@
         private Panel panelTransactionHistory;
         private Label label3;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn RequestID;
-        private DataGridViewTextBoxColumn ResidentName;
-        private DataGridViewTextBoxColumn DocumentType;
-        private DataGridViewTextBoxColumn DateRequested;
-        private DataGridViewTextBoxColumn Status;
         private Label label2;
         private Label label1;
         private Panel panel3;
@@ -310,5 +337,13 @@
         private Button btnBackAdminDashboard;
         private Button button1;
         private Label label4;
+        private DataGridViewTextBoxColumn RequestID;
+        private DataGridViewTextBoxColumn ResidentName;
+        private DataGridViewTextBoxColumn DocumentType;
+        private DataGridViewTextBoxColumn DateRequested;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn RequestPurpose;
+        private Button btnTransactionHistoryResidentInformation;
+        private Button btnTransactionHistoryBack;
     }
 }

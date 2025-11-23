@@ -20,7 +20,7 @@ namespace barangayTPS
         private void btnDocumentStatusLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormUserLogin newForm = new FormUserLogin();
+            FormAdminLogin newForm = new FormAdminLogin();
             newForm.Show();
         }
 

@@ -32,11 +32,6 @@
             label2 = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            RequestID = new DataGridViewTextBoxColumn();
-            ResidentName = new DataGridViewTextBoxColumn();
-            DocumentType = new DataGridViewTextBoxColumn();
-            DateRequested = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
             panelRecentRequest = new Panel();
             label4 = new Label();
             btnRejectedRequest = new Button();
@@ -53,6 +48,11 @@
             pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
             panel9 = new Panel();
+            ResidentName = new DataGridViewTextBoxColumn();
+            DocumentType = new DataGridViewTextBoxColumn();
+            DateRequested = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            btnResidentInfo = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelRecentRequest.SuspendLayout();
@@ -98,48 +98,13 @@
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status });
-            dataGridView1.Location = new Point(10, 70);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResidentName, DocumentType, DateRequested, Status });
+            dataGridView1.Location = new Point(10, 79);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1085, 362);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // RequestID
-            // 
-            RequestID.HeaderText = "Request ID";
-            RequestID.MinimumWidth = 6;
-            RequestID.Name = "RequestID";
-            RequestID.Width = 125;
-            // 
-            // ResidentName
-            // 
-            ResidentName.HeaderText = "Resident Name";
-            ResidentName.MinimumWidth = 6;
-            ResidentName.Name = "ResidentName";
-            ResidentName.Width = 125;
-            // 
-            // DocumentType
-            // 
-            DocumentType.HeaderText = "Document Type";
-            DocumentType.MinimumWidth = 6;
-            DocumentType.Name = "DocumentType";
-            DocumentType.Width = 125;
-            // 
-            // DateRequested
-            // 
-            DateRequested.HeaderText = "Date";
-            DateRequested.MinimumWidth = 6;
-            DateRequested.Name = "DateRequested";
-            DateRequested.Width = 125;
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.Width = 125;
             // 
             // panelRecentRequest
             // 
@@ -217,6 +182,7 @@
             // panelAdminSidebar
             // 
             panelAdminSidebar.BackColor = Color.SeaGreen;
+            panelAdminSidebar.Controls.Add(btnResidentInfo);
             panelAdminSidebar.Controls.Add(btnAdminLogout);
             panelAdminSidebar.Controls.Add(btnAdminDashboard);
             panelAdminSidebar.Controls.Add(btnTransactionHistory);
@@ -228,7 +194,7 @@
             // btnAdminLogout
             // 
             btnAdminLogout.BackColor = Color.White;
-            btnAdminLogout.Location = new Point(18, 171);
+            btnAdminLogout.Location = new Point(18, 220);
             btnAdminLogout.Name = "btnAdminLogout";
             btnAdminLogout.Size = new Size(179, 41);
             btnAdminLogout.TabIndex = 11;
@@ -250,7 +216,7 @@
             // btnTransactionHistory
             // 
             btnTransactionHistory.BackColor = Color.White;
-            btnTransactionHistory.Location = new Point(18, 107);
+            btnTransactionHistory.Location = new Point(18, 99);
             btnTransactionHistory.Name = "btnTransactionHistory";
             btnTransactionHistory.Size = new Size(179, 41);
             btnTransactionHistory.TabIndex = 9;
@@ -312,6 +278,44 @@
             panel9.Size = new Size(1575, 16);
             panel9.TabIndex = 2;
             // 
+            // ResidentName
+            // 
+            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ResidentName.HeaderText = "Resident Name";
+            ResidentName.MinimumWidth = 6;
+            ResidentName.Name = "ResidentName";
+            // 
+            // DocumentType
+            // 
+            DocumentType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DocumentType.HeaderText = "Document Type";
+            DocumentType.MinimumWidth = 6;
+            DocumentType.Name = "DocumentType";
+            // 
+            // DateRequested
+            // 
+            DateRequested.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DateRequested.HeaderText = "Date";
+            DateRequested.MinimumWidth = 6;
+            DateRequested.Name = "DateRequested";
+            // 
+            // Status
+            // 
+            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            // 
+            // btnResidentInfo
+            // 
+            btnResidentInfo.BackColor = Color.White;
+            btnResidentInfo.Location = new Point(18, 159);
+            btnResidentInfo.Name = "btnResidentInfo";
+            btnResidentInfo.Size = new Size(179, 41);
+            btnResidentInfo.TabIndex = 12;
+            btnResidentInfo.Text = "Resident Information";
+            btnResidentInfo.UseVisualStyleBackColor = false;
+            // 
             // FormAdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -340,11 +344,6 @@
         private Panel panel3;
         private Label label1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn RequestID;
-        private DataGridViewTextBoxColumn ResidentName;
-        private DataGridViewTextBoxColumn DocumentType;
-        private DataGridViewTextBoxColumn DateRequested;
-        private DataGridViewTextBoxColumn Status;
         private Label label2;
         private Panel panelRecentRequest;
         private Panel panelAdminSidebar;
@@ -362,5 +361,10 @@
         private PictureBox pictureBox1;
         private Label lblAdminWelcome;
         private Label label4;
+        private DataGridViewTextBoxColumn ResidentName;
+        private DataGridViewTextBoxColumn DocumentType;
+        private DataGridViewTextBoxColumn DateRequested;
+        private DataGridViewTextBoxColumn Status;
+        private Button btnResidentInfo;
     }
 }

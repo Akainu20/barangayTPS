@@ -30,6 +30,7 @@
         {
             panelLoginHeader = new Panel();
             cmbUser = new ComboBox();
+            Admin = new Label();
             btnUserLogin = new Button();
             lblSignup = new Label();
             label8 = new Label();
@@ -41,8 +42,6 @@
             label1 = new Label();
             label3 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
-            Admin = new Label();
             panelLoginHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -63,24 +62,35 @@
             panelLoginHeader.Controls.Add(label1);
             panelLoginHeader.Controls.Add(label3);
             panelLoginHeader.Controls.Add(label2);
-            panelLoginHeader.Location = new Point(-3, -7);
+            panelLoginHeader.Location = new Point(1, 0);
             panelLoginHeader.Name = "panelLoginHeader";
-            panelLoginHeader.Size = new Size(1375, 982);
+            panelLoginHeader.Size = new Size(1168, 982);
             panelLoginHeader.TabIndex = 3;
             // 
             // cmbUser
             // 
             cmbUser.FormattingEnabled = true;
-            cmbUser.Location = new Point(495, 280);
+            cmbUser.Location = new Point(498, 283);
             cmbUser.Name = "cmbUser";
             cmbUser.Size = new Size(97, 28);
             cmbUser.TabIndex = 16;
             cmbUser.Text = "Select role";
             // 
+            // Admin
+            // 
+            Admin.AutoSize = true;
+            Admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Admin.ForeColor = Color.White;
+            Admin.Location = new Point(517, 314);
+            Admin.Name = "Admin";
+            Admin.Size = new Size(54, 28);
+            Admin.TabIndex = 15;
+            Admin.Text = "User";
+            // 
             // btnUserLogin
             // 
             btnUserLogin.BackColor = Color.White;
-            btnUserLogin.Location = new Point(501, 480);
+            btnUserLogin.Location = new Point(504, 483);
             btnUserLogin.Margin = new Padding(3, 4, 3, 4);
             btnUserLogin.Name = "btnUserLogin";
             btnUserLogin.Size = new Size(86, 31);
@@ -95,7 +105,7 @@
             lblSignup.BackColor = Color.Transparent;
             lblSignup.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSignup.ForeColor = Color.Yellow;
-            lblSignup.Location = new Point(580, 542);
+            lblSignup.Location = new Point(583, 545);
             lblSignup.Name = "lblSignup";
             lblSignup.Size = new Size(63, 20);
             lblSignup.TabIndex = 13;
@@ -108,7 +118,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(447, 542);
+            label8.Location = new Point(450, 545);
             label8.Name = "label8";
             label8.Size = new Size(153, 20);
             label8.TabIndex = 12;
@@ -119,7 +129,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.logo_removebg_preview;
-            pictureBox1.Location = new Point(495, 60);
+            pictureBox1.Location = new Point(498, 63);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(110, 120);
@@ -133,7 +143,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(353, 456);
+            label7.Location = new Point(356, 459);
             label7.Name = "label7";
             label7.Size = new Size(76, 20);
             label7.TabIndex = 10;
@@ -145,7 +155,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(353, 386);
+            label6.Location = new Point(356, 389);
             label6.Name = "label6";
             label6.Size = new Size(125, 20);
             label6.TabIndex = 9;
@@ -154,7 +164,7 @@
             // 
             // txtUserLoginPassword
             // 
-            txtUserLoginPassword.Location = new Point(353, 420);
+            txtUserLoginPassword.Location = new Point(356, 423);
             txtUserLoginPassword.Multiline = true;
             txtUserLoginPassword.Name = "txtUserLoginPassword";
             txtUserLoginPassword.PasswordChar = '*';
@@ -164,7 +174,7 @@
             // 
             // txtUserLoginUsername
             // 
-            txtUserLoginUsername.Location = new Point(353, 353);
+            txtUserLoginUsername.Location = new Point(356, 356);
             txtUserLoginUsername.Multiline = true;
             txtUserLoginUsername.Name = "txtUserLoginUsername";
             txtUserLoginUsername.Size = new Size(403, 29);
@@ -177,7 +187,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(431, 184);
+            label1.Location = new Point(434, 187);
             label1.Name = "label1";
             label1.Size = new Size(265, 38);
             label1.TabIndex = 0;
@@ -190,7 +200,7 @@
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(495, 249);
+            label3.Location = new Point(498, 252);
             label3.Name = "label3";
             label3.Size = new Size(103, 23);
             label3.TabIndex = 2;
@@ -204,30 +214,11 @@
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.ImageAlign = ContentAlignment.MiddleLeft;
-            label2.Location = new Point(422, 224);
+            label2.Location = new Point(425, 227);
             label2.Name = "label2";
             label2.Size = new Size(265, 23);
             label2.TabIndex = 1;
             label2.Text = "Transaction Management System";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(260, 0);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(8, 28);
-            comboBox1.TabIndex = 4;
-            // 
-            // Admin
-            // 
-            Admin.AutoSize = true;
-            Admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Admin.ForeColor = Color.White;
-            Admin.Location = new Point(514, 311);
-            Admin.Name = "Admin";
-            Admin.Size = new Size(54, 28);
-            Admin.TabIndex = 15;
-            Admin.Text = "User";
             // 
             // FormUserLogin
             // 
@@ -235,7 +226,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGreen;
             ClientSize = new Size(1166, 739);
-            Controls.Add(comboBox1);
             Controls.Add(panelLoginHeader);
             Name = "FormUserLogin";
             Text = "FormLogin";
@@ -263,7 +253,6 @@
         private TextBox txtUserLoginUsername;
         private Button button1;
         private ComboBox cmbUser;
-        private ComboBox comboBox1;
         private Label Admin;
     }
 }

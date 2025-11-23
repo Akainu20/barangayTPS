@@ -33,9 +33,9 @@
             btnDocumentStatusDashboard = new Button();
             btnDocumentStatusTransactionHistory = new Button();
             panelDocumentStatusWelcome = new Panel();
-            btnBackToAdminDashboard = new Button();
             pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
+            btnDocumentStatusBack = new Button();
             paneDocumentsStatusSidebar = new Panel();
             label2 = new Label();
             label1 = new Label();
@@ -55,6 +55,7 @@
             btnReject = new Button();
             btnMarkAsComplete = new Button();
             panel1 = new Panel();
+            btnDocumentStatusResidentInformation = new Button();
             panelDocumentStatusWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -75,7 +76,7 @@
             // btnDocumentStatusLogout
             // 
             btnDocumentStatusLogout.BackColor = Color.White;
-            btnDocumentStatusLogout.Location = new Point(18, 171);
+            btnDocumentStatusLogout.Location = new Point(18, 228);
             btnDocumentStatusLogout.Name = "btnDocumentStatusLogout";
             btnDocumentStatusLogout.Size = new Size(179, 41);
             btnDocumentStatusLogout.TabIndex = 11;
@@ -117,16 +118,6 @@
             panelDocumentStatusWelcome.Size = new Size(1489, 83);
             panelDocumentStatusWelcome.TabIndex = 16;
             // 
-            // btnBackToAdminDashboard
-            // 
-            btnBackToAdminDashboard.Location = new Point(18, 238);
-            btnBackToAdminDashboard.Name = "btnBackToAdminDashboard";
-            btnBackToAdminDashboard.Size = new Size(179, 42);
-            btnBackToAdminDashboard.TabIndex = 32;
-            btnBackToAdminDashboard.Text = "Back";
-            btnBackToAdminDashboard.UseVisualStyleBackColor = true;
-            btnBackToAdminDashboard.Click += btnBackToAdminDashboard_Click;
-            // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
@@ -147,10 +138,21 @@
             pictureBox6.TabIndex = 31;
             pictureBox6.TabStop = false;
             // 
+            // btnDocumentStatusBack
+            // 
+            btnDocumentStatusBack.Location = new Point(18, 291);
+            btnDocumentStatusBack.Name = "btnDocumentStatusBack";
+            btnDocumentStatusBack.Size = new Size(179, 42);
+            btnDocumentStatusBack.TabIndex = 32;
+            btnDocumentStatusBack.Text = "Back";
+            btnDocumentStatusBack.UseVisualStyleBackColor = true;
+            btnDocumentStatusBack.Click += btnBackToAdminDashboard_Click;
+            // 
             // paneDocumentsStatusSidebar
             // 
             paneDocumentsStatusSidebar.BackColor = Color.SeaGreen;
-            paneDocumentsStatusSidebar.Controls.Add(btnBackToAdminDashboard);
+            paneDocumentsStatusSidebar.Controls.Add(btnDocumentStatusResidentInformation);
+            paneDocumentsStatusSidebar.Controls.Add(btnDocumentStatusBack);
             paneDocumentsStatusSidebar.Controls.Add(btnDocumentStatusLogout);
             paneDocumentsStatusSidebar.Controls.Add(btnDocumentStatusDashboard);
             paneDocumentsStatusSidebar.Controls.Add(btnDocumentStatusTransactionHistory);
@@ -358,6 +360,16 @@
             panel1.Size = new Size(1251, 374);
             panel1.TabIndex = 31;
             // 
+            // btnDocumentStatusResidentInformation
+            // 
+            btnDocumentStatusResidentInformation.BackColor = Color.White;
+            btnDocumentStatusResidentInformation.Location = new Point(18, 167);
+            btnDocumentStatusResidentInformation.Name = "btnDocumentStatusResidentInformation";
+            btnDocumentStatusResidentInformation.Size = new Size(179, 41);
+            btnDocumentStatusResidentInformation.TabIndex = 33;
+            btnDocumentStatusResidentInformation.Text = "Resident Information";
+            btnDocumentStatusResidentInformation.UseVisualStyleBackColor = false;
+            // 
             // FormDocumentStatus
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -406,7 +418,8 @@
         private Button btnMarkAsComplete;
         private PictureBox pictureBox6;
         private PictureBox pictureBox1;
-        private Button btnBackToAdminDashboard;
+        private Button btnDocumentStatusBack;
         private Panel panel1;
+        private Button btnDocumentStatusResidentInformation;
     }
 }

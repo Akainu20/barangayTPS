@@ -20,7 +20,7 @@ namespace barangayTPS
         private void btnTransactionHistoryLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormUserLogin newForm = new FormUserLogin();
+            FormAdminLogin newForm = new FormAdminLogin();
             newForm.Show();
         }
 
@@ -36,6 +36,11 @@ namespace barangayTPS
             this.Hide();
             FormAdminDashboard newForm = new FormAdminDashboard();
             newForm.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
