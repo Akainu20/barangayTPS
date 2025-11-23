@@ -1,134 +1,412 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
+using System.Windows.Forms;
 
 namespace barangayTPS
 {
     public static class DBHelper
     {
-        // ⚠️ CHANGE THIS PATH ONCE YOU MOVE THE DB INTO YOUR PROJECT FOLDER
-        // For now this path works since your DB is located here while you're testing:
-        private static readonly string DbFilePath =
-        @"C:\barangayTPS\barangayTPS\barangayTPS\barangayTPS.db";
+        private static string connectionString = @"Data Source=C:\barangayTPS\barangayTPS\barangayTPS\barangayTPS\barangayTPS.db;Version=3;";
 
-        private static string ConnectionString =>
-            $"Data Source={DbFilePath};Version=3;";
-
-        public static SQLiteConnection GetConnection()
+        public static void InitializeDatabase()
         {
-            var conn = new SQLiteConnection(ConnectionString);
-            conn.Open();
-            return conn;
+            try
+            {
+                string fullPath = @"C:\barangayTPS\barangayTPS\barangayTPS\barangayTPS\barangayTPS.db";
+                bool databaseExists = File.Exists(fullPath);
+
+                MessageBox.Show($"Looking for database at: {fullPath}");
+                MessageBox.Show($"Database exists: {databaseExists}");
+
+                if (!databaseExists)
+                {
+                    MessageBox.Show("Database file not found at the specified path!");
+                    return;
+                }
+
+                using (var conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+                    MessageBox.Show("Successfully connected to your barangayTPS.db database!");
+
+                    // Show all accounts for verification
+                    CheckAllAccounts();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Database connection error: {ex.Message}");
+            }
         }
 
-        // SELECT → DataTable
-        public static DataTable GetDataTable(string sql, params SQLiteParameter[] parameters)
+        // ==================== ACCOUNT METHODS ====================
+        public static string AuthenticateUser(string username, string password)
         {
-            using (var conn = GetConnection())
-            using (var cmd = new SQLiteCommand(sql, conn))
-            {
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
+            MessageBox.Show($"Authenticating: {username}");
 
-                using (var da = new SQLiteDataAdapter(cmd))
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                try
                 {
-                    DataTable dt = new();
-                    da.Fill(dt);
+                    conn.Open();
+                    string query = "SELECT Role FROM Accounts WHERE Username = @username AND Password = @password";
+
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+
+                        var result = cmd.ExecuteScalar();
+                        MessageBox.Show($"Authentication result: {result}");
+                        return result?.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Database error: {ex.Message}");
+                    return null;
+                }
+            }
+        }
+
+        public static int InsertUser(string username, string password, string role)
+        {
+            MessageBox.Show($"Inserting user: {username}, {password}, {role}");
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO Accounts (Username, Password, Role) VALUES (@username, @password, @role)";
+
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+                        cmd.Parameters.AddWithValue("@role", role);
+
+                        int result = cmd.ExecuteNonQuery();
+                        MessageBox.Show($"InsertUser: {result} row(s) affected");
+                        return result;
+                    }
+                }
+                catch (SQLiteException ex)
+                {
+                    if (ex.Message.Contains("UNIQUE constraint failed"))
+                    {
+                        MessageBox.Show("Username already exists. Please choose a different username.");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"SQLite error: {ex.Message}");
+                    }
+                    return 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                    return 0;
+                }
+            }
+        }
+
+        public static void CheckAllAccounts()
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT Username, Password, Role FROM Accounts";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    string accounts = "All accounts in database:\n";
+                    bool hasAccounts = false;
+
+                    while (reader.Read())
+                    {
+                        hasAccounts = true;
+                        accounts += $"Username: {reader["Username"]}, Password: {reader["Password"]}, Role: {reader["Role"]}\n";
+                    }
+
+                    if (!hasAccounts)
+                    {
+                        accounts += "No accounts found in database!";
+                    }
+                    MessageBox.Show(accounts);
+                }
+            }
+        }
+
+        // ==================== REQUEST METHODS ====================
+        public static DataTable GetRequests(string whereClause = "", params SQLiteParameter[] parameters)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"SELECT 
+                    RequestID,
+                    Username,
+                    FullName,
+                    Age,
+                    Address,
+                    Contact,
+                    Document_Type as DocumentType,
+                    Purpose,
+                    Status,
+                    Date_Submitted as DateRequested 
+                    FROM Requests";
+
+                if (!string.IsNullOrEmpty(whereClause))
+                {
+                    query += " WHERE " + whereClause;
+                }
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.Add(param);
+                    }
+
+                    using (var adapter = new SQLiteDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+        public static int InsertRequest(string username, string fullName, int age, string address,
+                                      string contact, string docType, string purpose, string status, string date)
+        {
+            MessageBox.Show($"Inserting request for: {username}, Document: {docType}");
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"INSERT INTO Requests 
+                               (Username, FullName, Age, Address, Contact, Document_Type, Purpose, Status, Date_Submitted) 
+                               VALUES (@username, @fullName, @age, @address, @contact, @docType, @purpose, @status, @date)";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@fullName", fullName);
+                    cmd.Parameters.AddWithValue("@age", age);
+                    cmd.Parameters.AddWithValue("@address", address);
+                    cmd.Parameters.AddWithValue("@contact", contact);
+                    cmd.Parameters.AddWithValue("@docType", docType);
+                    cmd.Parameters.AddWithValue("@purpose", purpose);
+                    cmd.Parameters.AddWithValue("@status", status);
+                    cmd.Parameters.AddWithValue("@date", date);
+
+                    int result = cmd.ExecuteNonQuery();
+                    MessageBox.Show($"InsertRequest: {result} row(s) affected");
+                    return result;
+                }
+            }
+        }
+
+        // ==================== DOCUMENT METHODS ====================
+        public static DataTable GetDocumentTypes()
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT DocumentType FROM Documents";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                using (var adapter = new SQLiteDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
                     return dt;
                 }
             }
         }
 
-        // INSERT / UPDATE / DELETE
-        public static int ExecuteNonQuery(string sql, params SQLiteParameter[] parameters)
+        public static void CheckAllDocuments()
         {
-            using (var conn = GetConnection())
-            using (var cmd = new SQLiteCommand(sql, conn))
+            using (var conn = new SQLiteConnection(connectionString))
             {
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
+                conn.Open();
+                string query = "SELECT DocumentType FROM Documents";
 
-                return cmd.ExecuteNonQuery();
+                using (var cmd = new SQLiteCommand(query, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    string documents = "Available document types:\n";
+                    bool hasDocuments = false;
+
+                    while (reader.Read())
+                    {
+                        hasDocuments = true;
+                        documents += $"- {reader["DocumentType"]}\n";
+                    }
+
+                    if (!hasDocuments)
+                    {
+                        documents += "No document types found!";
+                    }
+                    MessageBox.Show(documents);
+                }
             }
         }
 
-        // Single value
-        public static object ExecuteScalar(string sql, params SQLiteParameter[] parameters)
+        // ==================== RESIDENT METHODS ====================
+        public static DataTable GetResidentData()
         {
-            using (var conn = GetConnection())
-            using (var cmd = new SQLiteCommand(sql, conn))
+            using (var conn = new SQLiteConnection(connectionString))
             {
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
+                conn.Open();
 
-                return cmd.ExecuteScalar();
+                // Use the exact column names that match your data grid
+                string query = @"SELECT 
+            Username,
+            FullName as ResidentName,  // Changed from 'Name'
+            Age as ResidentAge,        // Changed from 'Age'
+            Address as ResidentAddress, // Changed from 'Address'
+            Contact as ResidentContactNum // Changed from 'ContactNumber'
+            FROM Requests 
+            WHERE Username IS NOT NULL";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                using (var adapter = new SQLiteDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
             }
         }
 
-        // Login authentication
-        public static string AuthenticateUser(string username, string password)
+        public static void CheckAllResidents()
         {
-            string sql = "SELECT Role FROM Accounts WHERE Username = @u AND Password = @p LIMIT 1;";
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"SELECT DISTINCT 
+                    Username,
+                    FullName,
+                    Age,
+                    Address,
+                    Contact
+                    FROM Requests";
 
-            DataTable dt = GetDataTable(sql,
-                new SQLiteParameter("@u", username),
-                new SQLiteParameter("@p", password));
+                using (var cmd = new SQLiteCommand(query, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    string residents = "Residents with requests:\n";
+                    bool hasResidents = false;
 
-            if (dt.Rows.Count == 0)
-                return null;
+                    while (reader.Read())
+                    {
+                        hasResidents = true;
+                        residents += $"User: {reader["Username"]}, Name: {reader["FullName"]}, Contact: {reader["Contact"]}\n";
+                    }
 
-            return dt.Rows[0]["Role"].ToString();
+                    if (!hasResidents)
+                    {
+                        residents += "No residents found with requests!";
+                    }
+                    MessageBox.Show(residents);
+                }
+            }
         }
 
-        // Insert resident document request
-        public static int InsertRequest(
-            string username,
-            string fullname,
-            int age,
-            string address,
-            string contact,
-            string docType,
-            string purpose,
-            string status,
-            string dateSubmitted)
+        // ==================== DEBUG METHODS ====================
+        public static void ShowTableData(string tableName)
         {
-            string sql = @"
-                INSERT INTO Requests 
-                (Username, FullName, Age, Address, Contact, Document_Type, Purpose, Status, Date_Submitted)
-                VALUES 
-                (@Username, @FullName, @Age, @Address, @Contact, @Document_Type, @Purpose, @Status, @Date_Submitted);
-            ";
+            try
+            {
+                using (var conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = $"SELECT * FROM {tableName}";
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        string data = $"{tableName} data:\n";
+                        bool hasData = false;
 
-            return ExecuteNonQuery(sql,
-                new SQLiteParameter("@Username", username),
-                new SQLiteParameter("@FullName", fullname),
-                new SQLiteParameter("@Age", age),
-                new SQLiteParameter("@Address", address),
-                new SQLiteParameter("@Contact", contact),
-                new SQLiteParameter("@Document_Type", docType),
-                new SQLiteParameter("@Purpose", purpose),
-                new SQLiteParameter("@Status", status),
-                new SQLiteParameter("@Date_Submitted", dateSubmitted));
+                        while (reader.Read())
+                        {
+                            hasData = true;
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                data += $"{reader.GetName(i)}: {reader[i]}, ";
+                            }
+                            data += "\n";
+                        }
+
+                        if (!hasData)
+                        {
+                            data += "No data found";
+                        }
+                        MessageBox.Show(data);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading {tableName}: {ex.Message}");
+            }
         }
 
-        // Get available document types
-        public static DataTable GetDocumentTypes()
+        public static void TestConnection()
         {
-            string sql = "SELECT DocumentType FROM Documents;";
-            return GetDataTable(sql);
+            try
+            {
+                using (var conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+                    MessageBox.Show("Database connection test: SUCCESS");
+
+                    // Test all tables
+                    CheckAllAccounts();
+                    CheckAllDocuments();
+                    CheckAllResidents();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Database connection test: FAILED - {ex.Message}");
+            }
         }
 
-        // Get requests (with optional filter)
-        public static DataTable GetRequests(string filter = "", params SQLiteParameter[] parameters)
+        public static void Debug_CheckRequestsTable()
         {
-            string sql = "SELECT RequestID, Username, FullName, Age, Address, Contact, Document_Type, Purpose, Status, Date_Submitted FROM Requests";
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT Username, FullName, Age, Address, Contact FROM Requests";
 
-            if (!string.IsNullOrWhiteSpace(filter))
-                sql += " WHERE " + filter;
+                using (var cmd = new SQLiteCommand(query, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    string data = "REQUESTS TABLE DATA:\n";
+                    int count = 0;
 
-            sql += " ORDER BY Date_Submitted DESC;";
+                    while (reader.Read())
+                    {
+                        count++;
+                        data += $"[{count}] User: '{reader["Username"]}', Name: '{reader["FullName"]}', Age: {reader["Age"]}\n";
+                    }
 
-            return GetDataTable(sql, parameters);
+                    if (count == 0)
+                    {
+                        data += "NO DATA FOUND IN REQUESTS TABLE!";
+                    }
+
+                    MessageBox.Show(data);
+                }
+            }
         }
     }
 }

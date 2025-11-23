@@ -17,6 +17,25 @@ namespace barangayTPS
             InitializeComponent();
         }
 
+        private void FormTransactionHistory_Load(object sender, EventArgs e)
+        {
+            LoadTransactionHistory();
+        }
+
+        private void LoadTransactionHistory()
+        {
+            try
+            {
+                DataTable transactionData = DBHelper.GetRequests();
+                dataGridTransactionHistory.DataSource = transactionData;
+                MessageBox.Show($"Loaded {transactionData.Rows.Count} transactions");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading transaction history: {ex.Message}");
+            }
+        }
+
         private void btnTransactionHistoryLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -64,7 +83,7 @@ namespace barangayTPS
 
         private void btnHistoryRefresh_Click(object sender, EventArgs e)
         {
-
+            LoadTransactionHistory(); // This will refresh the data
         }
     }
 }

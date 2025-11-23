@@ -17,6 +17,25 @@ namespace barangayTPS
             InitializeComponent();
         }
 
+        private void FormResidentInformation_Load(object sender, EventArgs e)
+        {
+            LoadResidentData();
+        }
+
+        private void LoadResidentData()
+        {
+            try
+            {
+                DataTable residentData = DBHelper.GetResidentData();
+                dataGridResidentData.DataSource = residentData;
+                MessageBox.Show($"Loaded {residentData.Rows.Count} residents from database");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading resident data: {ex.Message}");
+            }
+        }
+
         private void btnAdminLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -57,7 +76,12 @@ namespace barangayTPS
 
         private void btnResidentInfoRefresh_Click(object sender, EventArgs e)
         {
-
+            LoadResidentData();
         }
+
+        // Remove this method if it exists - it's causing the error
+        // private void FormResidentInformation_Load_2(object sender, EventArgs e)
+        // {
+        // }
     }
 }

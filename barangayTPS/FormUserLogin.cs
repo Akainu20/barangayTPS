@@ -17,16 +17,52 @@ namespace barangayTPS
 
         }
 
+        private void cmbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FormUserLogin = cmbUser.SelectedItem.ToString();
+
+            switch (FormUserLogin)
+            {
+                case "Admin":
+                    FormAdminLogin form2 = new FormAdminLogin();
+                    form2.Show();
+                    this.Hide();
+                    break;
+                case "Resident":
+                    FormUserLogin form1 = new FormUserLogin();
+                    form1.Show();
+                    this.Hide();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void lblSignup_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormSignup newForm = new FormSignup();
+            newForm.Show();
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtLoginUsername == null || txtLoginPassword == null)
+            string username = txtUserLoginUsername.Text.Trim();
+            string password = txtUserLoginPassword.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter Username/Password.");
+                MessageBox.Show("Please enter both username and password.");
                 return;
             }
 
-            string username = txtLoginUsername.Text.Trim();
-            string password = txtLoginPassword.Text.Trim();
+            // Remove placeholder text if present
+            if (username == "Enter your username/email")
+            {
+                MessageBox.Show("Please enter your actual username.");
+                return;
+            }
 
             string role = DBHelper.AuthenticateUser(username, password);
 
@@ -46,35 +82,11 @@ namespace barangayTPS
                 this.Hide();
                 new FormAdminDashboard().Show();
             }
-
         }
 
-        private void lblSignup_Click(object sender, EventArgs e)
+        private void FormUserLogin_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            FormSignup newForm = new FormSignup();
-            newForm.Show();
-        }
-
-        private void cmbUser_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string FormUserLogin = cmbUser.SelectedItem.ToString();
-
-            switch (FormUserLogin)
-            {
-                case "Resident":
-                    FormUserLogin form1 = new FormUserLogin();
-                    form1.Show();
-                    this.Hide();
-                    break;
-                case "Admin":
-                    FormAdminLogin form2 = new FormAdminLogin();
-                    form2.Show();
-                    this.Hide();
-                    break;
-                default:
-                    break;
-            }
+            DBHelper.CheckAllAccounts(); // Show all accounts for debugging
         }
     }
 }

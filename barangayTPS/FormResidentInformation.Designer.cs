@@ -41,6 +41,7 @@
             btnResidentInfoResidentInformation = new Button();
             label4 = new Label();
             panelResidentInformation = new Panel();
+            btnResidentInfoRefresh = new Button();
             dataGridResidentData = new DataGridView();
             ResidentName = new DataGridViewTextBoxColumn();
             ResidentAge = new DataGridViewTextBoxColumn();
@@ -49,7 +50,6 @@
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
-            btnResidentInfoRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panelAdminWelcome.SuspendLayout();
@@ -203,6 +203,16 @@
             panelResidentInformation.Size = new Size(1106, 550);
             panelResidentInformation.TabIndex = 10;
             // 
+            // btnResidentInfoRefresh
+            // 
+            btnResidentInfoRefresh.Location = new Point(975, 26);
+            btnResidentInfoRefresh.Name = "btnResidentInfoRefresh";
+            btnResidentInfoRefresh.Size = new Size(120, 37);
+            btnResidentInfoRefresh.TabIndex = 14;
+            btnResidentInfoRefresh.Text = "Refresh";
+            btnResidentInfoRefresh.UseVisualStyleBackColor = true;
+            btnResidentInfoRefresh.Click += btnResidentInfoRefresh_Click;
+            // 
             // dataGridResidentData
             // 
             dataGridResidentData.BackgroundColor = Color.White;
@@ -279,16 +289,6 @@
             panel3.Size = new Size(1106, 87);
             panel3.TabIndex = 9;
             // 
-            // btnResidentInfoRefresh
-            // 
-            btnResidentInfoRefresh.Location = new Point(975, 26);
-            btnResidentInfoRefresh.Name = "btnResidentInfoRefresh";
-            btnResidentInfoRefresh.Size = new Size(120, 37);
-            btnResidentInfoRefresh.TabIndex = 14;
-            btnResidentInfoRefresh.Text = "Refresh";
-            btnResidentInfoRefresh.UseVisualStyleBackColor = true;
-            btnResidentInfoRefresh.Click += btnResidentInfoRefresh_Click;
-            // 
             // FormResidentInformation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -300,6 +300,7 @@
             Controls.Add(panel3);
             Name = "FormResidentInformation";
             Text = "FormResidentInformation";
+            this.Load += new System.EventHandler(this.FormResidentInformation_Load);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panelAdminWelcome.ResumeLayout(false);

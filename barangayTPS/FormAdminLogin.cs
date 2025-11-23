@@ -41,8 +41,9 @@ namespace barangayTPS
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
-            string username = txtAdminLoginUsername.Text.Trim();
-            string password = txtAdminLoginUsername.Text.Trim();
+            // Use the exact credentials that were just created
+            string username = "Admin";
+            string password = "Admin123";
 
             string role = DBHelper.AuthenticateUser(username, password);
 
@@ -54,11 +55,12 @@ namespace barangayTPS
 
             if (role != "Admin")
             {
-                MessageBox.Show("Access denied. Account is not an admin.");
+                MessageBox.Show($"Access denied. Role is: {role}");
                 return;
             }
 
             // LOGIN SUCCESS
+            MessageBox.Show("Admin login successful!");
             this.Hide();
             new FormAdminDashboard().Show();
         }

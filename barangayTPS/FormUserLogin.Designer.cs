@@ -217,6 +217,7 @@
             Controls.Add(panelLoginHeader);
             Name = "FormUserLogin";
             Text = "FormLogin";
+            Load += FormUserLogin_Load;
             panelLoginHeader.ResumeLayout(false);
             panelLoginHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -230,16 +231,12 @@
         private Label label2;
         private Label label7;
         private Label label6;
-        private TextBox txtLoginPassword;
-        private TextBox txtLoginUsername;
         private PictureBox pictureBox1;
         private Label lblSignup;
         private Label label8;
-        private Button btnLogin;
         private Button btnUserLogin;
         private TextBox txtUserLoginPassword;
         private TextBox txtUserLoginUsername;
-        private Button button1;
         private ComboBox cmbUser;
     }
 }
