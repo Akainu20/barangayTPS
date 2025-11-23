@@ -23,5 +23,31 @@ namespace barangayTPS
             FormAdminLogin newForm = new FormAdminLogin();
             newForm.Show();
         }
+
+        private void btnResidentInfoResidentInformation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnResidentInfoTransactionHistory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormTransactionHistory newForm = new FormTransactionHistory();
+            newForm.Show();
+        }
+
+        private void btnResidentInfoAdminDashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAdminDashboard newForm = new FormAdminDashboard();
+            newForm.Show();
+        }
+
+        private void btnResidentInformationBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAdminDashboard newForm = new FormAdminDashboard();
+            newForm.Show();
+        }
     }
 }

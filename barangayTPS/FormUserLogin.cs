@@ -30,5 +30,26 @@ namespace barangayTPS
             FormSignup newForm = new FormSignup();
             newForm.Show();
         }
+
+        private void cmbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FormUserLogin = cmbUser.SelectedItem.ToString();
+
+            switch (FormUserLogin)
+            {
+                case "Resident":
+                    FormUserLogin form1 = new FormUserLogin();
+                    form1.Show();
+                    this.Hide();
+                    break;
+                case "Admin":
+                    FormAdminLogin form2 = new FormAdminLogin();
+                    form2.Show();
+                    this.Hide();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

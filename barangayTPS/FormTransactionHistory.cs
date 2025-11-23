@@ -42,5 +42,24 @@ namespace barangayTPS
         {
 
         }
+
+        private void btnTransactionHistoryResidentInformation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormResidentInformation newForm = new FormResidentInformation();
+            newForm.Show();
+        }
+
+        private void btnTransactionHistoryBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAdminDashboard newForm = new FormAdminDashboard();
+            newForm.Show();
+        }
+
+        private void btnTransactionHistoryTransactionHistory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

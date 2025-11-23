@@ -32,6 +32,10 @@
             label2 = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            ResidentName = new DataGridViewTextBoxColumn();
+            DocumentType = new DataGridViewTextBoxColumn();
+            DateRequested = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             panelRecentRequest = new Panel();
             label4 = new Label();
             btnRejectedRequest = new Button();
@@ -40,6 +44,7 @@
             btnPendingRequest = new Button();
             btnTotalRequest = new Button();
             panelAdminSidebar = new Panel();
+            btnResidentInfo = new Button();
             btnAdminLogout = new Button();
             btnAdminDashboard = new Button();
             btnTransactionHistory = new Button();
@@ -48,11 +53,6 @@
             pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
             panel9 = new Panel();
-            ResidentName = new DataGridViewTextBoxColumn();
-            DocumentType = new DataGridViewTextBoxColumn();
-            DateRequested = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            btnResidentInfo = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelRecentRequest.SuspendLayout();
@@ -105,6 +105,34 @@
             dataGridView1.Size = new Size(1085, 362);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // ResidentName
+            // 
+            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ResidentName.HeaderText = "Resident Name";
+            ResidentName.MinimumWidth = 6;
+            ResidentName.Name = "ResidentName";
+            // 
+            // DocumentType
+            // 
+            DocumentType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DocumentType.HeaderText = "Document Type";
+            DocumentType.MinimumWidth = 6;
+            DocumentType.Name = "DocumentType";
+            // 
+            // DateRequested
+            // 
+            DateRequested.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DateRequested.HeaderText = "Date";
+            DateRequested.MinimumWidth = 6;
+            DateRequested.Name = "DateRequested";
+            // 
+            // Status
+            // 
+            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
             // 
             // panelRecentRequest
             // 
@@ -190,6 +218,17 @@
             panelAdminSidebar.Name = "panelAdminSidebar";
             panelAdminSidebar.Size = new Size(219, 923);
             panelAdminSidebar.TabIndex = 7;
+            // 
+            // btnResidentInfo
+            // 
+            btnResidentInfo.BackColor = Color.White;
+            btnResidentInfo.Location = new Point(18, 159);
+            btnResidentInfo.Name = "btnResidentInfo";
+            btnResidentInfo.Size = new Size(179, 41);
+            btnResidentInfo.TabIndex = 12;
+            btnResidentInfo.Text = "Resident Information";
+            btnResidentInfo.UseVisualStyleBackColor = false;
+            btnResidentInfo.Click += btnResidentInfo_Click;
             // 
             // btnAdminLogout
             // 
@@ -277,44 +316,6 @@
             panel9.Name = "panel9";
             panel9.Size = new Size(1575, 16);
             panel9.TabIndex = 2;
-            // 
-            // ResidentName
-            // 
-            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ResidentName.HeaderText = "Resident Name";
-            ResidentName.MinimumWidth = 6;
-            ResidentName.Name = "ResidentName";
-            // 
-            // DocumentType
-            // 
-            DocumentType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DocumentType.HeaderText = "Document Type";
-            DocumentType.MinimumWidth = 6;
-            DocumentType.Name = "DocumentType";
-            // 
-            // DateRequested
-            // 
-            DateRequested.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DateRequested.HeaderText = "Date";
-            DateRequested.MinimumWidth = 6;
-            DateRequested.Name = "DateRequested";
-            // 
-            // Status
-            // 
-            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            // 
-            // btnResidentInfo
-            // 
-            btnResidentInfo.BackColor = Color.White;
-            btnResidentInfo.Location = new Point(18, 159);
-            btnResidentInfo.Name = "btnResidentInfo";
-            btnResidentInfo.Size = new Size(179, 41);
-            btnResidentInfo.TabIndex = 12;
-            btnResidentInfo.Text = "Resident Information";
-            btnResidentInfo.UseVisualStyleBackColor = false;
             // 
             // FormAdminDashboard
             // 

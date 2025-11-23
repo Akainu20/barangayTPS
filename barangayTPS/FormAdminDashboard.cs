@@ -45,5 +45,12 @@ namespace barangayTPS
         {
 
         }
+
+        private void btnResidentInfo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormResidentInformation newForm = new FormResidentInformation();
+            newForm.Show();
+        }
     }
 }

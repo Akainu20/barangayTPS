@@ -30,7 +30,6 @@
         {
             panelLoginHeader = new Panel();
             cmbUser = new ComboBox();
-            Admin = new Label();
             btnUserLogin = new Button();
             lblSignup = new Label();
             label8 = new Label();
@@ -50,7 +49,6 @@
             // 
             panelLoginHeader.BackColor = Color.SeaGreen;
             panelLoginHeader.Controls.Add(cmbUser);
-            panelLoginHeader.Controls.Add(Admin);
             panelLoginHeader.Controls.Add(btnUserLogin);
             panelLoginHeader.Controls.Add(lblSignup);
             panelLoginHeader.Controls.Add(label8);
@@ -70,22 +68,13 @@
             // cmbUser
             // 
             cmbUser.FormattingEnabled = true;
-            cmbUser.Location = new Point(498, 283);
+            cmbUser.Items.AddRange(new object[] { "Resident", "Admin" });
+            cmbUser.Location = new Point(499, 304);
             cmbUser.Name = "cmbUser";
             cmbUser.Size = new Size(97, 28);
             cmbUser.TabIndex = 16;
             cmbUser.Text = "Select role";
-            // 
-            // Admin
-            // 
-            Admin.AutoSize = true;
-            Admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Admin.ForeColor = Color.White;
-            Admin.Location = new Point(517, 314);
-            Admin.Name = "Admin";
-            Admin.Size = new Size(54, 28);
-            Admin.TabIndex = 15;
-            Admin.Text = "User";
+            cmbUser.SelectedIndexChanged += cmbUser_SelectedIndexChanged;
             // 
             // btnUserLogin
             // 
@@ -170,7 +159,6 @@
             txtUserLoginPassword.PasswordChar = '*';
             txtUserLoginPassword.Size = new Size(403, 32);
             txtUserLoginPassword.TabIndex = 7;
-            txtUserLoginPassword.Text = "Enter password\r\n";
             // 
             // txtUserLoginUsername
             // 
@@ -253,6 +241,5 @@
         private TextBox txtUserLoginUsername;
         private Button button1;
         private ComboBox cmbUser;
-        private Label Admin;
     }
 }

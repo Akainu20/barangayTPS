@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Status = new DataGridViewTextBoxColumn();
-            DocumentType = new DataGridViewTextBoxColumn();
-            ResidentName = new DataGridViewTextBoxColumn();
             lblAdminWelcome = new Label();
             pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -40,14 +37,18 @@
             btnResidentInfoAdminDashboard = new Button();
             btnResidentInfoTransactionHistory = new Button();
             panelAdminSidebar = new Panel();
+            btnResidentInformationBack = new Button();
             btnResidentInfoResidentInformation = new Button();
             label4 = new Label();
             panelResidentInformation = new Panel();
             dataGridView1 = new DataGridView();
-            DateRequested = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
+            ResidentName = new DataGridViewTextBoxColumn();
+            ResidentAge = new DataGridViewTextBoxColumn();
+            ResidentAddress = new DataGridViewTextBoxColumn();
+            ResidentContactNum = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panelAdminWelcome.SuspendLayout();
@@ -56,27 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
-            // 
-            // Status
-            // 
-            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            // 
-            // DocumentType
-            // 
-            DocumentType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DocumentType.HeaderText = "Document Type";
-            DocumentType.MinimumWidth = 6;
-            DocumentType.Name = "DocumentType";
-            // 
-            // ResidentName
-            // 
-            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ResidentName.HeaderText = "Resident Name";
-            ResidentName.MinimumWidth = 6;
-            ResidentName.Name = "ResidentName";
             // 
             // lblAdminWelcome
             // 
@@ -152,6 +132,7 @@
             btnResidentInfoAdminDashboard.TabIndex = 10;
             btnResidentInfoAdminDashboard.Text = "Dashboard";
             btnResidentInfoAdminDashboard.UseVisualStyleBackColor = false;
+            btnResidentInfoAdminDashboard.Click += btnResidentInfoAdminDashboard_Click;
             // 
             // btnResidentInfoTransactionHistory
             // 
@@ -162,10 +143,12 @@
             btnResidentInfoTransactionHistory.TabIndex = 9;
             btnResidentInfoTransactionHistory.Text = "Transaction History\r\n";
             btnResidentInfoTransactionHistory.UseVisualStyleBackColor = false;
+            btnResidentInfoTransactionHistory.Click += btnResidentInfoTransactionHistory_Click;
             // 
             // panelAdminSidebar
             // 
             panelAdminSidebar.BackColor = Color.SeaGreen;
+            panelAdminSidebar.Controls.Add(btnResidentInformationBack);
             panelAdminSidebar.Controls.Add(btnResidentInfoResidentInformation);
             panelAdminSidebar.Controls.Add(btnResidentInfoLogout);
             panelAdminSidebar.Controls.Add(btnResidentInfoAdminDashboard);
@@ -174,6 +157,16 @@
             panelAdminSidebar.Name = "panelAdminSidebar";
             panelAdminSidebar.Size = new Size(219, 923);
             panelAdminSidebar.TabIndex = 11;
+            // 
+            // btnResidentInformationBack
+            // 
+            btnResidentInformationBack.Location = new Point(18, 297);
+            btnResidentInformationBack.Name = "btnResidentInformationBack";
+            btnResidentInformationBack.Size = new Size(179, 42);
+            btnResidentInformationBack.TabIndex = 34;
+            btnResidentInformationBack.Text = "Back";
+            btnResidentInformationBack.UseVisualStyleBackColor = true;
+            btnResidentInformationBack.Click += btnResidentInformationBack_Click;
             // 
             // btnResidentInfoResidentInformation
             // 
@@ -184,6 +177,7 @@
             btnResidentInfoResidentInformation.TabIndex = 16;
             btnResidentInfoResidentInformation.Text = "Resident Information";
             btnResidentInfoResidentInformation.UseVisualStyleBackColor = false;
+            btnResidentInfoResidentInformation.Click += btnResidentInfoResidentInformation_Click;
             // 
             // label4
             // 
@@ -211,29 +205,22 @@
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResidentName, DocumentType, DateRequested, Status });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResidentName, ResidentAge, ResidentAddress, ResidentContactNum });
             dataGridView1.Location = new Point(10, 79);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1085, 362);
             dataGridView1.TabIndex = 3;
             // 
-            // DateRequested
-            // 
-            DateRequested.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DateRequested.HeaderText = "Date";
-            DateRequested.MinimumWidth = 6;
-            DateRequested.Name = "DateRequested";
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 53);
+            label2.Location = new Point(23, 53);
             label2.Name = "label2";
-            label2.Size = new Size(319, 20);
+            label2.Size = new Size(185, 20);
             label2.TabIndex = 4;
-            label2.Text = "Overview of barangay transactions and records";
+            label2.Text = "Overview of Resident Data";
             // 
             // label1
             // 
@@ -243,9 +230,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(19, 12);
             label1.Name = "label1";
-            label1.Size = new Size(171, 41);
+            label1.Size = new Size(317, 41);
             label1.TabIndex = 3;
-            label1.Text = "Dashboard";
+            label1.Text = "Resident Information";
             // 
             // panel3
             // 
@@ -256,6 +243,38 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1106, 87);
             panel3.TabIndex = 9;
+            // 
+            // ResidentName
+            // 
+            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ResidentName.HeaderText = "Name";
+            ResidentName.MinimumWidth = 6;
+            ResidentName.Name = "ResidentName";
+            ResidentName.ReadOnly = true;
+            // 
+            // ResidentAge
+            // 
+            ResidentAge.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ResidentAge.HeaderText = "Age";
+            ResidentAge.MinimumWidth = 6;
+            ResidentAge.Name = "ResidentAge";
+            ResidentAge.ReadOnly = true;
+            // 
+            // ResidentAddress
+            // 
+            ResidentAddress.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ResidentAddress.HeaderText = "Address";
+            ResidentAddress.MinimumWidth = 6;
+            ResidentAddress.Name = "ResidentAddress";
+            ResidentAddress.ReadOnly = true;
+            // 
+            // ResidentContactNum
+            // 
+            ResidentContactNum.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ResidentContactNum.HeaderText = "Contact Number";
+            ResidentContactNum.MinimumWidth = 6;
+            ResidentContactNum.Name = "ResidentContactNum";
+            ResidentContactNum.ReadOnly = true;
             // 
             // FormResidentInformation
             // 
@@ -282,10 +301,6 @@
         }
 
         #endregion
-
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn DocumentType;
-        private DataGridViewTextBoxColumn ResidentName;
         private Label lblAdminWelcome;
         private PictureBox pictureBox1;
         private PictureBox pictureBox6;
@@ -298,10 +313,14 @@
         private Label label4;
         private Panel panelResidentInformation;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn DateRequested;
         private Label label2;
         private Label label1;
         private Panel panel3;
         private Button btnResidentInfoResidentInformation;
+        private Button btnResidentInformationBack;
+        private DataGridViewTextBoxColumn ResidentName;
+        private DataGridViewTextBoxColumn ResidentAge;
+        private DataGridViewTextBoxColumn ResidentAddress;
+        private DataGridViewTextBoxColumn ResidentContactNum;
     }
 }

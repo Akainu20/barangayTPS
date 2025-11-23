@@ -30,7 +30,6 @@
         {
             panelLoginHeader = new Panel();
             cmbAdmin = new ComboBox();
-            Admin = new Label();
             btnAdminLogin = new Button();
             pictureBox1 = new PictureBox();
             label7 = new Label();
@@ -48,7 +47,6 @@
             // 
             panelLoginHeader.BackColor = Color.SeaGreen;
             panelLoginHeader.Controls.Add(cmbAdmin);
-            panelLoginHeader.Controls.Add(Admin);
             panelLoginHeader.Controls.Add(btnAdminLogin);
             panelLoginHeader.Controls.Add(pictureBox1);
             panelLoginHeader.Controls.Add(label7);
@@ -66,22 +64,13 @@
             // cmbAdmin
             // 
             cmbAdmin.FormattingEnabled = true;
-            cmbAdmin.Location = new Point(525, 354);
+            cmbAdmin.Items.AddRange(new object[] { "Admin", "Resident" });
+            cmbAdmin.Location = new Point(534, 384);
             cmbAdmin.Name = "cmbAdmin";
             cmbAdmin.Size = new Size(101, 28);
             cmbAdmin.TabIndex = 15;
             cmbAdmin.Text = "Select role";
-            // 
-            // Admin
-            // 
-            Admin.AutoSize = true;
-            Admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Admin.ForeColor = Color.White;
-            Admin.Location = new Point(540, 385);
-            Admin.Name = "Admin";
-            Admin.Size = new Size(74, 28);
-            Admin.TabIndex = 5;
-            Admin.Text = "Admin";
+            cmbAdmin.SelectedIndexChanged += cmbAdmin_SelectedIndexChanged;
             // 
             // btnAdminLogin
             // 
@@ -93,13 +82,14 @@
             btnAdminLogin.TabIndex = 14;
             btnAdminLogin.Text = "Login";
             btnAdminLogin.UseVisualStyleBackColor = false;
+            btnAdminLogin.Click += btnAdminLogin_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.logo_removebg_preview;
-            pictureBox1.Location = new Point(534, 135);
+            pictureBox1.Location = new Point(535, 135);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(110, 120);
@@ -139,7 +129,6 @@
             txtAdminLoginPassword.PasswordChar = '*';
             txtAdminLoginPassword.Size = new Size(403, 32);
             txtAdminLoginPassword.TabIndex = 7;
-            txtAdminLoginPassword.Text = "Enter password\r\n";
             // 
             // txtAdminLoginUsername
             // 
@@ -148,7 +137,7 @@
             txtAdminLoginUsername.Name = "txtAdminLoginUsername";
             txtAdminLoginUsername.Size = new Size(403, 29);
             txtAdminLoginUsername.TabIndex = 6;
-            txtAdminLoginUsername.Text = "Enter your username/email";
+            txtAdminLoginUsername.Text = "Enter your Email/Admin Account";
             // 
             // label1
             // 
@@ -216,7 +205,6 @@
         private Label label1;
         private Label label3;
         private Label label2;
-        private Label Admin;
         private TextBox txtLoginUsername;
         private Button btnLoginAdmin;
         private Button btnAdminLogin;

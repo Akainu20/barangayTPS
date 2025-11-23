@@ -37,21 +37,21 @@
             btnTransactionHistoryDashboard = new Button();
             btnTransactionHistoryTransactionHistory = new Button();
             panelTransactionSidebar = new Panel();
+            btnTransactionHistoryBack = new Button();
+            btnTransactionHistoryResidentInformation = new Button();
             panelTransactionHistory = new Panel();
             label4 = new Label();
             btnRefresh = new Button();
             dataGridView1 = new DataGridView();
-            label2 = new Label();
-            label1 = new Label();
-            panel3 = new Panel();
             RequestID = new DataGridViewTextBoxColumn();
             ResidentName = new DataGridViewTextBoxColumn();
             DocumentType = new DataGridViewTextBoxColumn();
             DateRequested = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             RequestPurpose = new DataGridViewTextBoxColumn();
-            btnTransactionHistoryResidentInformation = new Button();
-            btnTransactionHistoryBack = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            panel3 = new Panel();
             panelTransactionWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -144,6 +144,7 @@
             btnTransactionHistoryTransactionHistory.TabIndex = 9;
             btnTransactionHistoryTransactionHistory.Text = "Transaction History\r\n";
             btnTransactionHistoryTransactionHistory.UseVisualStyleBackColor = false;
+            btnTransactionHistoryTransactionHistory.Click += btnTransactionHistoryTransactionHistory_Click;
             // 
             // panelTransactionSidebar
             // 
@@ -157,6 +158,27 @@
             panelTransactionSidebar.Name = "panelTransactionSidebar";
             panelTransactionSidebar.Size = new Size(219, 923);
             panelTransactionSidebar.TabIndex = 16;
+            // 
+            // btnTransactionHistoryBack
+            // 
+            btnTransactionHistoryBack.Location = new Point(18, 295);
+            btnTransactionHistoryBack.Name = "btnTransactionHistoryBack";
+            btnTransactionHistoryBack.Size = new Size(179, 42);
+            btnTransactionHistoryBack.TabIndex = 33;
+            btnTransactionHistoryBack.Text = "Back";
+            btnTransactionHistoryBack.UseVisualStyleBackColor = true;
+            btnTransactionHistoryBack.Click += btnTransactionHistoryBack_Click;
+            // 
+            // btnTransactionHistoryResidentInformation
+            // 
+            btnTransactionHistoryResidentInformation.BackColor = Color.White;
+            btnTransactionHistoryResidentInformation.Location = new Point(18, 170);
+            btnTransactionHistoryResidentInformation.Name = "btnTransactionHistoryResidentInformation";
+            btnTransactionHistoryResidentInformation.Size = new Size(179, 41);
+            btnTransactionHistoryResidentInformation.TabIndex = 17;
+            btnTransactionHistoryResidentInformation.Text = "Resident Information";
+            btnTransactionHistoryResidentInformation.UseVisualStyleBackColor = false;
+            btnTransactionHistoryResidentInformation.Click += btnTransactionHistoryResidentInformation_Click;
             // 
             // panelTransactionHistory
             // 
@@ -202,38 +224,6 @@
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 53);
-            label2.Name = "label2";
-            label2.Size = new Size(319, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Overview of barangay transactions and records";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(19, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(289, 41);
-            label1.TabIndex = 3;
-            label1.Text = "Transaction History";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.SeaGreen;
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(label1);
-            panel3.Location = new Point(225, 122);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1101, 87);
-            panel3.TabIndex = 14;
-            // 
             // RequestID
             // 
             RequestID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -276,24 +266,37 @@
             RequestPurpose.MinimumWidth = 6;
             RequestPurpose.Name = "RequestPurpose";
             // 
-            // btnTransactionHistoryResidentInformation
+            // label2
             // 
-            btnTransactionHistoryResidentInformation.BackColor = Color.White;
-            btnTransactionHistoryResidentInformation.Location = new Point(18, 170);
-            btnTransactionHistoryResidentInformation.Name = "btnTransactionHistoryResidentInformation";
-            btnTransactionHistoryResidentInformation.Size = new Size(179, 41);
-            btnTransactionHistoryResidentInformation.TabIndex = 17;
-            btnTransactionHistoryResidentInformation.Text = "Resident Information";
-            btnTransactionHistoryResidentInformation.UseVisualStyleBackColor = false;
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(19, 53);
+            label2.Name = "label2";
+            label2.Size = new Size(319, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Overview of barangay transactions and records";
             // 
-            // btnTransactionHistoryBack
+            // label1
             // 
-            btnTransactionHistoryBack.Location = new Point(18, 295);
-            btnTransactionHistoryBack.Name = "btnTransactionHistoryBack";
-            btnTransactionHistoryBack.Size = new Size(179, 42);
-            btnTransactionHistoryBack.TabIndex = 33;
-            btnTransactionHistoryBack.Text = "Back";
-            btnTransactionHistoryBack.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(19, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(289, 41);
+            label1.TabIndex = 3;
+            label1.Text = "Transaction History";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.SeaGreen;
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label1);
+            panel3.Location = new Point(225, 122);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1101, 87);
+            panel3.TabIndex = 14;
             // 
             // FormTransactionHistory
             // 

@@ -41,7 +41,7 @@ namespace barangayTPS
         private void btnBackToAdminDashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormTransactionHistory newForm = new FormTransactionHistory();
+            FormAdminDashboard newForm = new FormAdminDashboard();
             newForm.Show();
         }
     }
