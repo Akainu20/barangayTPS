@@ -184,9 +184,9 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(7, 24);
             label4.Name = "label4";
-            label4.Size = new Size(247, 35);
+            label4.Size = new Size(262, 35);
             label4.TabIndex = 9;
-            label4.Text = "Resident Iformation";
+            label4.Text = "Resident Information";
             // 
             // panelResidentInformation
             // 
@@ -226,7 +226,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(23, 53);
+            label2.Location = new Point(21, 53);
             label2.Name = "label2";
             label2.Size = new Size(185, 20);
             label2.TabIndex = 4;
@@ -238,7 +238,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(19, 12);
+            label1.Location = new Point(15, 12);
             label1.Name = "label1";
             label1.Size = new Size(317, 41);
             label1.TabIndex = 3;
