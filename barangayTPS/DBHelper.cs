@@ -19,15 +19,12 @@ namespace barangayTPS
 
                 if (!databaseExists)
                 {
-                    MessageBox.Show("Database file not found at the specified path!");
                     return;
                 }
 
                 using (var conn = new SQLiteConnection(connectionString))
                 {
                     conn.Open();
-                    MessageBox.Show("Successfully connected to database!");
-                    CheckAllAccounts();
                 }
             }
             catch (Exception ex)
@@ -36,7 +33,6 @@ namespace barangayTPS
             }
         }
 
-        // ==================== ACCOUNT METHODS ====================
         public static string AuthenticateUser(string username, string password)
         {
             using (var conn = new SQLiteConnection(connectionString))
@@ -57,7 +53,6 @@ namespace barangayTPS
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Database error: {ex.Message}");
                     return null;
                 }
             }
@@ -85,23 +80,17 @@ namespace barangayTPS
                 {
                     if (ex.Message.Contains("UNIQUE constraint failed"))
                     {
-                        MessageBox.Show("Username already exists. Please choose a different username.");
-                    }
-                    else
-                    {
-                        MessageBox.Show($"SQLite error: {ex.Message}");
+                        return 0;
                     }
                     return 0;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error: {ex.Message}");
                     return 0;
                 }
             }
         }
 
-        // ==================== REQUEST METHODS ====================
         public static DataTable GetRecentRequestsForDashboard(string whereClause = "", params SQLiteParameter[] parameters)
         {
             using (var conn = new SQLiteConnection(connectionString))
@@ -206,7 +195,6 @@ namespace barangayTPS
             }
         }
 
-        // ==================== DOCUMENT METHODS ====================
         public static DataTable GetDocumentTypes()
         {
             using (var conn = new SQLiteConnection(connectionString))
@@ -224,7 +212,6 @@ namespace barangayTPS
             }
         }
 
-        // ==================== RESIDENT METHODS ====================
         public static DataTable GetResidentData()
         {
             using (var conn = new SQLiteConnection(connectionString))
@@ -253,111 +240,6 @@ namespace barangayTPS
             }
         }
 
-        // ==================== DEBUG METHODS ====================
-        public static void CheckAllAccounts()
-        {
-            using (var conn = new SQLiteConnection(connectionString))
-            {
-                conn.Open();
-                string query = "SELECT Username, Password, Role FROM Accounts";
-
-                using (var cmd = new SQLiteCommand(query, conn))
-                using (var reader = cmd.ExecuteReader())
-                {
-                    string accounts = "All accounts in database:\n";
-                    bool hasAccounts = false;
-
-                    while (reader.Read())
-                    {
-                        hasAccounts = true;
-                        accounts += $"Username: {reader["Username"]}, Password: {reader["Password"]}, Role: {reader["Role"]}\n";
-                    }
-
-                    if (!hasAccounts)
-                    {
-                        accounts += "No accounts found in database!";
-                    }
-                    MessageBox.Show(accounts);
-                }
-            }
-        }
-
-        public static void CheckAllDocuments()
-        {
-            using (var conn = new SQLiteConnection(connectionString))
-            {
-                conn.Open();
-                string query = "SELECT DocumentType FROM Documents";
-
-                using (var cmd = new SQLiteCommand(query, conn))
-                using (var reader = cmd.ExecuteReader())
-                {
-                    string documents = "Available document types:\n";
-                    bool hasDocuments = false;
-
-                    while (reader.Read())
-                    {
-                        hasDocuments = true;
-                        documents += $"- {reader["DocumentType"]}\n";
-                    }
-
-                    if (!hasDocuments)
-                    {
-                        documents += "No document types found!";
-                    }
-                    MessageBox.Show(documents);
-                }
-            }
-        }
-
-        public static void Debug_CheckAllRequestsWithResidents()
-        {
-            using (var conn = new SQLiteConnection(connectionString))
-            {
-                conn.Open();
-                string query = @"SELECT RequestID, Username, FullName, Document_Type, Status 
-                        FROM Requests 
-                        ORDER BY RequestID";
-
-                using (var cmd = new SQLiteCommand(query, conn))
-                using (var reader = cmd.ExecuteReader())
-                {
-                    string data = "ALL REQUESTS IN DATABASE:\n";
-                    int count = 0;
-                    int hasResidentInfo = 0;
-
-                    while (reader.Read())
-                    {
-                        count++;
-                        string username = reader["Username"]?.ToString() ?? "NULL";
-                        string fullname = reader["FullName"]?.ToString() ?? "NULL";
-
-                        data += $"[{count}] ID: {reader["RequestID"]}, User: '{username}', Name: '{fullname}', Doc: {reader["Document_Type"]}, Status: {reader["Status"]}\n";
-
-                        if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(fullname) && fullname != "NULL")
-                        {
-                            hasResidentInfo++;
-                        }
-                    }
-
-                    if (count == 0)
-                    {
-                        data += "NO REQUESTS FOUND IN DATABASE!\n";
-                    }
-                    else if (hasResidentInfo == 0)
-                    {
-                        data += $"\nFound {count} requests but NONE have resident information!\n";
-                    }
-                    else
-                    {
-                        data += $"\nFound {hasResidentInfo} requests with resident information.\n";
-                    }
-
-                    MessageBox.Show(data);
-                }
-            }
-        }
-
         public static void TestConnection()
         {
             try
@@ -365,12 +247,10 @@ namespace barangayTPS
                 using (var conn = new SQLiteConnection(connectionString))
                 {
                     conn.Open();
-                    MessageBox.Show("Database connection test: SUCCESS");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Database connection test: FAILED - {ex.Message}");
             }
         }
     }

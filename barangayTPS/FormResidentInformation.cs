@@ -19,9 +19,6 @@ namespace barangayTPS
 
         private void FormResidentInformation_Load(object sender, EventArgs e)
         {
-            // Temporary: Run debug first to see what's wrong
-            DBHelper.Debug_CheckAllRequestsWithResidents();
-
             LoadResidentData();
         }
 
@@ -29,10 +26,6 @@ namespace barangayTPS
         {
             try
             {
-                // First, check what data we actually have
-                DBHelper.Debug_CheckAllRequestsWithResidents();
-
-                // Then load the resident data
                 DataTable residentData = DBHelper.GetResidentData();
 
                 if (residentData.Rows.Count == 0)
@@ -51,7 +44,6 @@ namespace barangayTPS
                 else
                 {
                     dataGridResidentData.DataSource = residentData;
-                    MessageBox.Show($"Successfully loaded {residentData.Rows.Count} residents", "Data Loaded");
                 }
             }
             catch (Exception ex)
@@ -102,10 +94,5 @@ namespace barangayTPS
         {
             LoadResidentData();
         }
-
-        // Remove this method if it exists - it's causing the error
-        // private void FormResidentInformation_Load_2(object sender, EventArgs e)
-        // {
-        // }
     }
 }

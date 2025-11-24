@@ -255,7 +255,7 @@
             label3.BackColor = Color.SeaGreen;
             label3.Font = new Font("Segoe UI", 10.2F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(462, 150);
+            label3.Location = new Point(461, 150);
             label3.Name = "label3";
             label3.Size = new Size(93, 23);
             label3.TabIndex = 22;

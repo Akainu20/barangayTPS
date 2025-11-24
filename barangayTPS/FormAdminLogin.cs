@@ -19,7 +19,6 @@ namespace barangayTPS
 
         private void FormAdminLogin_Load(object sender, EventArgs e)
         {
-            // Set initial placeholder text and color
             txtAdminLoginUsername.Text = "Enter your Email/Admin Account";
             txtAdminLoginUsername.ForeColor = SystemColors.GrayText;
 
@@ -27,7 +26,6 @@ namespace barangayTPS
             txtAdminLoginPassword.PasswordChar = '\0';
             txtAdminLoginPassword.ForeColor = SystemColors.GrayText;
 
-            // Set combo box default
             cmbAdmin.Text = "Select role";
         }
 
@@ -40,8 +38,6 @@ namespace barangayTPS
             switch (selectedRole)
             {
                 case "Admin":
-                    // Already on admin login form
-                    MessageBox.Show("You are already on the Admin login page.");
                     break;
                 case "Resident":
                     this.Hide();
@@ -54,11 +50,9 @@ namespace barangayTPS
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
-            // ✅ USE ACTUAL USER INPUT
             string username = txtAdminLoginUsername.Text.Trim();
             string password = txtAdminLoginPassword.Text.Trim();
 
-            // Validate input
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ||
                 username == "Enter your Email/Admin Account" || password == "Enter password")
             {
@@ -80,8 +74,6 @@ namespace barangayTPS
                 return;
             }
 
-            // LOGIN SUCCESS
-            MessageBox.Show("Admin login successful!");
             this.Hide();
             new FormAdminDashboard().Show();
         }

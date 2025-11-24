@@ -57,7 +57,6 @@ namespace barangayTPS
                 return;
             }
 
-            // Remove placeholder text if present
             if (username == "Enter your username/email")
             {
                 MessageBox.Show("Please enter your actual username.");
@@ -86,7 +85,6 @@ namespace barangayTPS
 
         private void FormUserLogin_Load(object sender, EventArgs e)
         {
-            DBHelper.CheckAllAccounts(); // Show all accounts for debugging
         }
     }
 }

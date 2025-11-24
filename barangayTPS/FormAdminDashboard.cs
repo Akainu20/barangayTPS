@@ -13,28 +13,23 @@ namespace barangayTPS
 {
     public partial class FormAdminDashboard : Form
     {
-        // ✅ ADD THIS MISSING METHOD
         private void LoadRequests()
         {
             try
             {
-                // ✅ USE DASHBOARD-SPECIFIC METHOD
                 DataTable requests = DBHelper.GetRecentRequestsForDashboard();
                 dataGridRecentRequest.DataSource = requests;
 
-                // Hide RequestID column
                 if (dataGridRecentRequest.Columns.Contains("RequestID"))
                 {
                     dataGridRecentRequest.Columns["RequestID"].Visible = false;
                 }
 
-                // Optional: Rename columns for better display
                 if (dataGridRecentRequest.Columns.Contains("Date Requested"))
                 {
                     dataGridRecentRequest.Columns["Date Requested"].HeaderText = "Date";
                 }
 
-                // ✅ Make columns fill the grid
                 dataGridRecentRequest.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
@@ -72,10 +67,8 @@ namespace barangayTPS
             newForm.Show();
         }
 
-        // ✅ UPDATED FILTER BUTTONS
         private void btnTotalRequest_Click(object sender, EventArgs e)
         {
-            // ✅ Show ALL requests (no filter)
             dataGridRecentRequest.DataSource = DBHelper.GetRecentRequestsForDashboard();
         }
 
@@ -88,7 +81,7 @@ namespace barangayTPS
 
         private void btnRecentRequestRefresh_Click(object sender, EventArgs e)
         {
-            LoadRequests(); // This will use GetRecentRequestsForDashboard
+            LoadRequests();
         }
 
         private void btnPendingRequest_Click(object sender, EventArgs e)

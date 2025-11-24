@@ -13,16 +13,13 @@ namespace barangayTPS
 {
     public partial class FormDocumentStatus : Form
     {
-        // ✅ ADD THIS FIELD right here (at class level)
         private int _requestID;
 
-        // ✅ ADD THIS CONSTRUCTOR right here
         public FormDocumentStatus(int requestID, string residentName, string documentType, string dateRequested, string status)
         {
             InitializeComponent();
             _requestID = requestID;
 
-            // Populate the form fields
             txtRequestID.Text = requestID.ToString();
             txtResidentName.Text = residentName;
             txtDocType.Text = documentType;
@@ -30,7 +27,6 @@ namespace barangayTPS
             txtStatus.Text = status;
         }
 
-        // Keep your existing default constructor
         public FormDocumentStatus()
         {
             InitializeComponent();
@@ -94,12 +90,10 @@ namespace barangayTPS
 
         }
 
-        // ✅ UPDATED BUTTON METHODS WITH CRUD FUNCTIONALITY
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (UpdateRequestStatus("Accepted"))
             {
-                MessageBox.Show("Request accepted successfully!");
                 txtStatus.Text = "Accepted";
             }
         }
@@ -108,7 +102,6 @@ namespace barangayTPS
         {
             if (UpdateRequestStatus("Ready"))
             {
-                MessageBox.Show("Request marked as ready!");
                 txtStatus.Text = "Ready";
             }
         }
@@ -117,7 +110,6 @@ namespace barangayTPS
         {
             if (UpdateRequestStatus("Rejected"))
             {
-                MessageBox.Show("Request rejected!");
                 txtStatus.Text = "Rejected";
             }
         }
@@ -126,21 +118,18 @@ namespace barangayTPS
         {
             if (UpdateRequestStatus("Completed"))
             {
-                MessageBox.Show("Request completed!");
                 txtStatus.Text = "Completed";
             }
         }
 
         private void FormDocumentStatus_Load(object sender, EventArgs e)
         {
-            // Optional: Add any initialization code here if needed
             if (_requestID == 0)
             {
                 MessageBox.Show("No request selected. Please select a request from Transaction History.");
             }
         }
 
-        // ✅ ADD THIS CRUD METHOD
         private bool UpdateRequestStatus(string newStatus)
         {
             try
@@ -167,7 +156,6 @@ namespace barangayTPS
             }
         }
 
-        // ✅ ADD THIS METHOD FOR RESIDENT INFORMATION BUTTON (if you have one)
         private void btnDocumentStatusResidentInformation_Click(object sender, EventArgs e)
         {
             this.Hide();

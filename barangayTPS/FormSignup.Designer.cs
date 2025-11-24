@@ -91,7 +91,6 @@
             txtSignupPassword.PasswordChar = '*';
             txtSignupPassword.Size = new Size(422, 32);
             txtSignupPassword.TabIndex = 13;
-            txtSignupPassword.Text = "Enter password\r\n";
             // 
             // pictureBox1
             // 

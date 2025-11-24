@@ -40,46 +40,59 @@ namespace barangayTPS
 
         private void btnSubmitRequest_Click(object sender, EventArgs e)
         {
-            string fullname = txtFullName.Text.Trim();
-            int age = int.Parse(txtAge.Text.Trim());
-            string address = txtAddress.Text.Trim();
-            string contact = txtContactNumber.Text.Trim();
-            string docType = cmbDocType.SelectedValue.ToString();
-            string purpose = txtRequestReason.Text.Trim();
-            string status = "Pending";
-            string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-            int result = DBHelper.InsertRequest(
-                _username,
-                fullname,
-                age,
-                address,
-                contact,
-                docType,
-                purpose,
-                status,
-                date
-            );
-
-            if (result > 0)
+            try
             {
-                MessageBox.Show("Request submitted successfully!");
-                this.Hide();
-                new FormResidentDashboard(_username).Show();
+                string fullname = txtFullName.Text.Trim();
+                int age = int.Parse(txtAge.Text.Trim());
+                string address = txtAddress.Text.Trim();
+                string contact = txtContactNumber.Text.Trim();
+                string docType = cmbDocType.SelectedValue.ToString();
+                string purpose = txtRequestReason.Text.Trim();
+                string status = "Pending";
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+                int result = DBHelper.InsertRequest(
+                    _username,
+                    fullname,
+                    age,
+                    address,
+                    contact,
+                    docType,
+                    purpose,
+                    status,
+                    date
+                );
+
+                if (result > 0)
+                {
+                    this.Hide();
+                    new FormResidentDashboard(_username).Show();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to submit request.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Failed to submit request.");
+                MessageBox.Show($"Error submitting request: {ex.Message}");
             }
         }
 
         private void FormDocumentRequest_Load(object sender, EventArgs e)
         {
-            cmbDocType.DataSource = DBHelper.GetDocumentTypes();
-            cmbDocType.DisplayMember = "DocumentType";
-            cmbDocType.ValueMember = "DocumentType";
+            try
+            {
+                cmbDocType.DataSource = DBHelper.GetDocumentTypes();
+                cmbDocType.DisplayMember = "DocumentType";
+                cmbDocType.ValueMember = "DocumentType";
 
-            txtUsername.Text = _username;
+                txtUsername.Text = _username;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading document types: {ex.Message}");
+            }
         }
     }
 }
