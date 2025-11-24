@@ -17,23 +17,36 @@ namespace barangayTPS
             InitializeComponent();
         }
 
+        private void FormAdminLogin_Load(object sender, EventArgs e)
+        {
+            // Set initial placeholder text and color
+            txtAdminLoginUsername.Text = "Enter your Email/Admin Account";
+            txtAdminLoginUsername.ForeColor = SystemColors.GrayText;
+
+            txtAdminLoginPassword.Text = "Enter password";
+            txtAdminLoginPassword.PasswordChar = '\0';
+            txtAdminLoginPassword.ForeColor = SystemColors.GrayText;
+
+            // Set combo box default
+            cmbAdmin.Text = "Select role";
+        }
+
         private void cmbAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string FormUserLogin = cmbAdmin.SelectedItem.ToString();
+            if (cmbAdmin.SelectedItem == null) return;
 
-            switch (FormUserLogin)
+            string selectedRole = cmbAdmin.SelectedItem.ToString();
+
+            switch (selectedRole)
             {
                 case "Admin":
-                    FormAdminLogin form2 = new FormAdminLogin();
-                    form2.Show();
-                    this.Hide();
+                    // Already on admin login form
+                    MessageBox.Show("You are already on the Admin login page.");
                     break;
                 case "Resident":
-                    FormUserLogin form1 = new FormUserLogin();
-                    form1.Show();
                     this.Hide();
+                    new FormUserLogin().Show();
                     break;
-
                 default:
                     break;
             }
@@ -41,9 +54,17 @@ namespace barangayTPS
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
-            // Use the exact credentials that were just created
-            string username = "Admin";
-            string password = "Admin123";
+            // ✅ USE ACTUAL USER INPUT
+            string username = txtAdminLoginUsername.Text.Trim();
+            string password = txtAdminLoginPassword.Text.Trim();
+
+            // Validate input
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ||
+                username == "Enter your Email/Admin Account" || password == "Enter password")
+            {
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
 
             string role = DBHelper.AuthenticateUser(username, password);
 
@@ -63,6 +84,53 @@ namespace barangayTPS
             MessageBox.Show("Admin login successful!");
             this.Hide();
             new FormAdminDashboard().Show();
+        }
+
+        private void txtAdminLoginUsername_Enter(object sender, EventArgs e)
+        {
+            if (txtAdminLoginUsername.Text == "Enter your Email/Admin Account")
+            {
+                txtAdminLoginUsername.Text = "";
+                txtAdminLoginUsername.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void txtAdminLoginPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtAdminLoginPassword.Text == "Enter password")
+            {
+                txtAdminLoginPassword.Text = "";
+                txtAdminLoginPassword.PasswordChar = '*';
+                txtAdminLoginPassword.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void txtAdminLoginUsername_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtAdminLoginUsername.Text))
+            {
+                txtAdminLoginUsername.Text = "Enter your Email/Admin Account";
+                txtAdminLoginUsername.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void txtAdminLoginPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtAdminLoginPassword.Text))
+            {
+                txtAdminLoginPassword.Text = "Enter password";
+                txtAdminLoginPassword.PasswordChar = '\0';
+                txtAdminLoginPassword.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void txtAdminLoginPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAdminLogin_Click(sender, e);
+                e.Handled = true;
+            }
         }
     }
 }
