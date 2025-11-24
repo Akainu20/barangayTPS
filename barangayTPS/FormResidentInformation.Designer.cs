@@ -43,10 +43,6 @@
             panelResidentInformation = new Panel();
             btnResidentInfoRefresh = new Button();
             dataGridResidentData = new DataGridView();
-            ResidentName = new DataGridViewTextBoxColumn();
-            ResidentAge = new DataGridViewTextBoxColumn();
-            ResidentAddress = new DataGridViewTextBoxColumn();
-            ResidentContactNum = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
@@ -215,47 +211,16 @@
             // 
             // dataGridResidentData
             // 
+            dataGridResidentData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridResidentData.BackgroundColor = Color.White;
             dataGridResidentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridResidentData.Columns.AddRange(new DataGridViewColumn[] { ResidentName, ResidentAge, ResidentAddress, ResidentContactNum });
             dataGridResidentData.Location = new Point(10, 79);
             dataGridResidentData.Name = "dataGridResidentData";
+            dataGridResidentData.ReadOnly = true;
             dataGridResidentData.RowHeadersWidth = 51;
             dataGridResidentData.Size = new Size(1085, 362);
             dataGridResidentData.TabIndex = 3;
             dataGridResidentData.CellContentClick += dataGridResidentData_CellContentClick;
-            // 
-            // ResidentName
-            // 
-            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ResidentName.HeaderText = "Name";
-            ResidentName.MinimumWidth = 6;
-            ResidentName.Name = "ResidentName";
-            ResidentName.ReadOnly = true;
-            // 
-            // ResidentAge
-            // 
-            ResidentAge.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ResidentAge.HeaderText = "Age";
-            ResidentAge.MinimumWidth = 6;
-            ResidentAge.Name = "ResidentAge";
-            ResidentAge.ReadOnly = true;
-            // 
-            // ResidentAddress
-            // 
-            ResidentAddress.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ResidentAddress.HeaderText = "Address";
-            ResidentAddress.MinimumWidth = 6;
-            ResidentAddress.Name = "ResidentAddress";
-            ResidentAddress.ReadOnly = true;
-            // 
-            // ResidentContactNum
-            // 
-            ResidentContactNum.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ResidentContactNum.HeaderText = "Contact Number";
-            ResidentContactNum.MinimumWidth = 6;
-            ResidentContactNum.Name = "ResidentContactNum";
-            ResidentContactNum.ReadOnly = true;
             // 
             // label2
             // 
@@ -300,7 +265,7 @@
             Controls.Add(panel3);
             Name = "FormResidentInformation";
             Text = "FormResidentInformation";
-            this.Load += new System.EventHandler(this.FormResidentInformation_Load);
+            Load += FormResidentInformation_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panelAdminWelcome.ResumeLayout(false);
@@ -332,10 +297,6 @@
         private Panel panel3;
         private Button btnResidentInfoResidentInformation;
         private Button btnResidentInformationBack;
-        private DataGridViewTextBoxColumn ResidentName;
-        private DataGridViewTextBoxColumn ResidentAge;
-        private DataGridViewTextBoxColumn ResidentAddress;
-        private DataGridViewTextBoxColumn ResidentContactNum;
         private Button btnResidentInfoRefresh;
     }
 }

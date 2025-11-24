@@ -40,15 +40,10 @@
             btnTransactionHistoryBack = new Button();
             btnTransactionHistoryResidentInformation = new Button();
             panelTransactionHistory = new Panel();
+            btnViewDetails = new Button();
             label4 = new Label();
             btnHistoryRefresh = new Button();
             dataGridTransactionHistory = new DataGridView();
-            RequestID = new DataGridViewTextBoxColumn();
-            ResidentName = new DataGridViewTextBoxColumn();
-            DocumentType = new DataGridViewTextBoxColumn();
-            DateRequested = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            RequestPurpose = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
@@ -183,6 +178,7 @@
             // panelTransactionHistory
             // 
             panelTransactionHistory.BackColor = Color.SeaGreen;
+            panelTransactionHistory.Controls.Add(btnViewDetails);
             panelTransactionHistory.Controls.Add(label4);
             panelTransactionHistory.Controls.Add(btnHistoryRefresh);
             panelTransactionHistory.Controls.Add(dataGridTransactionHistory);
@@ -190,6 +186,16 @@
             panelTransactionHistory.Name = "panelTransactionHistory";
             panelTransactionHistory.Size = new Size(1101, 702);
             panelTransactionHistory.TabIndex = 15;
+            // 
+            // btnViewDetails
+            // 
+            btnViewDetails.Location = new Point(850, 18);
+            btnViewDetails.Name = "btnViewDetails";
+            btnViewDetails.Size = new Size(109, 37);
+            btnViewDetails.TabIndex = 24;
+            btnViewDetails.Text = "View Detials";
+            btnViewDetails.UseVisualStyleBackColor = true;
+            btnViewDetails.Click += btnViewDetails_Click;
             // 
             // label4
             // 
@@ -215,57 +221,15 @@
             // 
             // dataGridTransactionHistory
             // 
+            dataGridTransactionHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridTransactionHistory.BackgroundColor = Color.White;
             dataGridTransactionHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridTransactionHistory.Columns.AddRange(new DataGridViewColumn[] { RequestID, ResidentName, DocumentType, DateRequested, Status, RequestPurpose });
             dataGridTransactionHistory.Location = new Point(7, 66);
             dataGridTransactionHistory.Name = "dataGridTransactionHistory";
             dataGridTransactionHistory.RowHeadersWidth = 51;
             dataGridTransactionHistory.Size = new Size(1087, 624);
             dataGridTransactionHistory.TabIndex = 3;
             dataGridTransactionHistory.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // RequestID
-            // 
-            RequestID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            RequestID.HeaderText = "Request ID";
-            RequestID.MinimumWidth = 6;
-            RequestID.Name = "RequestID";
-            // 
-            // ResidentName
-            // 
-            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ResidentName.HeaderText = "Resident Name";
-            ResidentName.MinimumWidth = 6;
-            ResidentName.Name = "ResidentName";
-            // 
-            // DocumentType
-            // 
-            DocumentType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DocumentType.HeaderText = "Document Type";
-            DocumentType.MinimumWidth = 6;
-            DocumentType.Name = "DocumentType";
-            // 
-            // DateRequested
-            // 
-            DateRequested.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DateRequested.HeaderText = "Date";
-            DateRequested.MinimumWidth = 6;
-            DateRequested.Name = "DateRequested";
-            // 
-            // Status
-            // 
-            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            // 
-            // RequestPurpose
-            // 
-            RequestPurpose.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            RequestPurpose.HeaderText = "Purpose of Request";
-            RequestPurpose.MinimumWidth = 6;
-            RequestPurpose.Name = "RequestPurpose";
             // 
             // label2
             // 
@@ -308,8 +272,10 @@
             Controls.Add(panelTransactionSidebar);
             Controls.Add(panelTransactionHistory);
             Controls.Add(panel3);
+            Location = new Point(850, 18);
             Name = "FormTransactionHistory";
             Text = "FormTransactionHistory";
+            Load += FormTransactionHistory_Load_1;
             panelTransactionWelcome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -341,13 +307,8 @@
         private Button btnBackAdminDashboard;
         private Button button1;
         private Label label4;
-        private DataGridViewTextBoxColumn RequestID;
-        private DataGridViewTextBoxColumn ResidentName;
-        private DataGridViewTextBoxColumn DocumentType;
-        private DataGridViewTextBoxColumn DateRequested;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn RequestPurpose;
         private Button btnTransactionHistoryResidentInformation;
         private Button btnTransactionHistoryBack;
+        private Button btnViewDetails;
     }
 }

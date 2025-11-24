@@ -19,6 +19,9 @@ namespace barangayTPS
 
         private void FormResidentInformation_Load(object sender, EventArgs e)
         {
+            // Temporary: Run debug first to see what's wrong
+            DBHelper.Debug_CheckAllRequestsWithResidents();
+
             LoadResidentData();
         }
 
@@ -26,9 +29,30 @@ namespace barangayTPS
         {
             try
             {
+                // First, check what data we actually have
+                DBHelper.Debug_CheckAllRequestsWithResidents();
+
+                // Then load the resident data
                 DataTable residentData = DBHelper.GetResidentData();
-                dataGridResidentData.DataSource = residentData;
-                MessageBox.Show($"Loaded {residentData.Rows.Count} residents from database");
+
+                if (residentData.Rows.Count == 0)
+                {
+                    MessageBox.Show(
+                        "No resident data found.\n\n" +
+                        "This usually happens when:\n" +
+                        "1. No document requests have been submitted yet, OR\n" +
+                        "2. Requests were submitted without username/fullname information\n\n" +
+                        "Ask residents to submit document requests first through the 'Request Now' feature.",
+                        "No Data Found",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    dataGridResidentData.DataSource = residentData;
+                    MessageBox.Show($"Successfully loaded {residentData.Rows.Count} residents", "Data Loaded");
+                }
             }
             catch (Exception ex)
             {

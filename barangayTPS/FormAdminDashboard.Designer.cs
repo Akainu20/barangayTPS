@@ -32,10 +32,6 @@
             label2 = new Label();
             label1 = new Label();
             dataGridRecentRequest = new DataGridView();
-            ResidentName = new DataGridViewTextBoxColumn();
-            DocumentType = new DataGridViewTextBoxColumn();
-            DateRequested = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
             panelRecentRequest = new Panel();
             label4 = new Label();
             btnRejectedRequest = new Button();
@@ -98,41 +94,12 @@
             // 
             dataGridRecentRequest.BackgroundColor = Color.White;
             dataGridRecentRequest.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridRecentRequest.Columns.AddRange(new DataGridViewColumn[] { ResidentName, DocumentType, DateRequested, Status });
             dataGridRecentRequest.Location = new Point(10, 79);
             dataGridRecentRequest.Name = "dataGridRecentRequest";
             dataGridRecentRequest.RowHeadersWidth = 51;
             dataGridRecentRequest.Size = new Size(1085, 362);
             dataGridRecentRequest.TabIndex = 3;
             dataGridRecentRequest.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // ResidentName
-            // 
-            ResidentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ResidentName.HeaderText = "Resident Name";
-            ResidentName.MinimumWidth = 6;
-            ResidentName.Name = "ResidentName";
-            // 
-            // DocumentType
-            // 
-            DocumentType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DocumentType.HeaderText = "Document Type";
-            DocumentType.MinimumWidth = 6;
-            DocumentType.Name = "DocumentType";
-            // 
-            // DateRequested
-            // 
-            DateRequested.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DateRequested.HeaderText = "Date";
-            DateRequested.MinimumWidth = 6;
-            DateRequested.Name = "DateRequested";
-            // 
-            // Status
-            // 
-            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
             // 
             // panelRecentRequest
             // 
@@ -367,10 +334,6 @@
         private PictureBox pictureBox1;
         private Label lblAdminWelcome;
         private Label label4;
-        private DataGridViewTextBoxColumn ResidentName;
-        private DataGridViewTextBoxColumn DocumentType;
-        private DataGridViewTextBoxColumn DateRequested;
-        private DataGridViewTextBoxColumn Status;
         private Button btnResidentInfo;
     }
 }

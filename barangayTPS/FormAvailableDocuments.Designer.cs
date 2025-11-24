@@ -103,7 +103,7 @@
             panelResidentWelcome.Location = new Point(1, 2);
             panelResidentWelcome.Margin = new Padding(3, 4, 3, 4);
             panelResidentWelcome.Name = "panelResidentWelcome";
-            panelResidentWelcome.Size = new Size(1574, 83);
+            panelResidentWelcome.Size = new Size(1424, 83);
             panelResidentWelcome.TabIndex = 6;
             // 
             // panel9
