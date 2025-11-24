@@ -283,7 +283,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(61, 87);
+            label2.Location = new Point(52, 86);
             label2.Name = "label2";
             label2.Size = new Size(398, 20);
             label2.TabIndex = 1;
@@ -293,7 +293,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(50, 36);
+            label1.Location = new Point(47, 39);
             label1.Name = "label1";
             label1.Size = new Size(332, 38);
             label1.TabIndex = 0;

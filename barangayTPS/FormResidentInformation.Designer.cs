@@ -61,7 +61,7 @@
             lblAdminWelcome.BackColor = Color.SeaGreen;
             lblAdminWelcome.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAdminWelcome.ForeColor = Color.White;
-            lblAdminWelcome.Location = new Point(18, 15);
+            lblAdminWelcome.Location = new Point(454, 21);
             lblAdminWelcome.Name = "lblAdminWelcome";
             lblAdminWelcome.Size = new Size(475, 46);
             lblAdminWelcome.TabIndex = 12;
@@ -70,7 +70,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
-            pictureBox1.Location = new Point(1247, 21);
+            pictureBox1.Location = new Point(1247, 27);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 32);
             pictureBox1.TabIndex = 15;
@@ -80,7 +80,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(1286, 17);
+            pictureBox6.Location = new Point(1286, 24);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -180,11 +180,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(7, 26);
+            label4.Location = new Point(7, 24);
             label4.Name = "label4";
-            label4.Size = new Size(201, 28);
+            label4.Size = new Size(247, 35);
             label4.TabIndex = 9;
             label4.Text = "Resident Iformation";
             // 

@@ -91,7 +91,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
-            pictureBox1.Location = new Point(1246, 18);
+            pictureBox1.Location = new Point(1246, 19);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 32);
             pictureBox1.TabIndex = 23;
@@ -101,7 +101,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(1285, 14);
+            pictureBox6.Location = new Point(1285, 16);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -182,14 +182,14 @@
             panelTransactionHistory.Controls.Add(label4);
             panelTransactionHistory.Controls.Add(btnHistoryRefresh);
             panelTransactionHistory.Controls.Add(dataGridTransactionHistory);
-            panelTransactionHistory.Location = new Point(225, 257);
+            panelTransactionHistory.Location = new Point(225, 231);
             panelTransactionHistory.Name = "panelTransactionHistory";
-            panelTransactionHistory.Size = new Size(1101, 702);
+            panelTransactionHistory.Size = new Size(1101, 728);
             panelTransactionHistory.TabIndex = 15;
             // 
             // btnViewDetails
             // 
-            btnViewDetails.Location = new Point(850, 18);
+            btnViewDetails.Location = new Point(850, 19);
             btnViewDetails.Name = "btnViewDetails";
             btnViewDetails.Size = new Size(109, 37);
             btnViewDetails.TabIndex = 24;
@@ -205,9 +205,9 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(11, 27);
             label4.Name = "label4";
-            label4.Size = new Size(274, 28);
+            label4.Size = new Size(153, 28);
             label4.TabIndex = 23;
-            label4.Text = "Recent Transaction Request";
+            label4.Text = "Recent History";
             // 
             // btnHistoryRefresh
             // 
@@ -224,10 +224,10 @@
             dataGridTransactionHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridTransactionHistory.BackgroundColor = Color.White;
             dataGridTransactionHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridTransactionHistory.Location = new Point(7, 66);
+            dataGridTransactionHistory.Location = new Point(7, 68);
             dataGridTransactionHistory.Name = "dataGridTransactionHistory";
             dataGridTransactionHistory.RowHeadersWidth = 51;
-            dataGridTransactionHistory.Size = new Size(1087, 624);
+            dataGridTransactionHistory.Size = new Size(1087, 647);
             dataGridTransactionHistory.TabIndex = 3;
             dataGridTransactionHistory.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -237,9 +237,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(19, 53);
             label2.Name = "label2";
-            label2.Size = new Size(319, 20);
+            label2.Size = new Size(353, 20);
             label2.TabIndex = 4;
-            label2.Text = "Overview of barangay transactions and records";
+            label2.Text = "History of recently made Transactions and Requests ";
             // 
             // label1
             // 
@@ -247,7 +247,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(19, 12);
+            label1.Location = new Point(14, 12);
             label1.Name = "label1";
             label1.Size = new Size(289, 41);
             label1.TabIndex = 3;

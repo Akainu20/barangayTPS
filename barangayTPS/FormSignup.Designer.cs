@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             panelSignupHeader = new Panel();
+            pictureBox1 = new PictureBox();
             btnCreateAccount = new Button();
             label8 = new Label();
             txtSignupPassword = new TextBox();
-            pictureBox1 = new PictureBox();
             label6 = new Label();
             txtSignupUsername = new TextBox();
-            lvlBrgySanJuan = new Label();
+            lblBrgySanJuan = new Label();
             lblTaytayRizal = new Label();
             lblTransactionManagementSystem = new Label();
             panelSignupHeader.SuspendLayout();
@@ -45,13 +45,13 @@
             // panelSignupHeader
             // 
             panelSignupHeader.BackColor = Color.SeaGreen;
+            panelSignupHeader.Controls.Add(pictureBox1);
             panelSignupHeader.Controls.Add(btnCreateAccount);
             panelSignupHeader.Controls.Add(label8);
             panelSignupHeader.Controls.Add(txtSignupPassword);
-            panelSignupHeader.Controls.Add(pictureBox1);
             panelSignupHeader.Controls.Add(label6);
             panelSignupHeader.Controls.Add(txtSignupUsername);
-            panelSignupHeader.Controls.Add(lvlBrgySanJuan);
+            panelSignupHeader.Controls.Add(lblBrgySanJuan);
             panelSignupHeader.Controls.Add(lblTaytayRizal);
             panelSignupHeader.Controls.Add(lblTransactionManagementSystem);
             panelSignupHeader.Location = new Point(-104, -32);
@@ -59,10 +59,23 @@
             panelSignupHeader.Size = new Size(1275, 803);
             panelSignupHeader.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Image = Properties.Resources.logo_removebg_preview;
+            pictureBox1.Location = new Point(603, 139);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(117, 120);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
+            // 
             // btnCreateAccount
             // 
             btnCreateAccount.BackColor = Color.White;
-            btnCreateAccount.Location = new Point(594, 471);
+            btnCreateAccount.Location = new Point(589, 552);
             btnCreateAccount.Margin = new Padding(3, 4, 3, 4);
             btnCreateAccount.Name = "btnCreateAccount";
             btnCreateAccount.Size = new Size(131, 39);
@@ -77,7 +90,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(461, 429);
+            label8.Location = new Point(456, 510);
             label8.Name = "label8";
             label8.Size = new Size(137, 20);
             label8.TabIndex = 14;
@@ -85,25 +98,12 @@
             // 
             // txtSignupPassword
             // 
-            txtSignupPassword.Location = new Point(461, 394);
+            txtSignupPassword.Location = new Point(456, 475);
             txtSignupPassword.Multiline = true;
             txtSignupPassword.Name = "txtSignupPassword";
             txtSignupPassword.PasswordChar = '*';
             txtSignupPassword.Size = new Size(422, 32);
             txtSignupPassword.TabIndex = 13;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox1.Image = Properties.Resources.logo_removebg_preview;
-            pictureBox1.Location = new Point(615, 48);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(110, 120);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -111,7 +111,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(461, 353);
+            label6.Location = new Point(456, 434);
             label6.Name = "label6";
             label6.Size = new Size(125, 20);
             label6.TabIndex = 9;
@@ -119,24 +119,24 @@
             // 
             // txtSignupUsername
             // 
-            txtSignupUsername.Location = new Point(461, 321);
+            txtSignupUsername.Location = new Point(456, 402);
             txtSignupUsername.Multiline = true;
             txtSignupUsername.Name = "txtSignupUsername";
             txtSignupUsername.Size = new Size(422, 29);
             txtSignupUsername.TabIndex = 6;
             txtSignupUsername.Text = "Create admin username/email";
             // 
-            // lvlBrgySanJuan
+            // lblBrgySanJuan
             // 
-            lvlBrgySanJuan.AutoSize = true;
-            lvlBrgySanJuan.BackColor = Color.Transparent;
-            lvlBrgySanJuan.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lvlBrgySanJuan.ForeColor = Color.White;
-            lvlBrgySanJuan.Location = new Point(546, 172);
-            lvlBrgySanJuan.Name = "lvlBrgySanJuan";
-            lvlBrgySanJuan.Size = new Size(265, 38);
-            lvlBrgySanJuan.TabIndex = 0;
-            lvlBrgySanJuan.Text = "Barangay San Juan";
+            lblBrgySanJuan.AutoSize = true;
+            lblBrgySanJuan.BackColor = Color.Transparent;
+            lblBrgySanJuan.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBrgySanJuan.ForeColor = Color.White;
+            lblBrgySanJuan.Location = new Point(541, 253);
+            lblBrgySanJuan.Name = "lblBrgySanJuan";
+            lblBrgySanJuan.Size = new Size(265, 38);
+            lblBrgySanJuan.TabIndex = 0;
+            lblBrgySanJuan.Text = "Barangay San Juan";
             // 
             // lblTaytayRizal
             // 
@@ -145,7 +145,7 @@
             lblTaytayRizal.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTaytayRizal.ForeColor = Color.White;
             lblTaytayRizal.ImageAlign = ContentAlignment.MiddleLeft;
-            lblTaytayRizal.Location = new Point(622, 244);
+            lblTaytayRizal.Location = new Point(617, 325);
             lblTaytayRizal.Name = "lblTaytayRizal";
             lblTaytayRizal.Size = new Size(103, 23);
             lblTaytayRizal.TabIndex = 2;
@@ -158,11 +158,12 @@
             lblTransactionManagementSystem.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTransactionManagementSystem.ForeColor = Color.White;
             lblTransactionManagementSystem.ImageAlign = ContentAlignment.MiddleLeft;
-            lblTransactionManagementSystem.Location = new Point(537, 212);
+            lblTransactionManagementSystem.Location = new Point(532, 293);
             lblTransactionManagementSystem.Name = "lblTransactionManagementSystem";
             lblTransactionManagementSystem.Size = new Size(265, 23);
             lblTransactionManagementSystem.TabIndex = 1;
             lblTransactionManagementSystem.Text = "Transaction Management System";
+            lblTransactionManagementSystem.Click += lblTransactionManagementSystem_Click;
             // 
             // FormSignup
             // 
@@ -182,14 +183,14 @@
         #endregion
 
         private Panel panelSignupHeader;
-        private PictureBox pictureBox1;
         private Label label6;
         private TextBox txtSignupUsername;
-        private Label lvlBrgySanJuan;
+        private Label lblBrgySanJuan;
         private Label lblTaytayRizal;
         private Label lblTransactionManagementSystem;
         private Label label8;
         private TextBox txtSignupPassword;
         private Button btnCreateAccount;
+        private PictureBox pictureBox1;
     }
 }

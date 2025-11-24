@@ -121,7 +121,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
-            pictureBox1.Location = new Point(1392, 18);
+            pictureBox1.Location = new Point(1392, 21);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 32);
             pictureBox1.TabIndex = 31;
@@ -131,7 +131,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.profile_picture;
-            pictureBox6.Location = new Point(1431, 13);
+            pictureBox6.Location = new Point(1431, 16);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -175,11 +175,11 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 53);
+            label2.Location = new Point(23, 53);
             label2.Name = "label2";
-            label2.Size = new Size(319, 20);
+            label2.Size = new Size(304, 20);
             label2.TabIndex = 4;
-            label2.Text = "Overview of barangay transactions and records";
+            label2.Text = "Update the status of each request/document";
             // 
             // label1
             // 
@@ -187,11 +187,11 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(19, 12);
+            label1.Location = new Point(18, 12);
             label1.Name = "label1";
-            label1.Size = new Size(261, 41);
+            label1.Size = new Size(342, 41);
             label1.TabIndex = 3;
-            label1.Text = "Document Status";
+            label1.Text = "Update Request Status";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel3

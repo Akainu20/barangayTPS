@@ -143,9 +143,59 @@ namespace barangayTPS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Barangay_Certificate {
+            get {
+                object obj = ResourceManager.GetObject("Barangay Certificate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Barangay_Clearance {
             get {
                 object obj = ResourceManager.GetObject("Barangay Clearance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Barangay_ID {
+            get {
+                object obj = ResourceManager.GetObject("Barangay ID", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Business_Permit {
+            get {
+                object obj = ResourceManager.GetObject("Business Permit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Certificate_of_Indigency {
+            get {
+                object obj = ResourceManager.GetObject("Certificate of Indigency", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Certificate_of_Residency {
+            get {
+                object obj = ResourceManager.GetObject("Certificate of Residency", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +246,26 @@ namespace barangayTPS.Properties {
         internal static System.Drawing.Bitmap notification_bell {
             get {
                 object obj = ResourceManager.GetObject("notification-bell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Poster1 {
+            get {
+                object obj = ResourceManager.GetObject("Poster1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Poster11 {
+            get {
+                object obj = ResourceManager.GetObject("Poster11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

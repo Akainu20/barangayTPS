@@ -41,5 +41,10 @@ namespace barangayTPS
                 MessageBox.Show("Failed to create account. Username may already exist.");
             }
         }
+
+        private void lblTransactionManagementSystem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

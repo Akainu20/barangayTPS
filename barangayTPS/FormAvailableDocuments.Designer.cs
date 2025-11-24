@@ -88,7 +88,7 @@
             lblResidentWelcome.BackColor = Color.SeaGreen;
             lblResidentWelcome.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblResidentWelcome.ForeColor = Color.White;
-            lblResidentWelcome.Location = new Point(275, 11);
+            lblResidentWelcome.Location = new Point(465, 7);
             lblResidentWelcome.Name = "lblResidentWelcome";
             lblResidentWelcome.Size = new Size(616, 60);
             lblResidentWelcome.TabIndex = 1;
@@ -149,9 +149,11 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = Properties.Resources.Barangay_Clearance;
             pictureBox1.Location = new Point(13, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(197, 255);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
@@ -179,9 +181,11 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = Properties.Resources.Certificate_of_Residency;
             pictureBox2.Location = new Point(17, 23);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(197, 255);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
             // 
@@ -221,9 +225,11 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Image = Properties.Resources.Business_Permit;
             pictureBox4.Location = new Point(13, 23);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(197, 255);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 27;
             pictureBox4.TabStop = false;
             // 
@@ -251,9 +257,11 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Location = new Point(10, 23);
+            pictureBox5.Image = Properties.Resources.Barangay_ID;
+            pictureBox5.Location = new Point(9, 24);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(197, 255);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 28;
             pictureBox5.TabStop = false;
             // 
@@ -282,9 +290,11 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Image = Properties.Resources.Certificate_of_Indigency;
             pictureBox3.Location = new Point(14, 23);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(197, 255);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 26;
             pictureBox3.TabStop = false;
             // 
@@ -326,9 +336,10 @@
             pictureBox8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox8.BackgroundImageLayout = ImageLayout.None;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(286, 482);
+            pictureBox8.Location = new Point(217, 495);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(1079, 390);
+            pictureBox8.Size = new Size(1189, 377);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 8;
             pictureBox8.TabStop = false;
             // 

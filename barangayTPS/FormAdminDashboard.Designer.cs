@@ -120,13 +120,13 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(7, 26);
+            label4.Location = new Point(6, 26);
             label4.Name = "label4";
-            label4.Size = new Size(162, 28);
+            label4.Size = new Size(208, 35);
             label4.TabIndex = 9;
-            label4.Text = "Recent Request";
+            label4.Text = "Recent Requests";
             // 
             // btnRejectedRequest
             // 
@@ -253,7 +253,7 @@
             lblAdminWelcome.BackColor = Color.SeaGreen;
             lblAdminWelcome.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAdminWelcome.ForeColor = Color.White;
-            lblAdminWelcome.Location = new Point(18, 15);
+            lblAdminWelcome.Location = new Point(462, 17);
             lblAdminWelcome.Name = "lblAdminWelcome";
             lblAdminWelcome.Size = new Size(475, 46);
             lblAdminWelcome.TabIndex = 12;

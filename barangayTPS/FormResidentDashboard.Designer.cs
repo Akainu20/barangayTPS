@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormResidentDashboard));
             panelResidentSidebar = new Panel();
             btnResidentLogout = new Button();
             btnResidentDashboard = new Button();
@@ -47,8 +46,9 @@
             lblResidentWelcome = new Label();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
-            label2 = new Label();
             label1 = new Label();
+            label4 = new Label();
+            label2 = new Label();
             panelResidentSidebar.SuspendLayout();
             panel2.SuspendLayout();
             panelAvailableDocuments.SuspendLayout();
@@ -95,12 +95,12 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.White;
+            panel2.BackColor = Color.WhiteSmoke;
             panel2.Controls.Add(panelAvailableDocuments);
             panel2.Controls.Add(panelBarangayClearance);
-            panel2.Location = new Point(260, 231);
+            panel2.Location = new Point(215, 221);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1018, 215);
+            panel2.Size = new Size(1118, 215);
             panel2.TabIndex = 2;
             // 
             // panelAvailableDocuments
@@ -109,7 +109,7 @@
             panelAvailableDocuments.Controls.Add(pictureBox1);
             panelAvailableDocuments.Controls.Add(btnViewNow);
             panelAvailableDocuments.Controls.Add(label12);
-            panelAvailableDocuments.Location = new Point(539, 31);
+            panelAvailableDocuments.Location = new Point(571, 25);
             panelAvailableDocuments.Name = "panelAvailableDocuments";
             panelAvailableDocuments.Size = new Size(436, 165);
             panelAvailableDocuments.TabIndex = 29;
@@ -125,7 +125,8 @@
             // 
             // btnViewNow
             // 
-            btnViewNow.BackColor = Color.White;
+            btnViewNow.BackColor = Color.Beige;
+            btnViewNow.ForeColor = Color.Black;
             btnViewNow.Location = new Point(61, 93);
             btnViewNow.Name = "btnViewNow";
             btnViewNow.Size = new Size(323, 51);
@@ -152,7 +153,7 @@
             panelBarangayClearance.Controls.Add(pictureBox3);
             panelBarangayClearance.Controls.Add(btnRequestNow);
             panelBarangayClearance.Controls.Add(label3);
-            panelBarangayClearance.Location = new Point(54, 31);
+            panelBarangayClearance.Location = new Point(86, 25);
             panelBarangayClearance.Name = "panelBarangayClearance";
             panelBarangayClearance.Size = new Size(414, 165);
             panelBarangayClearance.TabIndex = 24;
@@ -168,7 +169,8 @@
             // 
             // btnRequestNow
             // 
-            btnRequestNow.BackColor = Color.White;
+            btnRequestNow.BackColor = Color.Beige;
+            btnRequestNow.ForeColor = Color.Black;
             btnRequestNow.Location = new Point(65, 93);
             btnRequestNow.Name = "btnRequestNow";
             btnRequestNow.Size = new Size(277, 51);
@@ -227,7 +229,7 @@
             lblResidentWelcome.BackColor = Color.SeaGreen;
             lblResidentWelcome.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblResidentWelcome.ForeColor = Color.White;
-            lblResidentWelcome.Location = new Point(14, 9);
+            lblResidentWelcome.Location = new Point(392, 9);
             lblResidentWelcome.Name = "lblResidentWelcome";
             lblResidentWelcome.Size = new Size(616, 60);
             lblResidentWelcome.TabIndex = 1;
@@ -238,10 +240,11 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(250, 470);
+            pictureBox2.Image = Properties.Resources._480740344_1661404787823400_59902;
+            pictureBox2.Location = new Point(215, 492);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1051, 351);
+            pictureBox2.Size = new Size(1118, 471);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
             // 
@@ -250,20 +253,10 @@
             panel3.BackColor = Color.SeaGreen;
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(215, 138);
+            panel3.Location = new Point(214, 98);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1119, 87);
+            panel3.Size = new Size(1119, 105);
             panel3.TabIndex = 14;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 53);
-            label2.Name = "label2";
-            label2.Size = new Size(319, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Overview of barangay transactions and records";
             // 
             // label1
             // 
@@ -273,10 +266,32 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(19, 12);
             label1.Name = "label1";
-            label1.Size = new Size(261, 41);
+            label1.Size = new Size(577, 41);
             label1.TabIndex = 3;
-            label1.Text = "Document Status";
+            label1.Text = "Request and View Available Documents";
             label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.ControlText;
+            label4.Location = new Point(213, 456);
+            label4.Name = "label4";
+            label4.Size = new Size(172, 31);
+            label4.TabIndex = 15;
+            label4.Text = "About San Juan";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(26, 54);
+            label2.Name = "label2";
+            label2.Size = new Size(577, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Welcome! Here, you can see the Available Documents and Create Document Requests";
             // 
             // FormResidentDashboard
             // 
@@ -284,6 +299,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1338, 971);
+            Controls.Add(label4);
             Controls.Add(panel3);
             Controls.Add(pictureBox2);
             Controls.Add(panelResidentWelcome);
@@ -307,6 +323,7 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -323,7 +340,6 @@
         private PictureBox pictureBox6;
         private Label label3;
         private Button btnResidentLogout;
-        private Label label2;
         private Label label1;
         private Label label4;
         private Label label5;
@@ -339,5 +355,6 @@
         private Label label12;
         private PictureBox pictureBox2;
         private Panel panel3;
+        private Label label2;
     }
 }
