@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblAdminWelcome = new Label();
             pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
             panel9 = new Panel();
@@ -54,18 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridResidentData).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblAdminWelcome
-            // 
-            lblAdminWelcome.AutoSize = true;
-            lblAdminWelcome.BackColor = Color.SeaGreen;
-            lblAdminWelcome.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdminWelcome.ForeColor = Color.White;
-            lblAdminWelcome.Location = new Point(454, 21);
-            lblAdminWelcome.Name = "lblAdminWelcome";
-            lblAdminWelcome.Size = new Size(475, 46);
-            lblAdminWelcome.TabIndex = 12;
-            lblAdminWelcome.Text = "Welcome to Your Dashboard";
             // 
             // pictureBox1
             // 
@@ -99,7 +86,6 @@
             // panelAdminWelcome
             // 
             panelAdminWelcome.BackColor = Color.SeaGreen;
-            panelAdminWelcome.Controls.Add(lblAdminWelcome);
             panelAdminWelcome.Controls.Add(pictureBox1);
             panelAdminWelcome.Controls.Add(pictureBox6);
             panelAdminWelcome.Controls.Add(panel9);
@@ -269,7 +255,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panelAdminWelcome.ResumeLayout(false);
-            panelAdminWelcome.PerformLayout();
             panelAdminSidebar.ResumeLayout(false);
             panelResidentInformation.ResumeLayout(false);
             panelResidentInformation.PerformLayout();
@@ -280,7 +265,6 @@
         }
 
         #endregion
-        private Label lblAdminWelcome;
         private PictureBox pictureBox1;
         private PictureBox pictureBox6;
         private Panel panel9;

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvailableDocuments));
             pictureBox6 = new PictureBox();
-            lblResidentWelcome = new Label();
             panelResidentWelcome = new Panel();
             panel9 = new Panel();
             btnBackToAdminDashboard = new Button();
@@ -82,24 +81,11 @@
             pictureBox6.TabIndex = 3;
             pictureBox6.TabStop = false;
             // 
-            // lblResidentWelcome
-            // 
-            lblResidentWelcome.AutoSize = true;
-            lblResidentWelcome.BackColor = Color.SeaGreen;
-            lblResidentWelcome.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResidentWelcome.ForeColor = Color.White;
-            lblResidentWelcome.Location = new Point(465, 7);
-            lblResidentWelcome.Name = "lblResidentWelcome";
-            lblResidentWelcome.Size = new Size(616, 60);
-            lblResidentWelcome.TabIndex = 1;
-            lblResidentWelcome.Text = "Welcome to Your Dashboard";
-            // 
             // panelResidentWelcome
             // 
             panelResidentWelcome.BackColor = Color.SeaGreen;
             panelResidentWelcome.Controls.Add(pictureBox6);
             panelResidentWelcome.Controls.Add(panel9);
-            panelResidentWelcome.Controls.Add(lblResidentWelcome);
             panelResidentWelcome.Location = new Point(1, 2);
             panelResidentWelcome.Margin = new Padding(3, 4, 3, 4);
             panelResidentWelcome.Name = "panelResidentWelcome";
@@ -357,7 +343,6 @@
             Load += FormAvailableDocuments_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panelResidentWelcome.ResumeLayout(false);
-            panelResidentWelcome.PerformLayout();
             panelBarangayClearance.ResumeLayout(false);
             panelBarangayClearance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -382,7 +367,6 @@
         #endregion
 
         private PictureBox pictureBox6;
-        private Label lblResidentWelcome;
         private Panel panelResidentWelcome;
         private Panel panel9;
         private Label label3;
