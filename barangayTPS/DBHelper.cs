@@ -8,13 +8,13 @@ namespace barangayTPS
 {
     public static class DBHelper
     {
-        public static string connectionString = @"Data Source=C:\barangayTPS\barangayTPS\barangayTPS\barangayTPS\barangayTPS.db;Version=3;";
+        public static string connectionString = @"Data Source=C:\Users\johnk\source\repos\barangayTPS\ROLINCE BOBO\barangayTPS\barangayTPS.db;Version=3;"; 
 
         public static void InitializeDatabase()
         {
             try
             {
-                string fullPath = @"C:\barangayTPS\barangayTPS\barangayTPS\barangayTPS\barangayTPS.db";
+                string fullPath = @"C:\Users\johnk\source\repos\barangayTPS\ROLINCE BOBO\barangayTPS\barangayTPS.db";
                 bool databaseExists = File.Exists(fullPath);
 
                 if (!databaseExists)

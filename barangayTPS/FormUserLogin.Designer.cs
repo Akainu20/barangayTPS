@@ -118,7 +118,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.logo_removebg_preview;
-            pictureBox1.Location = new Point(492, 64);
+            pictureBox1.Location = new Point(491, 64);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(117, 120);

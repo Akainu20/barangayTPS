@@ -91,7 +91,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.notification_bell;
-            pictureBox1.Location = new Point(1246, 19);
+            pictureBox1.Location = new Point(1246, 21);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(33, 32);
             pictureBox1.TabIndex = 23;

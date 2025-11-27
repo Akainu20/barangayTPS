@@ -89,7 +89,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.logo_removebg_preview;
-            pictureBox1.Location = new Point(524, 135);
+            pictureBox1.Location = new Point(523, 135);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 120);
@@ -145,7 +145,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(464, 259);
+            label1.Location = new Point(462, 259);
             label1.Name = "label1";
             label1.Size = new Size(265, 38);
             label1.TabIndex = 0;

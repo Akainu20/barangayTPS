@@ -72,11 +72,10 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 53);
+            label2.Location = new Point(25, 53);
             label2.Name = "label2";
-            label2.Size = new Size(319, 20);
+            label2.Size = new Size(0, 20);
             label2.TabIndex = 4;
-            label2.Text = "Overview of barangay transactions and records";
             // 
             // label1
             // 
@@ -84,7 +83,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(19, 12);
+            label1.Location = new Point(6, 19);
             label1.Name = "label1";
             label1.Size = new Size(171, 41);
             label1.TabIndex = 3;

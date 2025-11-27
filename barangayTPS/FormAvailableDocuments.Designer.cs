@@ -53,6 +53,7 @@
             btnResidentDashboard = new Button();
             panelResidentSidebar = new Panel();
             pictureBox8 = new PictureBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panelResidentWelcome.SuspendLayout();
             panelBarangayClearance.SuspendLayout();
@@ -84,6 +85,7 @@
             // panelResidentWelcome
             // 
             panelResidentWelcome.BackColor = Color.SeaGreen;
+            panelResidentWelcome.Controls.Add(label2);
             panelResidentWelcome.Controls.Add(pictureBox6);
             panelResidentWelcome.Controls.Add(panel9);
             panelResidentWelcome.Location = new Point(1, 2);
@@ -329,6 +331,19 @@
             pictureBox8.TabIndex = 8;
             pictureBox8.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(603, 20);
+            label2.Name = "label2";
+            label2.Size = new Size(315, 41);
+            label2.TabIndex = 9;
+            label2.Text = "Available Documents";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
             // FormAvailableDocuments
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -343,6 +358,7 @@
             Load += FormAvailableDocuments_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panelResidentWelcome.ResumeLayout(false);
+            panelResidentWelcome.PerformLayout();
             panelBarangayClearance.ResumeLayout(false);
             panelBarangayClearance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -391,5 +407,6 @@
         private PictureBox pictureBox7;
         private Button btnBackToAdminDashboard;
         private PictureBox pictureBox8;
+        private Label label2;
     }
 }
