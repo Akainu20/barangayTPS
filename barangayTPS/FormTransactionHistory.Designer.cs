@@ -40,6 +40,7 @@
             btnTransactionHistoryBack = new Button();
             btnTransactionHistoryResidentInformation = new Button();
             panelTransactionHistory = new Panel();
+            button1 = new Button();
             btnViewDetails = new Button();
             label4 = new Label();
             btnHistoryRefresh = new Button();
@@ -47,7 +48,7 @@
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
-            button1 = new Button();
+            textBox1 = new TextBox();
             panelTransactionWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -179,6 +180,7 @@
             // panelTransactionHistory
             // 
             panelTransactionHistory.BackColor = Color.SeaGreen;
+            panelTransactionHistory.Controls.Add(textBox1);
             panelTransactionHistory.Controls.Add(button1);
             panelTransactionHistory.Controls.Add(btnViewDetails);
             panelTransactionHistory.Controls.Add(label4);
@@ -188,6 +190,16 @@
             panelTransactionHistory.Name = "panelTransactionHistory";
             panelTransactionHistory.Size = new Size(1101, 728);
             panelTransactionHistory.TabIndex = 15;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(975, 18);
+            button1.Name = "button1";
+            button1.Size = new Size(109, 37);
+            button1.TabIndex = 25;
+            button1.Text = "Archive";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btnViewDetails
             // 
@@ -265,15 +277,13 @@
             panel3.Size = new Size(1101, 87);
             panel3.TabIndex = 14;
             // 
-            // button1
+            // textBox1
             // 
-            button1.Location = new Point(975, 18);
-            button1.Name = "button1";
-            button1.Size = new Size(109, 37);
-            button1.TabIndex = 25;
-            button1.Text = "Delete";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            textBox1.Location = new Point(326, 27);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(380, 27);
+            textBox1.TabIndex = 26;
+            textBox1.Text = "Search";
             // 
             // FormTransactionHistory
             // 
@@ -322,5 +332,6 @@
         private Button btnTransactionHistoryBack;
         private Button btnViewDetails;
         private Button button1;
+        private TextBox textBox1;
     }
 }
