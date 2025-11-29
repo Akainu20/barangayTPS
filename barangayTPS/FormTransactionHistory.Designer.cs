@@ -47,6 +47,7 @@
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
+            button1 = new Button();
             panelTransactionWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -178,6 +179,7 @@
             // panelTransactionHistory
             // 
             panelTransactionHistory.BackColor = Color.SeaGreen;
+            panelTransactionHistory.Controls.Add(button1);
             panelTransactionHistory.Controls.Add(btnViewDetails);
             panelTransactionHistory.Controls.Add(label4);
             panelTransactionHistory.Controls.Add(btnHistoryRefresh);
@@ -189,7 +191,7 @@
             // 
             // btnViewDetails
             // 
-            btnViewDetails.Location = new Point(850, 19);
+            btnViewDetails.Location = new Point(856, 18);
             btnViewDetails.Name = "btnViewDetails";
             btnViewDetails.Size = new Size(109, 37);
             btnViewDetails.TabIndex = 24;
@@ -211,7 +213,7 @@
             // 
             // btnHistoryRefresh
             // 
-            btnHistoryRefresh.Location = new Point(971, 18);
+            btnHistoryRefresh.Location = new Point(727, 18);
             btnHistoryRefresh.Name = "btnHistoryRefresh";
             btnHistoryRefresh.Size = new Size(116, 37);
             btnHistoryRefresh.TabIndex = 22;
@@ -263,6 +265,16 @@
             panel3.Size = new Size(1101, 87);
             panel3.TabIndex = 14;
             // 
+            // button1
+            // 
+            button1.Location = new Point(975, 18);
+            button1.Name = "button1";
+            button1.Size = new Size(109, 37);
+            button1.TabIndex = 25;
+            button1.Text = "Delete";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // FormTransactionHistory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -305,10 +317,10 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox1;
         private Button btnBackAdminDashboard;
-        private Button button1;
         private Label label4;
         private Button btnTransactionHistoryResidentInformation;
         private Button btnTransactionHistoryBack;
         private Button btnViewDetails;
+        private Button button1;
     }
 }
